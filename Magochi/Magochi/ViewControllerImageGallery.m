@@ -7,6 +7,8 @@
 //
 
 #import "ViewControllerImageGallery.h"
+#import "ViewControllerGameView.h"
+#import "Utils.h"
 
 @interface ViewControllerImageGallery ()
 @property (strong, nonatomic) IBOutlet UIButton *btn1;
@@ -16,10 +18,13 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrImages;
 
+@property NSString *imagenMascota;
+
 
 @end
 
 @implementation ViewControllerImageGallery
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,28 +49,47 @@
     switch (boton.tag) {
         case MascotaCiervo:
             self.imgMascota.image = [UIImage imageNamed:@"ciervo_comiendo_2"];
+            self.imagenMascota = @"ciervo_comiendo_2";
             break;
         case MascotaGato:
             self.imgMascota.image = [UIImage imageNamed:@"gato_comiendo_2"];
+            self.imagenMascota = @"gato_comiendo_2";
             break;
         case MascotaJirafa:
             self.imgMascota.image = [UIImage imageNamed:@"jirafa_comiendo_2"];
+            self.imagenMascota = @"jirafa_comiendo_2";
             break;
         case MascotaLeon:
             self.imgMascota.image = [UIImage imageNamed:@"leon_comiendo_2"];
+            self.imagenMascota = @"leon_comiendo_2";
             break;
         default:
             break;
     }
-    //self.imgMascota.image = boton.currentBackgroundImage;
+    
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.scrImages.contentSize = CGSizeMake(600,128);
     if (self.nombreMascota){
-        self.lblNombre.text = self.nombreMascota;
+        self.title = self.nombreMascota;
     }
+    self.imagenMascota = @"ciervo_comiendo_2";
 }
+
+- (id)initWithName: (NSString*) name {
+    self = [super initWithNibName:@"ViewControllerImageGallery" bundle:nil];
+    self.nombreMascota = name;
+    return self;
+}
+- (IBAction)btnClickDone:(id)sender {
+    ViewControllerGameView* newView = [[ViewControllerGameView alloc]initWithData:self.nombreMascota imagen:self.imagenMascota];
+
+    [self.navigationController pushViewController:newView animated:YES];
+}
+
+
+
 
 @end

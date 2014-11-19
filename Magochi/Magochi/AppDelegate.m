@@ -21,7 +21,7 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ViewControllerImageGallery* home = [[ViewControllerImageGallery alloc] initWithNibName:@"ViewControllerImageGallery" bundle:nil];
+    ViewControllerDataEntry* home = [[ViewControllerDataEntry alloc] initWithNibName:@"ViewControllerDataEntry" bundle:nil];
     UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
     
     [self.window setRootViewController:navControllerHome];

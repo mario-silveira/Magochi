@@ -48,6 +48,7 @@
 		FA5D24501A1BD3CF0045984A /* ViewControllerGameView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerGameView.h; sourceTree = "<group>"; };
 		FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerGameView.m; sourceTree = "<group>"; };
 		FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerGameView.xib; sourceTree = "<group>"; };
+		FA5D26851A1CED850045984A /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +103,7 @@
 				FA5D24501A1BD3CF0045984A /* ViewControllerGameView.h */,
 				FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */,
 				FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */,
+				FA5D26851A1CED850045984A /* Utils.h */,
 			);
 			path = Magochi;
 			sourceTree = "<group>";
@@ -409,6 +411,7 @@
 				FA5D24401A1BCA530045984A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FA5D24411A1BCA530045984A /* Build configuration list for PBXNativeTarget "MagochiTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +420,7 @@
 				FA5D24431A1BCA530045984A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

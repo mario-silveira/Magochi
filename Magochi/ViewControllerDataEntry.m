@@ -12,9 +12,9 @@
 @interface ViewControllerDataEntry ()
 
 @property NSString* nombreMascota;
+@property (strong, nonatomic) IBOutlet UILabel *lblError;
 
 @end
-
 
 
 @implementation ViewControllerDataEntry
@@ -29,6 +29,15 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
+    [self.view endEditing:YES];
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [self.lblError setHidden:YES];
+    self.txtName.text = @"";
+}
+
 /*
 #pragma mark - Navigation
 
@@ -38,5 +47,42 @@
     // Pass the selected object to the new view controller.
 }
 */
+- (IBAction)btnClick:(id)sender {
+    BOOL result = [self validateText: self.txtName.text];
+    
+    if (result){
+        self.nombreMascota = self.txtName.text;
+        
+        ViewControllerImageGallery* newView = [[ViewControllerImageGallery alloc]initWithName:self.nombreMascota];
+        
+        [self.navigationController pushViewController:newView animated:YES];
+    } else {
+        [self.lblError setHidden:NO];
+    }
+}
+- (IBAction)txtEndEdt:(id)sender {
+  [self.view endEditing:YES];
+}
+
+- (BOOL) validateText: (NSString*) name {
+    if ([name isEqualToString:@""]){
+        return NO;
+    }
+    if ([name length] < 6){
+        return NO;
+    }
+    
+    NSCharacterSet *strCharSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
+    strCharSet = [strCharSet invertedSet];
+    
+    NSRange r = [name rangeOfCharacterFromSet:strCharSet];
+    if (r.location != NSNotFound) {
+        return NO;
+    }
+    
+    return YES;
+}
+
+
 
 @end

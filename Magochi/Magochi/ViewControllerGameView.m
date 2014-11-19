@@ -7,12 +7,18 @@
 //
 
 #import "ViewControllerGameView.h"
-
+#import "Utils.h"
 @interface ViewControllerGameView ()
+
+@property NSString* nombreMascota;
+@property NSString* imagenMascota;
 
 @end
 
 @implementation ViewControllerGameView
+
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +28,19 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(void)viewWillAppear:(BOOL)animated{
+    
+    self.title = self.nombreMascota;
+    self.imgMascota.image = [UIImage imageNamed:self.imagenMascota];
+}
+
+- (id)initWithData: (NSString*) nombre imagen: (NSString*) imagenMascota {
+    self = [super initWithNibName:@"ViewControllerGameView" bundle:nil];
+    self.nombreMascota = nombre;
+    self.imagenMascota = imagenMascota;
+    return self;
 }
 
 /*

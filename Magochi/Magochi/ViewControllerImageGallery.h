@@ -12,11 +12,5 @@
 @property (strong, nonatomic) IBOutlet UILabel *lblNombre;
 @property (strong,nonatomic) NSString * nombreMascota;
 
-enum {
-    MascotaCiervo = 0,
-    MascotaGato = 1,
-    MascotaJirafa = 2,
-    MascotaLeon = 3,
-};
-
+- (id)initWithName: (NSString*) name;
 @end

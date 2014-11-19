@@ -10,4 +10,8 @@
 
 @interface ViewControllerGameView : UIViewController
 
+- (id)initWithData: (NSString*) nombre imagen: (NSString*) imagenMascota;
+@property (strong, nonatomic) IBOutlet UILabel *lblNombre;
+@property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
+
 @end

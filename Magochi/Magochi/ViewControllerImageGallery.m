@@ -69,6 +69,9 @@
     
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    self.title = @"";
+}
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.scrImages.contentSize = CGSizeMake(600,128);

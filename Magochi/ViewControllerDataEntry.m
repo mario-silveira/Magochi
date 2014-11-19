@@ -83,6 +83,10 @@
     return YES;
 }
 
+-(void)viewWillDisappear:(BOOL)animated{
+    self.title = @"";
+}
+
 
 
 @end

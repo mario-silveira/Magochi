@@ -11,6 +11,7 @@
                 <outlet property="btn3" destination="aJt-SJ-0v2" id="Lod-Ja-NCa"/>
                 <outlet property="btn4" destination="2fE-OE-NQh" id="zv5-0T-a3e"/>
                 <outlet property="imgMascota" destination="3Ju-7f-4qg" id="5OT-pe-yCd"/>
+                <outlet property="lblNombre" destination="3Ju-7f-4qg" id="tGI-Pb-6pV"/>
                 <outlet property="scrImages" destination="1W6-Oe-hId" id="VzQ-Fq-QzX"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -41,7 +42,7 @@
                                 <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="rts-nb-urp"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJt-SJ-0v2">
+                        <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJt-SJ-0v2">
                             <rect key="frame" x="255" y="27" width="81" height="74"/>
                             <state key="normal" backgroundImage="jirafa_comiendo_1">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -50,7 +51,7 @@
                                 <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="Geo-zp-ST1"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-OE-NQh">
+                        <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-OE-NQh">
                             <rect key="frame" x="350" y="27" width="81" height="74"/>
                             <state key="normal" backgroundImage="leon_comiendo_1">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -59,7 +60,7 @@
                                 <action selector="btnClick:" destination="-1" eventType="touchUpInside" id="OMp-Qa-tgA"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efL-vm-uG4">
+                        <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efL-vm-uG4">
                             <rect key="frame" x="138" y="27" width="81" height="74"/>
                             <state key="normal" backgroundImage="gato_comiendo_1">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>

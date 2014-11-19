@@ -7,6 +7,7 @@
 //
 
 #import "ViewControllerDataEntry.h"
+#import "ViewControllerImageGallery.h"
 
 @interface ViewControllerDataEntry ()
 
@@ -38,7 +39,4 @@
 }
 */
 
-- (IBAction)btnDataEntryClick:(id)sender {
-    self.nombreMascota = self.txtName.text;
-}
 @end

@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrImages;
 
+
 @end
 
 @implementation ViewControllerImageGallery
@@ -40,14 +41,31 @@
 }
 */
 - (IBAction)btnClick:(UIButton*)boton {
-    self.imgMascota.image = boton.currentBackgroundImage;
+    switch (boton.tag) {
+        case MascotaCiervo:
+            self.imgMascota.image = [UIImage imageNamed:@"ciervo_comiendo_2"];
+            break;
+        case MascotaGato:
+            self.imgMascota.image = [UIImage imageNamed:@"gato_comiendo_2"];
+            break;
+        case MascotaJirafa:
+            self.imgMascota.image = [UIImage imageNamed:@"jirafa_comiendo_2"];
+            break;
+        case MascotaLeon:
+            self.imgMascota.image = [UIImage imageNamed:@"leon_comiendo_2"];
+            break;
+        default:
+            break;
+    }
+    //self.imgMascota.image = boton.currentBackgroundImage;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     self.scrImages.contentSize = CGSizeMake(600,128);
-    
-    
+    if (self.nombreMascota){
+        self.lblNombre.text = self.nombreMascota;
+    }
 }
 
 @end

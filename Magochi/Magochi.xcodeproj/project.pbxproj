@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */ = {isa = PBXBuildFile; fileRef = FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */; };
+		FA57263F1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */; };
+		FA5726411A1E54AB00C1F5E3 /* Comida.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5726401A1E54AA00C1F5E3 /* Comida.m */; };
+		FA5726461A1E664A00C1F5E3 /* CellComida.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5726441A1E664A00C1F5E3 /* CellComida.m */; };
+		FA5726471A1E664A00C1F5E3 /* CellComida.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5726451A1E664A00C1F5E3 /* CellComida.xib */; };
 		FA5D24211A1BCA530045984A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D24201A1BCA530045984A /* main.m */; };
 		FA5D24241A1BCA530045984A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D24231A1BCA530045984A /* AppDelegate.m */; };
 		FA5D242C1A1BCA530045984A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA5D242B1A1BCA530045984A /* Images.xcassets */; };
@@ -30,6 +35,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FA57263B1A1E523C00C1F5E3 /* ViewControllerTablaComidas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTablaComidas.h; sourceTree = "<group>"; };
+		FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTablaComidas.m; sourceTree = "<group>"; };
+		FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerTablaComidas.xib; sourceTree = "<group>"; };
+		FA5726401A1E54AA00C1F5E3 /* Comida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Comida.m; sourceTree = "<group>"; };
+		FA5726421A1E54CF00C1F5E3 /* Comida.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Comida.h; sourceTree = "<group>"; };
+		FA5726431A1E664A00C1F5E3 /* CellComida.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellComida.h; sourceTree = "<group>"; };
+		FA5726441A1E664A00C1F5E3 /* CellComida.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellComida.m; sourceTree = "<group>"; };
+		FA5726451A1E664A00C1F5E3 /* CellComida.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellComida.xib; sourceTree = "<group>"; };
 		FA5D241B1A1BCA530045984A /* Magochi.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Magochi.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA5D241F1A1BCA530045984A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA5D24201A1BCA530045984A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +117,14 @@
 				FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */,
 				FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */,
 				FA5D26851A1CED850045984A /* Utils.h */,
+				FA57263B1A1E523C00C1F5E3 /* ViewControllerTablaComidas.h */,
+				FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */,
+				FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */,
+				FA5726401A1E54AA00C1F5E3 /* Comida.m */,
+				FA5726421A1E54CF00C1F5E3 /* Comida.h */,
+				FA5726431A1E664A00C1F5E3 /* CellComida.h */,
+				FA5726441A1E664A00C1F5E3 /* CellComida.m */,
+				FA5726451A1E664A00C1F5E3 /* CellComida.xib */,
 			);
 			path = Magochi;
 			sourceTree = "<group>";
@@ -214,7 +235,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA57263F1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib in Resources */,
 				FA5D24541A1BD3CF0045984A /* ViewControllerGameView.xib in Resources */,
+				FA5726471A1E664A00C1F5E3 /* CellComida.xib in Resources */,
 				FA5D244F1A1BD1410045984A /* ViewControllerImageGallery.xib in Resources */,
 				FA5D242C1A1BCA530045984A /* Images.xcassets in Resources */,
 				FA5D244A1A1BCE1D0045984A /* ViewControllerDataEntry.xib in Resources */,
@@ -237,6 +260,9 @@
 			files = (
 				FA5D24241A1BCA530045984A /* AppDelegate.m in Sources */,
 				FA5D24531A1BD3CF0045984A /* ViewControllerGameView.m in Sources */,
+				FA5726411A1E54AB00C1F5E3 /* Comida.m in Sources */,
+				FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */,
+				FA5726461A1E664A00C1F5E3 /* CellComida.m in Sources */,
 				FA5D244E1A1BD1410045984A /* ViewControllerImageGallery.m in Sources */,
 				FA5D24491A1BCE1D0045984A /* ViewControllerDataEntry.m in Sources */,
 				FA5D24211A1BCA530045984A /* main.m in Sources */,

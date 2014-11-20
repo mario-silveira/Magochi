@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "ViewControllerDataEntry.h"
-#import "ViewControllerImageGallery.h"
+
+
 
 @interface AppDelegate ()
 

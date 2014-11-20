@@ -7,11 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Comida.h"
+#import "ViewControllerTablaComidas.h"
 
-@interface ViewControllerGameView : UIViewController
+@interface ViewControllerGameView : UIViewController <tableProtocol>
 
 - (id)initWithData: (NSString*) nombre imagen: (NSString*) imagenMascota;
+-(void) setComida: (Comida*) comida;
 @property (strong, nonatomic) IBOutlet UILabel *lblNombre;
 @property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
+
+
 
 @end

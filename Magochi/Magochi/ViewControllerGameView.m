@@ -8,10 +8,12 @@
 
 #import "ViewControllerGameView.h"
 #import "Utils.h"
+#import "Comida.h"
 @interface ViewControllerGameView ()
 
 @property NSString* nombreMascota;
 @property NSString* imagenMascota;
+@property (strong, nonatomic) IBOutlet UIImageView *imgComida;
 
 @end
 
@@ -36,6 +38,10 @@
     self.imgMascota.image = [UIImage imageNamed:self.imagenMascota];
 }
 
+-(void)viewWillDisappear:(BOOL)animated {
+    self.title = @"";
+}
+
 - (id)initWithData: (NSString*) nombre imagen: (NSString*) imagenMascota {
     self = [super initWithNibName:@"ViewControllerGameView" bundle:nil];
     self.nombreMascota = nombre;
@@ -43,14 +49,18 @@
     return self;
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+-(void) setComida: (Comida*) comida{
+    self.imgComida.image = [UIImage imageNamed:comida.imagenComida];
 }
-*/
+
+
+- (IBAction)btnComer:(UIButton *)sender {
+    
+    ViewControllerTablaComidas* newView = [[ViewControllerTablaComidas alloc]init];
+    newView.delegate = self;
+    
+    [self.navigationController pushViewController:newView animated:YES];
+}
+
 
 @end

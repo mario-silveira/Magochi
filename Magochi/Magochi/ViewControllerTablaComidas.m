@@ -21,8 +21,6 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [self.tblComidas setDelegate: self];
-    
     self.arrayComidas = [[NSMutableArray alloc]init];
     [self.arrayComidas addObject:[[Comida alloc] initWithData:[[NSNumber alloc] initWithInt:0]: @"Torta" : @"comida_0"]];
     [self.arrayComidas addObject:[[Comida alloc] initWithData:[[NSNumber alloc] initWithInt:1]: @"Pastel": @"comida_1"]];

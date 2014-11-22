@@ -22,6 +22,8 @@
 		FA5D244F1A1BD1410045984A /* ViewControllerImageGallery.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5D244D1A1BD1410045984A /* ViewControllerImageGallery.xib */; };
 		FA5D24531A1BD3CF0045984A /* ViewControllerGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */; };
 		FA5D24541A1BD3CF0045984A /* ViewControllerGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */; };
+		FA929F571A1FC7EE00792436 /* Mascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F561A1FC7EE00792436 /* Mascota.m */; };
+		FA929F591A1FC86E00792436 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F581A1FC86E00792436 /* Utils.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,9 @@
 		FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerGameView.m; sourceTree = "<group>"; };
 		FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerGameView.xib; sourceTree = "<group>"; };
 		FA5D26851A1CED850045984A /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		FA929F551A1FC7EE00792436 /* Mascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mascota.h; sourceTree = "<group>"; };
+		FA929F561A1FC7EE00792436 /* Mascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mascota.m; sourceTree = "<group>"; };
+		FA929F581A1FC86E00792436 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +122,7 @@
 				FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */,
 				FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */,
 				FA5D26851A1CED850045984A /* Utils.h */,
+				FA929F581A1FC86E00792436 /* Utils.m */,
 				FA57263B1A1E523C00C1F5E3 /* ViewControllerTablaComidas.h */,
 				FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */,
 				FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */,
@@ -125,6 +131,8 @@
 				FA5726431A1E664A00C1F5E3 /* CellComida.h */,
 				FA5726441A1E664A00C1F5E3 /* CellComida.m */,
 				FA5726451A1E664A00C1F5E3 /* CellComida.xib */,
+				FA929F551A1FC7EE00792436 /* Mascota.h */,
+				FA929F561A1FC7EE00792436 /* Mascota.m */,
 			);
 			path = Magochi;
 			sourceTree = "<group>";
@@ -261,10 +269,12 @@
 				FA5D24241A1BCA530045984A /* AppDelegate.m in Sources */,
 				FA5D24531A1BD3CF0045984A /* ViewControllerGameView.m in Sources */,
 				FA5726411A1E54AB00C1F5E3 /* Comida.m in Sources */,
+				FA929F591A1FC86E00792436 /* Utils.m in Sources */,
 				FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */,
 				FA5726461A1E664A00C1F5E3 /* CellComida.m in Sources */,
 				FA5D244E1A1BD1410045984A /* ViewControllerImageGallery.m in Sources */,
 				FA5D24491A1BCE1D0045984A /* ViewControllerDataEntry.m in Sources */,
+				FA929F571A1FC7EE00792436 /* Mascota.m in Sources */,
 				FA5D24211A1BCA530045984A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

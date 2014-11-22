@@ -9,6 +9,7 @@
 #import "ViewControllerImageGallery.h"
 #import "ViewControllerGameView.h"
 #import "Utils.h"
+#import "Mascota.h"
 
 @interface ViewControllerImageGallery ()
 @property (strong, nonatomic) IBOutlet UIButton *btn1;
@@ -18,8 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrImages;
 
-@property NSString *imagenMascota;
-
+@property Mascota* mascota;
 
 @end
 
@@ -29,6 +29,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [Utils cargarMascotas];
+    self.mascota = (Mascota*) Utils.getMascotas[0];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -46,7 +49,12 @@
 }
 */
 - (IBAction)btnClick:(UIButton*)boton {
-    switch (boton.tag) {
+    
+    self.mascota = (Mascota*) Utils.getMascotas[boton.tag];
+    
+    self.imgMascota.image = [UIImage imageNamed:self.mascota.imagen];
+    
+   /* switch (boton.tag) {
         case MascotaCiervo:
             self.imgMascota.image = [UIImage imageNamed:@"ciervo_comiendo_2"];
             self.imagenMascota = @"ciervo_comiendo_2";
@@ -65,7 +73,7 @@
             break;
         default:
             break;
-    }
+    }*/
     
 }
 
@@ -76,9 +84,8 @@
     [super viewWillAppear:animated];
     self.scrImages.contentSize = CGSizeMake(600,128);
     if (self.nombreMascota){
-        self.title = self.nombreMascota;
+        self.title = self.mascota.nombre;
     }
-    self.imagenMascota = @"ciervo_comiendo_2";
 }
 
 - (id)initWithName: (NSString*) name {
@@ -87,7 +94,7 @@
     return self;
 }
 - (IBAction)btnClickDone:(id)sender {
-    ViewControllerGameView* newView = [[ViewControllerGameView alloc]initWithData:self.nombreMascota imagen:self.imagenMascota];
+    ViewControllerGameView* newView = [[ViewControllerGameView alloc]initWithData:self.mascota];
 
     [self.navigationController pushViewController:newView animated:YES];
 }

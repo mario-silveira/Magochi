@@ -15,5 +15,15 @@ enum {
     MascotaJirafa = 2,
     MascotaLeon = 3,
 };
+@interface Utils : NSObject
+
+
++(void)cargarMascotas;
++(NSArray*) getMascotas;
+
+@end
+
+
+
 
 #endif

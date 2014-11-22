@@ -9,14 +9,19 @@
 #import <UIKit/UIKit.h>
 #import "Comida.h"
 #import "ViewControllerTablaComidas.h"
+#import "Mascota.h"
 
 @interface ViewControllerGameView : UIViewController <tableProtocol>
+@property (strong, nonatomic) IBOutlet UIImageView *imgBoca;
 
-- (id)initWithData: (NSString*) nombre imagen: (NSString*) imagenMascota;
--(void) setComida: (Comida*) comida;
+@property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesto;
 @property (strong, nonatomic) IBOutlet UILabel *lblNombre;
 @property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
+@property Mascota* mascota;
 
+@property (strong, nonatomic) IBOutlet UIProgressView *pgbEnergia;
 
+- (id)initWithData: (Mascota*) mascota;
+-(void) setComida: (Comida*) comida;
 
 @end

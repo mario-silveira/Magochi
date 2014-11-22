@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #import "Comida.h"
 #import "ViewControllerTablaComidas.h"
 #import "Mascota.h"
 
-@interface ViewControllerGameView : UIViewController <tableProtocol>
+@interface ViewControllerGameView : UIViewController <tableProtocol, MFMailComposeViewControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *imgBoca;
 
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesto;

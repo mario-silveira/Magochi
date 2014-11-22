@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface ViewControllerImageGallery : UIViewController
 @property (strong, nonatomic) IBOutlet UILabel *lblNombre;
 @property (strong,nonatomic) NSString * nombreMascota;
+
 
 - (id)initWithName: (NSString*) name;
 @end

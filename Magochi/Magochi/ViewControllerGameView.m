@@ -23,18 +23,85 @@
     [super viewDidLoad];
     self.comidaCargada = NO;
     
+    
+    UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:@selector(enviarMail)];
+    
+    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects: mailButton, nil];
+    
 }
 
-- (NSArray *) cargarArrayAnimacion:(NSArray *) array{
+- (void) enviarMail {
     
-    NSMutableArray* result = [[NSMutableArray alloc] init];
+    NSString *emailTitle = @"Que app copada";
+    NSString *messageBody = [NSString stringWithFormat:@"Buenas! Soy %@, cómo va? Quería comentarte que estuve usando la App %@ para comerme todo y está genial. Bajatela YA!!   Saludos!", self.mascota.nombre, NSBundle.mainBundle.infoDictionary  [@"CFBundleDisplayName"]];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
     
-    for (NSString* item in array){
-        [result addObject:[UIImage imageNamed:item]];
-    }
-    return [[NSArray alloc]initWithArray:result];
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
     
 }
+
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
+{
+    UIAlertView* alert;
+    switch (result)
+    {
+        case MFMailComposeResultCancelled:
+            
+               alert = [[UIAlertView alloc]
+                      initWithTitle: @"Resultado"
+                      message: @"Mail Cancelado"
+                      delegate: self
+                      cancelButtonTitle:@"OK"
+                      otherButtonTitles:nil];
+            
+              [alert show];
+            
+              break;
+        case MFMailComposeResultSaved:
+            alert = [[UIAlertView alloc]
+                     initWithTitle: @"Resultado"
+                     message: @"Mail Guardado"
+                     delegate: self
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+            
+            [alert show];
+            break;
+        case MFMailComposeResultSent:
+            alert = [[UIAlertView alloc]
+                     initWithTitle: @"Resultado"
+                     message: @"Mail Enviado"
+                     delegate: self
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+            
+            [alert show];
+            break;
+        case MFMailComposeResultFailed:
+            alert = [[UIAlertView alloc]
+                     initWithTitle: @"Resultado"
+                     message: @"Error al enviar mail"
+                     delegate: self
+                     cancelButtonTitle:@"OK"
+                     otherButtonTitles:nil];
+            
+            [alert show];
+            break;
+        default:
+            break;
+    }
+    
+    [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
@@ -89,17 +156,28 @@
                              UIView* xview = [self.view hitTest:translation withEvent:nil];
                              UIView* xx = self.imgBoca;
                              if ([xview isEqual:xx]){
-                                 self.comidaEnBoca;
+                                 [self comidaEnBoca];
                              }
                          
         }];
     }
 }
 
-- (void)comidaEnBoca{
+- (NSArray*) cargarArrayAnimacion:(NSArray *) array{
     
+    NSMutableArray* result = [[NSMutableArray alloc] init];
+    
+    for (NSString* item in array){
+        [result addObject:[UIImage imageNamed:item]];
+    }
+    return [[NSArray alloc]initWithArray:result];
+    
+}
+
+
+- (void)comidaEnBoca{
     self.imgComida.alpha = 0;
-//    [self.imgMascota setAnimationImages:[self.cargarArrayAnimacion self.Mascota.imagenesComiendo]];
+    [self.imgMascota setAnimationImages:[self cargarArrayAnimacion :self.mascota.imagenesComiendo]];
     self.imgMascota.animationRepeatCount = 2;
     self.imgMascota.animationDuration = 2;
     

@@ -21,6 +21,7 @@
 @property Mascota* mascota;
 
 @property (strong, nonatomic) IBOutlet UIProgressView *pgbEnergia;
+@property (strong, nonatomic) IBOutlet UIButton *btnEjercicio;
 
 - (id)initWithData: (Mascota*) mascota;
 -(void) setComida: (Comida*) comida;

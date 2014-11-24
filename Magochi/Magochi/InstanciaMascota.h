@@ -7,7 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Mascota.h"
 
 @interface InstanciaMascota : NSObject
+
++ (InstanciaMascota*) sharedInstance;
+-(void) iniciarEjercicio;
+-(void) pararEjercicio;
+-(void) setMascota: (Mascota*) pet;
+-(NSNumber*) getEnergia;
+-(void) subaEnergia: (NSNumber*) energia;
 
 @end

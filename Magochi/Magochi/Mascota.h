@@ -14,5 +14,7 @@
 @property NSString* tipo;
 @property NSString* imagen;
 @property NSArray* imagenesComiendo;
+@property NSArray* imagenesEjercicio;
+@property NSNumber* energia;
 
 @end

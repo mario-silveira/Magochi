@@ -90,6 +90,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "Magochi/ViewControllerGameView.m"
             timestampString = "438357114.550616"
             startingColumnNumber = "9223372036854775807"
@@ -99,6 +100,8 @@
             landmarkName = "@interface ViewControllerGameView()"
             landmarkType = "2">
 =======
+=======
+>>>>>>> clase6
             filePath = "Magochi/InstanciaMascota.m"
             timestampString = "438549296.115132"
             startingColumnNumber = "9223372036854775807"
@@ -107,7 +110,10 @@
             endingLineNumber = "14"
             landmarkName = "energia"
             landmarkType = "19">
+<<<<<<< HEAD
 >>>>>>> clase 6
+=======
+>>>>>>> clase6
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -117,6 +123,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
 <<<<<<< HEAD
+<<<<<<< HEAD
             filePath = "Magochi/ViewControllerGameView.m"
             timestampString = "438357130.869786"
             startingColumnNumber = "9223372036854775807"
@@ -124,6 +131,8 @@
             startingLineNumber = "10"
             endingLineNumber = "10">
 =======
+=======
+>>>>>>> clase6
             filePath = "Magochi/InstanciaMascota.m"
             timestampString = "438549296.115132"
             startingColumnNumber = "9223372036854775807"
@@ -180,7 +189,10 @@
             endingLineNumber = "67"
             landmarkName = "-tickTimerEjercicio"
             landmarkType = "5">
+<<<<<<< HEAD
 >>>>>>> clase 6
+=======
+>>>>>>> clase6
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

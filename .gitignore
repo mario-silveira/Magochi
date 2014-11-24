@@ -1,6 +1,10 @@
 # Xcode
+<<<<<<< HEAD
 #
 .DS_Store
+=======
+#
+>>>>>>> clase6
 build/
 *.pbxuser
 !default.pbxuser

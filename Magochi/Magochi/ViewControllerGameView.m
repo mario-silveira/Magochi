@@ -26,8 +26,7 @@
     [super viewDidLoad];
     self.comidaCargada = NO;
     self.ejercitando = NO;
-    
-    
+
     UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:@selector(enviarMail)];
     
     self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects: mailButton, nil];

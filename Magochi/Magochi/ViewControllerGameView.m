@@ -50,50 +50,44 @@
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
-    UIAlertView* alert;
     switch (result)
     {
         case MFMailComposeResultCancelled:
             
-               alert = [[UIAlertView alloc]
-                      initWithTitle: @"Resultado"
-                      message: @"Mail Cancelado"
-                      delegate: self
-                      cancelButtonTitle:@"OK"
-                      otherButtonTitles:nil];
-            
-              [alert show];
+            [[[UIAlertView alloc]
+             initWithTitle: @"Resultado"
+             message: @"Mail Cancelado"
+             delegate: self
+             cancelButtonTitle:@"OK"
+             otherButtonTitles:nil] show];
             
               break;
         case MFMailComposeResultSaved:
-            alert = [[UIAlertView alloc]
-                     initWithTitle: @"Resultado"
-                     message: @"Mail Guardado"
-                     delegate: self
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
+            [[[UIAlertView alloc]
+             initWithTitle: @"Resultado"
+             message: @"Mail Guardado"
+             delegate: self
+             cancelButtonTitle:@"OK"
+             otherButtonTitles:nil] show];
             
-            [alert show];
             break;
         case MFMailComposeResultSent:
-            alert = [[UIAlertView alloc]
-                     initWithTitle: @"Resultado"
-                     message: @"Mail Enviado"
-                     delegate: self
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
+            [[[UIAlertView alloc]
+             initWithTitle: @"Resultado"
+             message: @"Mail Enviado"
+             delegate: self
+             cancelButtonTitle:@"OK"
+             otherButtonTitles:nil] show];
             
-            [alert show];
             break;
         case MFMailComposeResultFailed:
-            alert = [[UIAlertView alloc]
-                     initWithTitle: @"Resultado"
-                     message: @"Error al enviar mail"
-                     delegate: self
-                     cancelButtonTitle:@"OK"
-                     otherButtonTitles:nil];
+            [[[UIAlertView alloc]
+             initWithTitle: @"Resultado"
+             message: @"Error al enviar mail"
+             delegate: self
+             cancelButtonTitle:@"OK"
+             otherButtonTitles:nil] show];
             
-            [alert show];
             break;
         default:
             break;

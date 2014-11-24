@@ -44,7 +44,7 @@
                         <action selector="btnComer:" destination="-1" eventType="touchUpInside" id="mGB-06-Rlo"/>
                     </connections>
                 </button>
-                <imageView tag="9999" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="U4o-oD-Nod">
+                <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="U4o-oD-Nod">
                     <rect key="frame" x="169" y="327" width="57" height="36"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <gestureRecognizers/>

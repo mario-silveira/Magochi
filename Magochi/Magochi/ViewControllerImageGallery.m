@@ -10,6 +10,7 @@
 #import "ViewControllerGameView.h"
 #import "Utils.h"
 #import "Mascota.h"
+#import "InstanciaMascota.h"
 
 @interface ViewControllerImageGallery ()
 @property (strong, nonatomic) IBOutlet UIButton *btn1;
@@ -52,29 +53,10 @@
     
     self.mascota = (Mascota*) Utils.getMascotas[boton.tag];
     
+    [[InstanciaMascota sharedInstance] setMascota:self.mascota];
+    
+  
     self.imgMascota.image = [UIImage imageNamed:self.mascota.imagen];
-    
-   /* switch (boton.tag) {
-        case MascotaCiervo:
-            self.imgMascota.image = [UIImage imageNamed:@"ciervo_comiendo_2"];
-            self.imagenMascota = @"ciervo_comiendo_2";
-            break;
-        case MascotaGato:
-            self.imgMascota.image = [UIImage imageNamed:@"gato_comiendo_2"];
-            self.imagenMascota = @"gato_comiendo_2";
-            break;
-        case MascotaJirafa:
-            self.imgMascota.image = [UIImage imageNamed:@"jirafa_comiendo_2"];
-            self.imagenMascota = @"jirafa_comiendo_2";
-            break;
-        case MascotaLeon:
-            self.imgMascota.image = [UIImage imageNamed:@"leon_comiendo_2"];
-            self.imagenMascota = @"leon_comiendo_2";
-            break;
-        default:
-            break;
-    }*/
-    
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

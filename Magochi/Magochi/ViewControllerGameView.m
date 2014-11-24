@@ -9,10 +9,13 @@
 #import "ViewControllerGameView.h"
 #import "Utils.h"
 #import "Comida.h"
+#import "InstanciaMascota.h"
+
 @interface ViewControllerGameView ()
 
 @property (strong, nonatomic) IBOutlet UIImageView *imgComida;
 @property BOOL comidaCargada;
+@property BOOL ejercitando;
 
 @end
 
@@ -22,6 +25,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.comidaCargada = NO;
+    self.ejercitando = NO;
     
 }
 
@@ -48,11 +52,21 @@
     
     self.imgComida.alpha = 1;
     self.imgComida.center = CGPointMake(281.0f, 572.0f);
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(refrescarEnergia:) name:@"REFRESCAR_ENERGIA"
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(pararEjercicio) name:@"PARAR_EJERCICIO"
+                                               object:nil];
+    
 
+    [self refrescarEnergia:[[InstanciaMascota sharedInstance] getEnergia]];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
     self.title = @"";
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (id)initWithData: (Mascota*) mascota {
@@ -89,7 +103,7 @@
                              UIView* xview = [self.view hitTest:translation withEvent:nil];
                              UIView* xx = self.imgBoca;
                              if ([xview isEqual:xx]){
-                                 self.comidaEnBoca;
+                                 [self comidaEnBoca];
                              }
                          
         }];
@@ -99,14 +113,44 @@
 - (void)comidaEnBoca{
     
     self.imgComida.alpha = 0;
-//    [self.imgMascota setAnimationImages:[self.cargarArrayAnimacion self.Mascota.imagenesComiendo]];
+    [self.imgMascota setAnimationImages:[self cargarArrayAnimacion :self.mascota.imagenesComiendo]];
     self.imgMascota.animationRepeatCount = 2;
     self.imgMascota.animationDuration = 2;
+    NSNumber* energia = [[NSNumber alloc]initWithFloat:100.0f];
+    [[InstanciaMascota sharedInstance] subaEnergia:energia];
     
-    self.pgbEnergia.progress = 100.0f;
+    [self refrescarEnergia:energia];
     
     [self.imgMascota startAnimating];
     
+}
+
+#pragma mark - Ejercicio
+
+- (IBAction)clickEjercicio:(UIButton *)sender {
+    if (self.ejercitando){
+        [[InstanciaMascota sharedInstance] pararEjercicio];
+        [self.btnEjercicio setTitle:@"Ejercitar" forState:UIControlStateNormal];
+        self.ejercitando = NO;
+    } else {
+        [self.imgMascota setAnimationImages:[self cargarArrayAnimacion :self.mascota.imagenesEjercicio]];
+        [self.imgMascota startAnimating];
+        [InstanciaMascota.sharedInstance iniciarEjercicio];
+        [self.btnEjercicio setTitle:@"Parar" forState:UIControlStateNormal];
+        self.ejercitando = YES;
+    }
+    
+    
+}
+
+- (void) refrescarEnergia: (NSNumber*) energia {
+    
+    [self.pgbEnergia setProgress:[[[InstanciaMascota sharedInstance] getEnergia] floatValue] / 100 animated:YES];
+
+}
+
+- (void) pararEjercicio {
+    [self.imgMascota stopAnimating];
 }
 
 @end

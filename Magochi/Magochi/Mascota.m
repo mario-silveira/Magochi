@@ -10,4 +10,13 @@
 
 @implementation Mascota
 
+-(Mascota*) init {
+    Mascota* mascota = [super init];
+    mascota.energia = [[NSNumber alloc]initWithInt:100];
+    return mascota;
+}
+
+
 @end
+
+

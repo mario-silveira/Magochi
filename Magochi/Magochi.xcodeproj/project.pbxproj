@@ -24,6 +24,7 @@
 		FA5D24541A1BD3CF0045984A /* ViewControllerGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */; };
 		FA929F571A1FC7EE00792436 /* Mascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F561A1FC7EE00792436 /* Mascota.m */; };
 		FA929F591A1FC86E00792436 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F581A1FC86E00792436 /* Utils.m */; };
+		FABAA17E1A2381E300D7D912 /* InstanciaMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +68,8 @@
 		FA929F551A1FC7EE00792436 /* Mascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mascota.h; sourceTree = "<group>"; };
 		FA929F561A1FC7EE00792436 /* Mascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mascota.m; sourceTree = "<group>"; };
 		FA929F581A1FC86E00792436 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		FABAA17C1A2381E300D7D912 /* InstanciaMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanciaMascota.h; sourceTree = "<group>"; };
+		FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanciaMascota.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,31 +111,15 @@
 		FA5D241D1A1BCA530045984A /* Magochi */ = {
 			isa = PBXGroup;
 			children = (
-				FA5D24461A1BCE1D0045984A /* ViewControllerDataEntry.h */,
-				FA5D24471A1BCE1D0045984A /* ViewControllerDataEntry.m */,
-				FA5D24481A1BCE1D0045984A /* ViewControllerDataEntry.xib */,
+				FABAA17B1A237AB300D7D912 /* Dominio */,
+				FABAA17A1A237A9400D7D912 /* TablaComidas */,
+				FABAA1791A237A7700D7D912 /* GameView */,
+				FABAA1781A237A6200D7D912 /* ImageGallery */,
+				FABAA1771A2379CF00D7D912 /* DataEntry */,
 				FA5D24221A1BCA530045984A /* AppDelegate.h */,
 				FA5D24231A1BCA530045984A /* AppDelegate.m */,
 				FA5D242B1A1BCA530045984A /* Images.xcassets */,
 				FA5D241E1A1BCA530045984A /* Supporting Files */,
-				FA5D244B1A1BD1410045984A /* ViewControllerImageGallery.h */,
-				FA5D244C1A1BD1410045984A /* ViewControllerImageGallery.m */,
-				FA5D244D1A1BD1410045984A /* ViewControllerImageGallery.xib */,
-				FA5D24501A1BD3CF0045984A /* ViewControllerGameView.h */,
-				FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */,
-				FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */,
-				FA5D26851A1CED850045984A /* Utils.h */,
-				FA929F581A1FC86E00792436 /* Utils.m */,
-				FA57263B1A1E523C00C1F5E3 /* ViewControllerTablaComidas.h */,
-				FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */,
-				FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */,
-				FA5726401A1E54AA00C1F5E3 /* Comida.m */,
-				FA5726421A1E54CF00C1F5E3 /* Comida.h */,
-				FA5726431A1E664A00C1F5E3 /* CellComida.h */,
-				FA5726441A1E664A00C1F5E3 /* CellComida.m */,
-				FA5726451A1E664A00C1F5E3 /* CellComida.xib */,
-				FA929F551A1FC7EE00792436 /* Mascota.h */,
-				FA929F561A1FC7EE00792436 /* Mascota.m */,
 			);
 			path = Magochi;
 			sourceTree = "<group>";
@@ -161,6 +148,64 @@
 				FA5D24391A1BCA530045984A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FABAA1771A2379CF00D7D912 /* DataEntry */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D24461A1BCE1D0045984A /* ViewControllerDataEntry.h */,
+				FA5D24471A1BCE1D0045984A /* ViewControllerDataEntry.m */,
+				FA5D24481A1BCE1D0045984A /* ViewControllerDataEntry.xib */,
+			);
+			name = DataEntry;
+			sourceTree = "<group>";
+		};
+		FABAA1781A237A6200D7D912 /* ImageGallery */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D244B1A1BD1410045984A /* ViewControllerImageGallery.h */,
+				FA5D244C1A1BD1410045984A /* ViewControllerImageGallery.m */,
+				FA5D244D1A1BD1410045984A /* ViewControllerImageGallery.xib */,
+			);
+			name = ImageGallery;
+			sourceTree = "<group>";
+		};
+		FABAA1791A237A7700D7D912 /* GameView */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D24501A1BD3CF0045984A /* ViewControllerGameView.h */,
+				FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */,
+				FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */,
+			);
+			name = GameView;
+			sourceTree = "<group>";
+		};
+		FABAA17A1A237A9400D7D912 /* TablaComidas */ = {
+			isa = PBXGroup;
+			children = (
+				FA5726431A1E664A00C1F5E3 /* CellComida.h */,
+				FA5726441A1E664A00C1F5E3 /* CellComida.m */,
+				FA5726451A1E664A00C1F5E3 /* CellComida.xib */,
+				FA57263B1A1E523C00C1F5E3 /* ViewControllerTablaComidas.h */,
+				FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */,
+				FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */,
+			);
+			name = TablaComidas;
+			sourceTree = "<group>";
+		};
+		FABAA17B1A237AB300D7D912 /* Dominio */ = {
+			isa = PBXGroup;
+			children = (
+				FA5D26851A1CED850045984A /* Utils.h */,
+				FA929F581A1FC86E00792436 /* Utils.m */,
+				FA5726401A1E54AA00C1F5E3 /* Comida.m */,
+				FA5726421A1E54CF00C1F5E3 /* Comida.h */,
+				FA929F551A1FC7EE00792436 /* Mascota.h */,
+				FA929F561A1FC7EE00792436 /* Mascota.m */,
+				FABAA17C1A2381E300D7D912 /* InstanciaMascota.h */,
+				FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */,
+			);
+			name = Dominio;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -273,6 +318,7 @@
 				FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */,
 				FA5726461A1E664A00C1F5E3 /* CellComida.m in Sources */,
 				FA5D244E1A1BD1410045984A /* ViewControllerImageGallery.m in Sources */,
+				FABAA17E1A2381E300D7D912 /* InstanciaMascota.m in Sources */,
 				FA5D24491A1BCE1D0045984A /* ViewControllerDataEntry.m in Sources */,
 				FA929F571A1FC7EE00792436 /* Mascota.m in Sources */,
 				FA5D24211A1BCA530045984A /* main.m in Sources */,

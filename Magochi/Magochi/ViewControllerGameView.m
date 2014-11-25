@@ -16,6 +16,7 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imgComida;
 @property BOOL comidaCargada;
 @property BOOL ejercitando;
+@property (strong, nonatomic)Comida* comida;
 
 @end
 
@@ -26,10 +27,13 @@
     [super viewDidLoad];
     self.comidaCargada = NO;
     self.ejercitando = NO;
+    [self setMascota:[[InstanciaMascota sharedInstance] getMascota]];
 
     UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:@selector(enviarMail)];
     
     self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects: mailButton, nil];
+    
+    self.imgMascota.image = [UIImage imageNamed:self.mascota.imagen];
     
 }
 
@@ -108,20 +112,21 @@
 -(void)viewWillAppear:(BOOL)animated{
     
     self.title = self.mascota.nombre;
-    self.imgMascota.image = [UIImage imageNamed:self.mascota.imagen];
-    
+    [self.imgMascota.layer setBorderWidth:2.0];
     self.imgComida.alpha = 1;
     self.imgComida.center = CGPointMake(281.0f, 572.0f);
     
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(refrescarEnergia:) name:@"REFRESCAR_ENERGIA"
+                                             selector:@selector(refrescarEnergia) name:@"REFRESCAR_ENERGIA"
                                                object:nil];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
-                                             selector:@selector(pararEjercicio) name:@"PARAR_EJERCICIO"
+                                             selector:@selector(mascotaExausta)
+                                                 name:@"MASCOTA_EXHAUSTA"
                                                object:nil];
     
 
-    [self refrescarEnergia:[[InstanciaMascota sharedInstance] getEnergia]];
+    [self refrescarEnergia];
 }
 
 -(void)viewWillDisappear:(BOOL)animated {
@@ -129,14 +134,10 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (id)initWithData: (Mascota*) mascota {
-    self = [super initWithNibName:@"ViewControllerGameView" bundle:nil];
-    self.mascota = mascota;
-    return self;
-}
 
--(void) setComida: (Comida*) comida{
+-(void) setearComida: (Comida*) comida{
     self.imgComida.image = [UIImage imageNamed:comida.imagenComida];
+    self.comida = comida;
     self.comidaCargada = YES;
 }
 
@@ -186,13 +187,14 @@
     self.imgComida.alpha = 0;
     [self.imgMascota setAnimationImages:[self cargarArrayAnimacion :self.mascota.imagenesComiendo]];
     self.imgMascota.animationRepeatCount = 2;
-    self.imgMascota.animationDuration = 2;
-    NSNumber* energia = [[NSNumber alloc]initWithFloat:100.0f];
-    [[InstanciaMascota sharedInstance] subaEnergia:energia];
+    self.imgMascota.animationDuration = 0.5;
     
-    [self refrescarEnergia:energia];
+    [[InstanciaMascota sharedInstance] subaEnergia:self.comida.valor];
     
+    [self refrescarEnergia];
+    [self.imgMascota setImage: [UIImage imageNamed:[self.mascota.imagenesComiendo firstObject]]];
     [self.imgMascota startAnimating];
+    [self.btnEjercicio setEnabled:YES];
     
 }
 
@@ -201,10 +203,13 @@
 - (IBAction)clickEjercicio:(UIButton *)sender {
     if (self.ejercitando){
         [[InstanciaMascota sharedInstance] pararEjercicio];
+        [self pararEjercicio];
         [self.btnEjercicio setTitle:@"Ejercitar" forState:UIControlStateNormal];
         self.ejercitando = NO;
     } else {
         [self.imgMascota setAnimationImages:[self cargarArrayAnimacion :self.mascota.imagenesEjercicio]];
+        [self.imgMascota setAnimationRepeatCount:0];
+        [self.imgMascota setAnimationDuration: 0.5];
         [self.imgMascota startAnimating];
         [InstanciaMascota.sharedInstance iniciarEjercicio];
         [self.btnEjercicio setTitle:@"Parar" forState:UIControlStateNormal];
@@ -214,7 +219,7 @@
     
 }
 
-- (void) refrescarEnergia: (NSNumber*) energia {
+- (void) refrescarEnergia {
     
     [self.pgbEnergia setProgress:[[[InstanciaMascota sharedInstance] getEnergia] floatValue] / 100 animated:YES];
 
@@ -222,6 +227,19 @@
 
 - (void) pararEjercicio {
     [self.imgMascota stopAnimating];
+}
+
+- (void) mascotaExausta {
+    
+    [self.imgMascota setAnimationImages:[self cargarArrayAnimacion:self.mascota.imagenesCansado]];
+    [self.imgMascota setAnimationRepeatCount:1];
+    [self.imgMascota setAnimationDuration:0.7];
+    [self.imgMascota setImage: [UIImage imageNamed:[self.mascota.imagenesCansado lastObject]]];
+    
+    [self.btnEjercicio setEnabled:NO];
+    [self.btnEjercicio setTitle:@"Ejercitar" forState:UIControlStateNormal];
+    self.ejercitando = false;
+    [self.imgMascota startAnimating];
 }
 
 @end

@@ -15,6 +15,7 @@
 -(void) iniciarEjercicio;
 -(void) pararEjercicio;
 -(void) setMascota: (Mascota*) pet;
+-(Mascota*) getMascota;
 -(NSNumber*) getEnergia;
 -(void) subaEnergia: (NSNumber*) energia;
 

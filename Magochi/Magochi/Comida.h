@@ -12,6 +12,7 @@
 @property (strong,nonatomic) NSNumber * idComida;
 @property (strong,nonatomic) NSString * nombreComida;
 @property (strong,nonatomic) NSString * imagenComida;
+@property (strong,nonatomic) NSNumber * valor;
 
 -(id) initWithData: (NSNumber*) identifier : (NSString*) nombre : (NSString*) imagen;
 

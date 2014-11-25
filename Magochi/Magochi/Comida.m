@@ -19,6 +19,7 @@
     comida.idComida = identifier;
     comida.nombreComida = nombre;
     comida.imagenComida = imagen;
+    comida.valor = [[NSNumber alloc]initWithInt:50];
     return comida;
 }
 

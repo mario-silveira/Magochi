@@ -37,6 +37,11 @@ static NSArray *mascotas;
                                @"ciervo_ejercicio_3",
                                @"ciervo_ejercicio_4",
                                @"ciervo_ejercicio_5", nil];
+    ciervo.imagenesCansado = [[NSArray alloc]initWithObjects:
+                              @"ciervo_exhausto_1",
+                              @"ciervo_exhausto_2",
+                              @"ciervo_exhausto_3",
+                              @"ciervo_exhausto_4", nil];
     
     
     Mascota* gato = [[Mascota alloc]init];
@@ -53,6 +58,11 @@ static NSArray *mascotas;
                               @"gato_ejercicio_3",
                               @"gato_ejercicio_4",
                               @"gato_ejercicio_5", nil];
+    gato.imagenesCansado = [[NSArray alloc]initWithObjects:
+                            @"gato_exhausto_1",
+                            @"gato_exhausto_2",
+                            @"gato_exhausto_3",
+                            @"gato_exhausto_4", nil];
     
     Mascota* jirafa = [[Mascota alloc]init];
     jirafa.tipo = @"Jirafa";
@@ -68,6 +78,12 @@ static NSArray *mascotas;
                                @"jirafa_ejercicio_3",
                                @"jirafa_ejercicio_4",
                                @"jirafa_ejercicio_5", nil];
+    jirafa.imagenesCansado = [[NSArray alloc]initWithObjects:
+                              @"jirafa_exhausto_1",
+                              @"jirafa_exhausto_2",
+                              @"jirafa_exhausto_3",
+                              @"jirafa_exhausto_4", nil];
+
     
     Mascota* leon = [[Mascota alloc]init];
     leon.tipo = @"Leon";
@@ -83,6 +99,11 @@ static NSArray *mascotas;
                              @"leon_ejercicio_3",
                              @"leon_ejercicio_4",
                              @"leon_ejercicio_5", nil];
+    leon.imagenesCansado = [[NSArray alloc]initWithObjects:
+                            @"leon_exhausto_1",
+                            @"leon_exhausto_2",
+                            @"leon_exhausto_3",
+                            @"leon_exhausto_4", nil];
     
     mascotas = [[NSArray alloc]initWithObjects:ciervo, gato, jirafa, leon, nil];
 }

@@ -19,6 +19,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btn4;
 @property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
 @property (strong, nonatomic) IBOutlet UIScrollView *scrImages;
+@property (strong, nonatomic) IBOutlet UIButton *btnDone;
 
 @property Mascota* mascota;
 
@@ -31,8 +32,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
-    [Utils cargarMascotas];
-    self.mascota = (Mascota*) Utils.getMascotas[0];
+    [self.btnDone setEnabled:NO];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -40,21 +41,11 @@
     // Dispose of any resources that can be recreated.
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)btnClick:(UIButton*)boton {
     
+    [self.btnDone setEnabled:YES];
+    
     self.mascota = (Mascota*) Utils.getMascotas[boton.tag];
-    
-    [[InstanciaMascota sharedInstance] setMascota:self.mascota];
-    
   
     self.imgMascota.image = [UIImage imageNamed:self.mascota.imagen];
 }
@@ -64,6 +55,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    [self.imgMascota.layer setBorderWidth:2.0];
     self.scrImages.contentSize = CGSizeMake(600,128);
     if (self.nombreMascota){
         self.title = self.mascota.nombre;
@@ -76,7 +68,11 @@
     return self;
 }
 - (IBAction)btnClickDone:(id)sender {
-    ViewControllerGameView* newView = [[ViewControllerGameView alloc]initWithData:self.mascota];
+    self.mascota.nombre = self.nombreMascota;
+    
+    [[InstanciaMascota sharedInstance] setMascota:self.mascota];
+    
+    ViewControllerGameView* newView = [[ViewControllerGameView alloc]init];
 
     [self.navigationController pushViewController:newView animated:YES];
 }

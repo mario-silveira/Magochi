@@ -15,6 +15,10 @@
 @property NSString* imagen;
 @property NSArray* imagenesComiendo;
 @property NSArray* imagenesEjercicio;
+@property NSArray* imagenesCansado;
 @property NSNumber* energia;
+@property NSNumber* nivel;
+@property NSNumber* experiencia;
+@property NSNumber* experienciaSiguienteNivel;
 
 @end

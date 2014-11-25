@@ -11,7 +11,7 @@
 
 @protocol tableProtocol
 
--(void) setComida: (Comida*) comida;
+-(void) setearComida: (Comida*) comida;
 
 @end
 

@@ -8,6 +8,8 @@
 
 #import "ViewControllerDataEntry.h"
 #import "ViewControllerImageGallery.h"
+#import "NSString+Validation.h"
+#import "Utils.h"
 
 @interface ViewControllerDataEntry ()
 
@@ -34,6 +36,8 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
+    [Utils cargarMascotas];
+    
     [self.lblError setHidden:YES];
     self.txtName.text = @"";
 }
@@ -65,22 +69,14 @@
 }
 
 - (BOOL) validateText: (NSString*) name {
-    if ([name isEqualToString:@""]){
+    if ([name isEmpty]){
         return NO;
     }
     if ([name length] < 6){
         return NO;
     }
     
-    NSCharacterSet *strCharSet = [NSCharacterSet characterSetWithCharactersInString:@"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"];
-    strCharSet = [strCharSet invertedSet];
-    
-    NSRange r = [name rangeOfCharacterFromSet:strCharSet];
-    if (r.location != NSNotFound) {
-        return NO;
-    }
-    
-    return YES;
+   	return [name hasOnlyLetters];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

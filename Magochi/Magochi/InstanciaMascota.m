@@ -7,6 +7,7 @@
 //
 
 #import "InstanciaMascota.h"
+#import "NSTimer+StopTimer.h"
 
 @interface InstanciaMascota ()
 
@@ -36,8 +37,7 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
 -(InstanciaMascota*) init {
     InstanciaMascota* instancia = [super init];
     instancia.energia = [[NSNumber alloc]initWithInt:100];
-  /*  instancia.timerEjercicio = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(tickTimerEjercicio) userInfo:nil repeats:YES];
-    */
+
     return instancia;
 }
 
@@ -50,7 +50,11 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
 }
 
 -(void) configurarTimerEjercicio {
-    _instanciaMascota.timerEjercicio = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(tickTimerEjercicio) userInfo:nil repeats:YES];
+    _instanciaMascota.timerEjercicio = [NSTimer scheduledTimerWithTimeInterval:1
+                                                                        target:self
+                                                                      selector:@selector(tickTimerEjercicio)
+                                                                      userInfo:nil
+                                                                       repeats:YES];
 }
 
 -(void) iniciarEjercicio {
@@ -65,11 +69,18 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
 -(void) tickTimerEjercicio {
     if (_energia.intValue > 0) {
         _energia = [NSNumber numberWithInt:[_energia intValue] - 10];
+        [self subirExperiencia];
         [[NSNotificationCenter defaultCenter] postNotificationName:@"REFRESCAR_ENERGIA"
                                              object:_energia];
     } else {
-        [self pararEjercicio];
+        [self exhausto];
     }
+}
+
+-(void) exhausto {
+    [self.timerEjercicio pararTimer];
+    _timerEjercicio = nil;
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"MASCOTA_EXHAUSTA" object:nil];
 }
 
 -(void) pararEjercicio {
@@ -77,7 +88,6 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
         [_timerEjercicio invalidate];
     }
     _timerEjercicio = nil;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"PARAR_EJERCICIO" object:nil];
 }
 
 -(NSNumber*) getEnergia {
@@ -85,7 +95,27 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
 }
 
 - (void) subaEnergia: (NSNumber*) energia {
-    self.energia = energia;
+    self.energia = MIN([[NSNumber alloc] initWithInt:100], [[NSNumber alloc] initWithInt:[energia integerValue] + [self.energia integerValue]]);
+    NSLog(@"energia:%@", self.energia);
+}
+
+- (void) subirExperiencia {
+    self.mascota.experiencia = [[NSNumber alloc] initWithInt:[self.mascota.experiencia intValue] + 10];
+    NSLog(@"Experiencia:%@", self.mascota.experiencia);
+    if (self.mascota.experiencia.intValue >= self.mascota.experienciaSiguienteNivel.intValue) {
+        [self subirNivel];
+        NSLog(@"NUEVO NIVEL!!!");
+    }
+}
+
+- (void) subirNivel {
+    self.mascota.nivel = [[NSNumber alloc] initWithInt:[self.mascota.nivel intValue] + 1 ];
+    [self.mascota setExperienciaSiguienteNivel:[self experienciaNuevoNivel]];
+    NSLog(@"Experiencia siguiente nivel: %@", self.mascota.experienciaSiguienteNivel);
+}
+
+- (NSNumber*) experienciaNuevoNivel {
+    return [[NSNumber alloc] initWithInt:100 * (self.mascota.nivel.intValue * self.mascota.nivel.intValue)];
 }
 
 @end

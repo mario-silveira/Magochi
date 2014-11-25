@@ -22,8 +22,10 @@
 		FA5D244F1A1BD1410045984A /* ViewControllerImageGallery.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5D244D1A1BD1410045984A /* ViewControllerImageGallery.xib */; };
 		FA5D24531A1BD3CF0045984A /* ViewControllerGameView.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */; };
 		FA5D24541A1BD3CF0045984A /* ViewControllerGameView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */; };
+		FA60994A1A25021C00E5D001 /* NSString+Validation.m in Sources */ = {isa = PBXBuildFile; fileRef = FA6099491A25021C00E5D001 /* NSString+Validation.m */; };
 		FA929F571A1FC7EE00792436 /* Mascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F561A1FC7EE00792436 /* Mascota.m */; };
 		FA929F591A1FC86E00792436 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F581A1FC86E00792436 /* Utils.m */; };
+		FA97CB3D1A250CEB0039082E /* NSTimer+StopTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97CB3C1A250CEB0039082E /* NSTimer+StopTimer.m */; };
 		FABAA17E1A2381E300D7D912 /* InstanciaMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */; };
 /* End PBXBuildFile section */
 
@@ -65,9 +67,13 @@
 		FA5D24511A1BD3CF0045984A /* ViewControllerGameView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerGameView.m; sourceTree = "<group>"; };
 		FA5D24521A1BD3CF0045984A /* ViewControllerGameView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerGameView.xib; sourceTree = "<group>"; };
 		FA5D26851A1CED850045984A /* Utils.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		FA6099481A25021C00E5D001 /* NSString+Validation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+Validation.h"; sourceTree = "<group>"; };
+		FA6099491A25021C00E5D001 /* NSString+Validation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+Validation.m"; sourceTree = "<group>"; };
 		FA929F551A1FC7EE00792436 /* Mascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mascota.h; sourceTree = "<group>"; };
 		FA929F561A1FC7EE00792436 /* Mascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mascota.m; sourceTree = "<group>"; };
 		FA929F581A1FC86E00792436 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
+		FA97CB3B1A250CEB0039082E /* NSTimer+StopTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+StopTimer.h"; sourceTree = "<group>"; };
+		FA97CB3C1A250CEB0039082E /* NSTimer+StopTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+StopTimer.m"; sourceTree = "<group>"; };
 		FABAA17C1A2381E300D7D912 /* InstanciaMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanciaMascota.h; sourceTree = "<group>"; };
 		FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanciaMascota.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -204,6 +210,10 @@
 				FA929F561A1FC7EE00792436 /* Mascota.m */,
 				FABAA17C1A2381E300D7D912 /* InstanciaMascota.h */,
 				FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */,
+				FA6099481A25021C00E5D001 /* NSString+Validation.h */,
+				FA6099491A25021C00E5D001 /* NSString+Validation.m */,
+				FA97CB3B1A250CEB0039082E /* NSTimer+StopTimer.h */,
+				FA97CB3C1A250CEB0039082E /* NSTimer+StopTimer.m */,
 			);
 			name = Dominio;
 			sourceTree = "<group>";
@@ -317,8 +327,10 @@
 				FA929F591A1FC86E00792436 /* Utils.m in Sources */,
 				FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */,
 				FA5726461A1E664A00C1F5E3 /* CellComida.m in Sources */,
+				FA60994A1A25021C00E5D001 /* NSString+Validation.m in Sources */,
 				FA5D244E1A1BD1410045984A /* ViewControllerImageGallery.m in Sources */,
 				FABAA17E1A2381E300D7D912 /* InstanciaMascota.m in Sources */,
+				FA97CB3D1A250CEB0039082E /* NSTimer+StopTimer.m in Sources */,
 				FA5D24491A1BCE1D0045984A /* ViewControllerDataEntry.m in Sources */,
 				FA929F571A1FC7EE00792436 /* Mascota.m in Sources */,
 				FA5D24211A1BCA530045984A /* main.m in Sources */,
@@ -425,7 +437,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Magochi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -436,7 +448,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Magochi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};

@@ -64,7 +64,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     Comida *comida = (Comida*) self.arrayComidas[indexPath.row];
-    [self.delegate setComida:comida];
+    [self.delegate setearComida:comida];
     
     [self.navigationController popViewControllerAnimated:YES];
     

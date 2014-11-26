@@ -10,6 +10,7 @@
 #import "ViewControllerImageGallery.h"
 #import "NSString+Validation.h"
 #import "Utils.h"
+#import "InstanciaMascota.h"
 
 @interface ViewControllerDataEntry ()
 
@@ -83,6 +84,9 @@
     self.title = @"";
 }
 
+- (IBAction)clickCargar:(UIButton *)sender {
+    [[InstanciaMascota sharedInstance] recibirMascota];
+}
 
 
 @end

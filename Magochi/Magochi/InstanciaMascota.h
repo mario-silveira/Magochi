@@ -18,5 +18,6 @@
 -(Mascota*) getMascota;
 -(NSNumber*) getEnergia;
 -(void) subaEnergia: (NSNumber*) energia;
+-(void) recibirMascota;
 
 @end

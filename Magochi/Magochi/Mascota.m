@@ -12,6 +12,7 @@
 
 -(Mascota*) init {
     Mascota* mascota = [super init];
+    mascota.codigo = @"MSILVEIRA8031";
     mascota.energia = [[NSNumber alloc]initWithInt:100];
     mascota.nivel = [[NSNumber alloc]initWithInt:1];
     mascota.experiencia = 0;
@@ -20,6 +21,13 @@
     return mascota;
 }
 
+-(NSDictionary*) dataForSending{
+    return [NSDictionary dictionaryWithObjectsAndKeys:self.codigo, @"code",
+             self.nombre, @"name",
+             self.energia, @"energy",
+             self.nivel, @"level",
+             self.experiencia, @"experience", nil];
+}
 
 @end
 

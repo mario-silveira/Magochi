@@ -10,6 +10,7 @@
 
 @interface Mascota : NSObject
 
+@property NSString* codigo;
 @property NSString* nombre;
 @property NSString* tipo;
 @property NSString* imagen;
@@ -20,5 +21,7 @@
 @property NSNumber* nivel;
 @property NSNumber* experiencia;
 @property NSNumber* experienciaSiguienteNivel;
+
+-(NSDictionary*) dataForSending;
 
 @end

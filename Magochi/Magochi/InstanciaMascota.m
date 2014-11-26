@@ -8,12 +8,14 @@
 
 #import "InstanciaMascota.h"
 #import "NSTimer+StopTimer.h"
+#import "NetworkManager.h"
 
 @interface InstanciaMascota ()
 
 @property (nonatomic)  Mascota* mascota;
 @property (nonatomic, strong) NSNumber* energia;
 @property NSTimer* timerEjercicio;
+
 
 @end
 
@@ -112,10 +114,48 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
     self.mascota.nivel = [[NSNumber alloc] initWithInt:[self.mascota.nivel intValue] + 1 ];
     [self.mascota setExperienciaSiguienteNivel:[self experienciaNuevoNivel]];
     NSLog(@"Experiencia siguiente nivel: %@", self.mascota.experienciaSiguienteNivel);
+    [self enviarNuevoNivel];
 }
 
 - (NSNumber*) experienciaNuevoNivel {
     return [[NSNumber alloc] initWithInt:100 * (self.mascota.nivel.intValue * self.mascota.nivel.intValue)];
 }
+
+-(void) enviarNuevoNivel {
+    NSLog(@"llego al llamado");
+    [[NetworkManager sharedInstance] POST:@"/pet"
+                               parameters:[[self getMascota] dataForSending]
+                                  success:^(NSURLSessionDataTask *task, id responseObject) {
+        //                              NSHTTPURLResponse* httpRsp = (NSHTTPURLResponse*) responseObject;
+                                      if ([[responseObject objectForKey:@"status"] isEqualToString:@"ok"]){
+                                          NSLog(@"la info llego sin error");
+                                      } else {
+                                          NSLog(@"hay errores en el llamado");
+                                      }
+                                      
+                                      
+                                  }
+                                  failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                      NSLog(@"error");
+                                  }];
+}
+
+-(void) recibirMascota {
+    [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
+                              parameters:nil
+                                 success:^(NSURLSessionDataTask *task, id responseObject) {
+                                     NSString* nombre = [responseObject objectForKey:@"name"];
+                                     NSNumber* experiencia = [responseObject objectForKey:@"experience"];
+                                     NSNumber* nivel = [responseObject objectForKey:@"level"];
+                                     NSNumber* energia = [responseObject objectForKey:@"energy"];
+                                     
+                                     
+                                 }
+                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
+                                     NSLog(@"hay errores en el llamado:%@", error.localizedDescription);
+                                 }];
+}
+
+
 
 @end

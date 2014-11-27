@@ -12,7 +12,7 @@
 
 @property NSString* codigo;
 @property NSString* nombre;
-@property NSString* tipo;
+@property NSNumber* tipo;
 @property NSString* imagen;
 @property NSArray* imagenesComiendo;
 @property NSArray* imagenesEjercicio;

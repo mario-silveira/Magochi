@@ -9,6 +9,10 @@
 #import <Foundation/Foundation.h>
 #import "Mascota.h"
 
+
+typedef void (^Success)(NSURLSessionDataTask *task, id responseObject);
+typedef void (^Failure)(NSURLSessionDataTask *task, NSError *error);
+
 @interface InstanciaMascota : NSObject
 
 + (InstanciaMascota*) sharedInstance;

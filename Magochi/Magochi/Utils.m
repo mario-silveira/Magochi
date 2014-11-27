@@ -24,7 +24,7 @@ static NSArray *mascotas;
 +(void)cargarMascotas {
     
     Mascota* ciervo = [[Mascota alloc]init];
-    ciervo.tipo = @"Ciervo";
+    ciervo.tipo = [[NSNumber alloc] initWithInt:0];
     ciervo.imagen = @"ciervo_comiendo_1";
     ciervo.imagenesComiendo = [[NSArray alloc]initWithObjects:
                            @"ciervo_comiendo_1",
@@ -45,7 +45,7 @@ static NSArray *mascotas;
     
     
     Mascota* gato = [[Mascota alloc]init];
-    gato.tipo = @"Gato";
+    gato.tipo = [[NSNumber alloc] initWithInt:1];
     gato.imagen = @"gato_comiendo_1";
     gato.imagenesComiendo = [[NSArray alloc]initWithObjects:
                             @"gato_comiendo_1",
@@ -65,7 +65,7 @@ static NSArray *mascotas;
                             @"gato_exhausto_4", nil];
     
     Mascota* jirafa = [[Mascota alloc]init];
-    jirafa.tipo = @"Jirafa";
+    jirafa.tipo = [[NSNumber alloc] initWithInt:2];
     jirafa.imagen = @"jirafa_comiendo_1";
     jirafa.imagenesComiendo = [[NSArray alloc]initWithObjects:
                                @"jirafa_comiendo_1",
@@ -86,7 +86,7 @@ static NSArray *mascotas;
 
     
     Mascota* leon = [[Mascota alloc]init];
-    leon.tipo = @"Leon";
+    leon.tipo = [[NSNumber alloc] initWithInt:3];
     leon.imagen = @"leon_comiendo_1";
     leon.imagenesComiendo = [[NSArray alloc]initWithObjects:
                             @"leon_comiendo_1",
@@ -111,6 +111,7 @@ static NSArray *mascotas;
 +(NSArray*) getMascotas{
     return mascotas;
 }
+
 
 
 @end

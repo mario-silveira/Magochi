@@ -16,12 +16,15 @@
 @property (nonatomic, strong) NSNumber* energia;
 @property NSTimer* timerEjercicio;
 
+@property (nonatomic, copy) Success successGetBlock;
+@property (nonatomic, copy) Failure failureGetBlock;
 
 @end
 
 @implementation InstanciaMascota
 
 __strong static InstanciaMascota *_instanciaMascota = nil;
+__weak typeof(InstanciaMascota) *weakSelf;
 
 +(InstanciaMascota*) sharedInstance {
     
@@ -39,6 +42,7 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
 -(InstanciaMascota*) init {
     InstanciaMascota* instancia = [super init];
     instancia.energia = [[NSNumber alloc]initWithInt:100];
+    weakSelf = self;
 
     return instancia;
 }
@@ -141,19 +145,33 @@ __strong static InstanciaMascota *_instanciaMascota = nil;
 }
 
 -(void) recibirMascota {
-    [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
+  /*  [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
                               parameters:nil
-                                 success:^(NSURLSessionDataTask *task, id responseObject) {
-                                     NSString* nombre = [responseObject objectForKey:@"name"];
-                                     NSNumber* experiencia = [responseObject objectForKey:@"experience"];
-                                     NSNumber* nivel = [responseObject objectForKey:@"level"];
-                                     NSNumber* energia = [responseObject objectForKey:@"energy"];
+                                 success:{self getSuccessGetBlock}
                                      
+                                 //    [weakSelf recibirJsonMascota:responseObject];
                                      
-                                 }
+                                
+     
                                  failure:^(NSURLSessionDataTask *task, NSError *error) {
                                      NSLog(@"hay errores en el llamado:%@", error.localizedDescription);
-                                 }];
+                                 }];*/
+}
+
+
+- (void) recibirJsonMascota: (id*) jsonResponse{
+ /*   Mascota* mascota = [[Mascota alloc] init];
+    mascota.energia = [jsonResponse objectForKey:@"energy"];
+    mascota.codigo = [jsonResponse objectForKey:@"code"];
+    mascota.nivel = [jsonResponse objectForKey:@"level"];
+    mascota.experiencia = [jsonResponse objectForKey:@"experience"];
+    mascota.nombre = [jsonResponse objectForKey:@"name"];
+    mascota.tipo = [jsonResponse objectForKey:@"pet_type"];
+    mascota.experienciaSiguienteNivel = [[NSNumber alloc] initWithInt:100 * (mascota.nivel.intValue * mascota.nivel.intValue)];
+    
+    //**************
+   //setear los array*/
+    
 }
 
 

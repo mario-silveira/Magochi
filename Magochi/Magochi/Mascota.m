@@ -7,6 +7,7 @@
 //
 
 #import "Mascota.h"
+#import "Utils.h"
 
 @implementation Mascota
 
@@ -26,7 +27,8 @@
              self.nombre, @"name",
              self.energia, @"energy",
              self.nivel, @"level",
-             self.experiencia, @"experience", nil];
+             self.experiencia, @"experience",
+             self.tipo, @"pet_type", nil];
 }
 
 @end

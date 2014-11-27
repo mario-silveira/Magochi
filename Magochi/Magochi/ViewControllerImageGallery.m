@@ -56,7 +56,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.imgMascota.layer setBorderWidth:2.0];
-    self.scrImages.contentSize = CGSizeMake(600,128);
+    self.scrImages.contentSize = CGSizeMake(600,75);
     if (self.nombreMascota){
         self.title = self.mascota.nombre;
     }

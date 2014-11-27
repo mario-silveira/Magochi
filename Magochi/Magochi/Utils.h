@@ -9,12 +9,13 @@
 #ifndef Magochi_Utils_h
 #define Magochi_Utils_h
 
-enum {
-    MascotaCiervo = 0,
-    MascotaGato = 1,
-    MascotaJirafa = 2,
-    MascotaLeon = 3,
-};
+enum typeDef {
+    Ciervo = 0,
+    Gato = 1,
+    Jirafa = 2,
+    Leon = 3,
+} tipoMascota;
+
 @interface Utils : NSObject
 
 

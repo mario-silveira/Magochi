@@ -37,7 +37,7 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [Utils cargarMascotas];
+    [Utils cargarImagenes];
     
     [self.lblError setHidden:YES];
     self.txtName.text = @"";

@@ -45,9 +45,10 @@
     
     [self.btnDone setEnabled:YES];
     
-    self.mascota = (Mascota*) Utils.getMascotas[boton.tag];
+    self.mascota = [[Mascota alloc] init];
+    [self.mascota setTipo:[[NSNumber alloc] initWithInteger:boton.tag]];
   
-    self.imgMascota.image = [UIImage imageNamed:self.mascota.imagen];
+    self.imgMascota.image = [UIImage imageNamed:[self.mascota getImagenMascota]];
 }
 
 -(void)viewWillDisappear:(BOOL)animated{

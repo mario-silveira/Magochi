@@ -7,21 +7,23 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Imagenes.h"
 
 @interface Mascota : NSObject
 
 @property NSString* codigo;
 @property NSString* nombre;
 @property NSNumber* tipo;
-@property NSString* imagen;
-@property NSArray* imagenesComiendo;
-@property NSArray* imagenesEjercicio;
-@property NSArray* imagenesCansado;
 @property NSNumber* energia;
 @property NSNumber* nivel;
 @property NSNumber* experiencia;
 @property NSNumber* experienciaSiguienteNivel;
+@property (nonatomic) Imagenes* imagenes;
 
 -(NSDictionary*) dataForSending;
+-(NSString*) getImagenMascota;
+-(NSArray*) getImagenesComiendo;
+-(NSArray*) getImagenesEjercitando;
+-(NSArray*) getImagenesCansado;
 
 @end

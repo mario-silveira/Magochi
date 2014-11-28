@@ -22,6 +22,12 @@
     return mascota;
 }
 
+-(void)setTipo:(NSNumber *)tipo{
+    _tipo = tipo;
+    [self setImagenes:[Utils getImagenes][tipo.intValue]];
+    
+}
+
 -(NSDictionary*) dataForSending{
     return [NSDictionary dictionaryWithObjectsAndKeys:self.codigo, @"code",
              self.nombre, @"name",
@@ -29,6 +35,22 @@
              self.nivel, @"level",
              self.experiencia, @"experience",
              self.tipo, @"pet_type", nil];
+}
+
+-(NSString*) getImagenMascota{
+    return self.imagenes.imagen;
+}
+
+-(NSArray*) getImagenesComiendo{
+    return self.imagenes.imagenesComiendo;
+}
+
+-(NSArray*) getImagenesEjercitando{
+    return self.imagenes.imagenesEjercicio;
+}
+
+-(NSArray*) getImagenesCansado{
+    return self.imagenes.imagenesCansado;
 }
 
 @end

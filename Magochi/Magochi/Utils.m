@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Utils.h"
 #import "Mascota.h"
+#import "Imagenes.h"
 @interface Utils ()
 
 //@property (nonatomic, strong) NSArray* mascotas;
@@ -16,15 +17,14 @@
 @end
 
 
-static NSArray *mascotas;
+static NSArray *imagenes;
 
 @implementation Utils
 
 
-+(void)cargarMascotas {
++(void)cargarImagenes {
     
-    Mascota* ciervo = [[Mascota alloc]init];
-    ciervo.tipo = [[NSNumber alloc] initWithInt:0];
+    Imagenes* ciervo = [[Imagenes alloc]init];
     ciervo.imagen = @"ciervo_comiendo_1";
     ciervo.imagenesComiendo = [[NSArray alloc]initWithObjects:
                            @"ciervo_comiendo_1",
@@ -44,8 +44,7 @@ static NSArray *mascotas;
                               @"ciervo_exhausto_4", nil];
     
     
-    Mascota* gato = [[Mascota alloc]init];
-    gato.tipo = [[NSNumber alloc] initWithInt:1];
+    Imagenes* gato = [[Imagenes alloc]init];
     gato.imagen = @"gato_comiendo_1";
     gato.imagenesComiendo = [[NSArray alloc]initWithObjects:
                             @"gato_comiendo_1",
@@ -64,8 +63,7 @@ static NSArray *mascotas;
                             @"gato_exhausto_3",
                             @"gato_exhausto_4", nil];
     
-    Mascota* jirafa = [[Mascota alloc]init];
-    jirafa.tipo = [[NSNumber alloc] initWithInt:2];
+    Imagenes* jirafa = [[Imagenes alloc]init];
     jirafa.imagen = @"jirafa_comiendo_1";
     jirafa.imagenesComiendo = [[NSArray alloc]initWithObjects:
                                @"jirafa_comiendo_1",
@@ -85,8 +83,7 @@ static NSArray *mascotas;
                               @"jirafa_exhausto_4", nil];
 
     
-    Mascota* leon = [[Mascota alloc]init];
-    leon.tipo = [[NSNumber alloc] initWithInt:3];
+    Imagenes* leon = [[Imagenes alloc]init];
     leon.imagen = @"leon_comiendo_1";
     leon.imagenesComiendo = [[NSArray alloc]initWithObjects:
                             @"leon_comiendo_1",
@@ -105,11 +102,11 @@ static NSArray *mascotas;
                             @"leon_exhausto_3",
                             @"leon_exhausto_4", nil];
     
-    mascotas = [[NSArray alloc]initWithObjects:ciervo, gato, jirafa, leon, nil];
+    imagenes = [[NSArray alloc]initWithObjects:ciervo, gato, jirafa, leon, nil];
 }
 
-+(NSArray*) getMascotas{
-    return mascotas;
++(NSArray*) getImagenes{
+    return imagenes;
 }
 
 

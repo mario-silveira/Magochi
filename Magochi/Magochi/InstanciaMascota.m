@@ -9,6 +9,8 @@
 #import "InstanciaMascota.h"
 #import "NSTimer+StopTimer.h"
 #import "NetworkManager.h"
+#import <Parse/Parse.h>
+
 
 @interface InstanciaMascota ()
 
@@ -127,7 +129,12 @@ __weak typeof(InstanciaMascota) *weakSelf;
 
 -(void) enviarNuevoNivel {
     NSLog(@"llego al llamado");
-    [[NetworkManager sharedInstance] POST:@"/pet"
+    
+ //   [self createNotification];
+    
+    [self sendRemoteNotification];
+    
+  /*  [[NetworkManager sharedInstance] POST:@"/pet"
                                parameters:[[self getMascota] dataForSending]
                                   success:^(NSURLSessionDataTask *task, id responseObject) {
         //                              NSHTTPURLResponse* httpRsp = (NSHTTPURLResponse*) responseObject;
@@ -141,15 +148,32 @@ __weak typeof(InstanciaMascota) *weakSelf;
                                   }
                                   failure:^(NSURLSessionDataTask *task, NSError *error) {
                                       NSLog(@"error");
-                                  }];
+                                  }];*/
+}
+
+-(void) createNotification{
+    UILocalNotification* localNotification = [[UILocalNotification alloc] init];
+    
+    localNotification.fireDate = [[NSDate alloc] init];
+    
+    localNotification.timeZone = [NSTimeZone defaultTimeZone];
+    localNotification.repeatCalendar = [NSCalendar currentCalendar];
+    localNotification.alertBody = @"Nuevo Nivel!!";
+    
+    localNotification.userInfo = [_mascota dataForSending];
+    localNotification.soundName = UILocalNotificationDefaultSoundName;
+    localNotification.applicationIconBadgeNumber = 1;
+    
+    // Schedule the notification
+    [[UIApplication sharedApplication]scheduleLocalNotification:localNotification];
 }
 
 -(void) recibirMascota {
-  /*  [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
+ /*   [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
                               parameters:nil
                                  success:{self getSuccessGetBlock}
                                      
-                                 //    [weakSelf recibirJsonMascota:responseObject];
+                                     [weakSelf recibirJsonMascota:responseObject];
                                      
                                 
      
@@ -158,6 +182,15 @@ __weak typeof(InstanciaMascota) *weakSelf;
                                  }];*/
 }
 
+- (void) sendRemoteNotification{
+
+    PFPush *push = [[PFPush alloc] init];
+    
+    [push setChannel:@"PeleaDeMascotas"];
+    [push setMessage:@"Nuevo Nivel"];
+    [push setData:[[self mascota] dataForSending]];
+    [push sendPushInBackground];
+}
 
 - (void) recibirJsonMascota: (id*) jsonResponse{
  /*   Mascota* mascota = [[Mascota alloc] init];
@@ -169,7 +202,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
     mascota.tipo = [jsonResponse objectForKey:@"pet_type"];
     mascota.experienciaSiguienteNivel = [[NSNumber alloc] initWithInt:100 * (mascota.nivel.intValue * mascota.nivel.intValue)];
     
-    //**************
+    **************
    //setear los array*/
     
 }

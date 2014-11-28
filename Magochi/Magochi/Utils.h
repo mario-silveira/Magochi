@@ -19,8 +19,9 @@ enum typeDef {
 @interface Utils : NSObject
 
 
-+(void)cargarMascotas;
-+(NSArray*) getMascotas;
++(void)cargarImagenes;
++(NSArray*) getImagenes;
+
 
 @end
 

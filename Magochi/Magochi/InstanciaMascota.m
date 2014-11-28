@@ -134,10 +134,10 @@ __weak typeof(InstanciaMascota) *weakSelf;
     
     [self sendRemoteNotification];
     
-  /*  [[NetworkManager sharedInstance] POST:@"/pet"
+    [[NetworkManager sharedInstance] POST:@"/pet"
                                parameters:[[self getMascota] dataForSending]
                                   success:^(NSURLSessionDataTask *task, id responseObject) {
-        //                              NSHTTPURLResponse* httpRsp = (NSHTTPURLResponse*) responseObject;
+                                      NSHTTPURLResponse* httpRsp = (NSHTTPURLResponse*) responseObject;
                                       if ([[responseObject objectForKey:@"status"] isEqualToString:@"ok"]){
                                           NSLog(@"la info llego sin error");
                                       } else {
@@ -148,7 +148,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
                                   }
                                   failure:^(NSURLSessionDataTask *task, NSError *error) {
                                       NSLog(@"error");
-                                  }];*/
+                                  }];
 }
 
 -(void) createNotification{

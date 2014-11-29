@@ -13,13 +13,14 @@
 
 @property NSString* codigo;
 @property NSString* nombre;
-@property NSNumber* tipo;
+@property (nonatomic) NSNumber* tipo;
 @property NSNumber* energia;
 @property NSNumber* nivel;
 @property NSNumber* experiencia;
 @property NSNumber* experienciaSiguienteNivel;
 @property (nonatomic) Imagenes* imagenes;
 
+-(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo;
 -(NSDictionary*) dataForSending;
 -(NSString*) getImagenMascota;
 -(NSArray*) getImagenesComiendo;

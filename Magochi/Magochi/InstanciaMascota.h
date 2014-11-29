@@ -23,5 +23,7 @@ typedef void (^Failure)(NSURLSessionDataTask*, NSError*);
 -(NSNumber*) getEnergia;
 -(void) subaEnergia: (NSNumber*) energia;
 -(void) recibirMascota;
+-(void) recibirTodasMascotas;
+-(NSMutableArray*) getMascotas;
 
 @end

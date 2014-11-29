@@ -10,6 +10,7 @@
 #import "Utils.h"
 #import "Comida.h"
 #import "InstanciaMascota.h"
+#import "ViewControllerRanking.h"
 
 @interface ViewControllerGameView ()
 
@@ -265,6 +266,13 @@
     
     [self dismissViewControllerAnimated:YES completion:NULL];
     }
+}
+- (IBAction)clickRanking:(id)sender {
+    
+    ViewControllerRanking* newView = [[ViewControllerRanking alloc]init];
+    
+    [self.navigationController pushViewController:newView animated:YES];
+    
 }
 
 @end

@@ -59,6 +59,10 @@
 		FAC5AFBB1A28C9820023ED62 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBA1A28C9820023ED62 /* Security.framework */; };
 		FAC5AFBD1A28C9910023ED62 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBC1A28C9910023ED62 /* StoreKit.framework */; };
 		FAC5AFBF1A28C99D0023ED62 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */; };
+		FAD01C161A2A050C0055CE96 /* ViewControllerRanking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD01C141A2A050C0055CE96 /* ViewControllerRanking.m */; };
+		FAD01C171A2A050C0055CE96 /* ViewControllerRanking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD01C151A2A050C0055CE96 /* ViewControllerRanking.xib */; };
+		FAD01C1B1A2A05320055CE96 /* CellRanking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD01C191A2A05320055CE96 /* CellRanking.m */; };
+		FAD01C1C1A2A05320055CE96 /* CellRanking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD01C1A1A2A05320055CE96 /* CellRanking.xib */; };
 		FAD52FD81A26237900B2760D /* VCPruebasNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FD61A26237900B2760D /* VCPruebasNetworking.m */; };
 		FAD52FD91A26237900B2760D /* VCPruebasNetworking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */; };
 		FAD52FDD1A26277800B2760D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FDC1A26277800B2760D /* NetworkManager.m */; };
@@ -163,6 +167,12 @@
 		FAC5AFBA1A28C9820023ED62 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FAC5AFBC1A28C9910023ED62 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FAD01C131A2A050C0055CE96 /* ViewControllerRanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerRanking.h; sourceTree = "<group>"; };
+		FAD01C141A2A050C0055CE96 /* ViewControllerRanking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRanking.m; sourceTree = "<group>"; };
+		FAD01C151A2A050C0055CE96 /* ViewControllerRanking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerRanking.xib; sourceTree = "<group>"; };
+		FAD01C181A2A05320055CE96 /* CellRanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellRanking.h; sourceTree = "<group>"; };
+		FAD01C191A2A05320055CE96 /* CellRanking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellRanking.m; sourceTree = "<group>"; };
+		FAD01C1A1A2A05320055CE96 /* CellRanking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellRanking.xib; sourceTree = "<group>"; };
 		FAD52FD51A26237900B2760D /* VCPruebasNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPruebasNetworking.h; sourceTree = "<group>"; };
 		FAD52FD61A26237900B2760D /* VCPruebasNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPruebasNetworking.m; sourceTree = "<group>"; };
 		FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VCPruebasNetworking.xib; sourceTree = "<group>"; };
@@ -292,6 +302,7 @@
 		FA5D241D1A1BCA530045984A /* Magochi */ = {
 			isa = PBXGroup;
 			children = (
+				FAD01C0F1A2A04C50055CE96 /* Ranking */,
 				FAC5AFA31A28C7B40023ED62 /* parse-library-1 */,
 				FAD52FDA1A26272F00B2760D /* Networking */,
 				FAD52FD41A26234B00B2760D /* PruebasNetworking */,
@@ -409,6 +420,19 @@
 			path = "parse-library-1";
 			sourceTree = "<group>";
 		};
+		FAD01C0F1A2A04C50055CE96 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				FAD01C131A2A050C0055CE96 /* ViewControllerRanking.h */,
+				FAD01C141A2A050C0055CE96 /* ViewControllerRanking.m */,
+				FAD01C151A2A050C0055CE96 /* ViewControllerRanking.xib */,
+				FAD01C181A2A05320055CE96 /* CellRanking.h */,
+				FAD01C191A2A05320055CE96 /* CellRanking.m */,
+				FAD01C1A1A2A05320055CE96 /* CellRanking.xib */,
+			);
+			name = Ranking;
+			sourceTree = "<group>";
+		};
 		FAD52FD41A26234B00B2760D /* PruebasNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -510,9 +534,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD01C1C1A2A05320055CE96 /* CellRanking.xib in Resources */,
 				FA57263F1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib in Resources */,
 				FA5D24541A1BD3CF0045984A /* ViewControllerGameView.xib in Resources */,
 				FA5726471A1E664A00C1F5E3 /* CellComida.xib in Resources */,
+				FAD01C171A2A050C0055CE96 /* ViewControllerRanking.xib in Resources */,
 				FAD52FD91A26237900B2760D /* VCPruebasNetworking.xib in Resources */,
 				FA5D244F1A1BD1410045984A /* ViewControllerImageGallery.xib in Resources */,
 				FA5D242C1A1BCA530045984A /* Images.xcassets in Resources */,
@@ -542,6 +568,7 @@
 				FA28663E1A264E580064C3A1 /* UIProgressView+AFNetworking.m in Sources */,
 				FA080DD41A2898CB005071CB /* Imagenes.m in Sources */,
 				FA2866321A264E580064C3A1 /* AFHTTPSessionManager.m in Sources */,
+				FAD01C1B1A2A05320055CE96 /* CellRanking.m in Sources */,
 				FA929F591A1FC86E00792436 /* Utils.m in Sources */,
 				FA28663D1A264E580064C3A1 /* UIImageView+AFNetworking.m in Sources */,
 				FA2866331A264E580064C3A1 /* AFNetworkReachabilityManager.m in Sources */,
@@ -565,6 +592,7 @@
 				FAD52FDD1A26277800B2760D /* NetworkManager.m in Sources */,
 				FA2866311A264E580064C3A1 /* AFHTTPRequestOperationManager.m in Sources */,
 				FA5D24211A1BCA530045984A /* main.m in Sources */,
+				FAD01C161A2A050C0055CE96 /* ViewControllerRanking.m in Sources */,
 				FA2866371A264E580064C3A1 /* AFURLResponseSerialization.m in Sources */,
 				FA2866391A264E580064C3A1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 			);

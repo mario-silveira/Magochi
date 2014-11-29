@@ -18,9 +18,12 @@
 @property (nonatomic)  Mascota* mascota;
 @property (nonatomic, strong) NSNumber* energia;
 @property NSTimer* timerEjercicio;
+@property NSArray* mascotas;
 
 @property (nonatomic, copy) Success successGetBlock;
 @property (nonatomic, copy) Failure failureGetBlock;
+@property (nonatomic, copy) Success successGetAllPetsBlock;
+@property (nonatomic, copy) Failure failureGetAllPetsBlock;
 
 @end
 
@@ -210,6 +213,53 @@ __weak typeof(InstanciaMascota) *weakSelf;
     {
         NSLog(@"Error en recibir la mascota: %@",error);
     };
+}
+
+
+-(void) recibirTodasMascotas {
+    [[NetworkManager sharedInstance] GET:@"/pet/all"
+                              parameters:nil
+                                 success:[self successGetAllPetsBlock]
+                                 failure:[self failureGetAllPetsBlock]];
+
+}
+
+-(Success) successGetAllPetsBlock{
+    return ^(NSURLSessionDataTask* task, id responseObject){
+    
+        NSMutableArray* mascotasDesordenadas = [[NSMutableArray alloc] init];
+        
+        NSString* nombre;
+        NSNumber* tipo;
+        NSNumber* nivel;
+        NSString* codigo;
+        for (NSDictionary* data in responseObject) {
+            nombre = [data objectForKey:@"name"];
+            tipo = [data objectForKey:@"pet_type"];
+            nivel = [data objectForKey:@"level"];
+            codigo = [data objectForKeyedSubscript:@"code"];
+            [mascotasDesordenadas addObject:[[Mascota alloc]initMascotaRanking:nombre tipo:tipo nivel:nivel codigo:codigo]];
+        }
+        
+        weakSelf.mascotas = [mascotasDesordenadas sortedArrayUsingComparator:^NSComparisonResult(id a, id b) {
+            NSNumber *first = ((Mascota*) a).nivel;
+            NSNumber *second =((Mascota*) b).nivel;
+            return [second compare:first];
+        }];
+        
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"RANKING_CARGADO" object:nil];
+    };
+}
+
+-(Failure)failureGetAllPetsBlock {
+    return ^(NSURLSessionDataTask *task, NSError *error)
+    {
+        NSLog(@"Error en recibir la mascota: %@",error);
+    };
+}
+
+-(NSArray*) getMascotas{
+    return _mascotas;
 }
 
 

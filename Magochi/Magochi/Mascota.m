@@ -22,6 +22,15 @@
     return mascota;
 }
 
+-(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo {
+    Mascota* mascota = [super init];
+    mascota.nombre = nombre;
+    mascota.tipo = tipo;
+    mascota.nivel = nivel;
+    mascota.codigo = codigo;
+    return mascota;
+}
+
 -(void)setTipo:(NSNumber *)tipo{
     _tipo = tipo;
     [self setImagenes:[Utils getImagenes][tipo.intValue]];

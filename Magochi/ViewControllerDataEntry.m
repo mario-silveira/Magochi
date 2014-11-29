@@ -8,9 +8,11 @@
 
 #import "ViewControllerDataEntry.h"
 #import "ViewControllerImageGallery.h"
+#import "ViewControllerGameView.h"
 #import "NSString+Validation.h"
 #import "Utils.h"
 #import "InstanciaMascota.h"
+#import "ViewControllerGameView.h"
 
 @interface ViewControllerDataEntry ()
 
@@ -25,6 +27,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(mascotaCargada)
+                                                 name:@"MASCOTA_CARGADA"
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -82,10 +89,18 @@
 
 -(void)viewWillDisappear:(BOOL)animated{
     self.title = @"";
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+
 }
 
 - (IBAction)clickCargar:(UIButton *)sender {
     [[InstanciaMascota sharedInstance] recibirMascota];
+}
+
+-(void)mascotaCargada{
+    ViewControllerGameView* newView = [[ViewControllerGameView alloc] initWithNibName:@"ViewControllerGameView" bundle:nil];
+    
+    [self.navigationController pushViewController:newView animated:YES];
 }
 
 

@@ -10,6 +10,7 @@
 #import "NSTimer+StopTimer.h"
 #import "NetworkManager.h"
 #import <Parse/Parse.h>
+#import "ViewControllerGameView.h"
 
 
 @interface InstanciaMascota ()
@@ -128,7 +129,6 @@ __weak typeof(InstanciaMascota) *weakSelf;
 }
 
 -(void) enviarNuevoNivel {
-    NSLog(@"llego al llamado");
     
  //   [self createNotification];
     
@@ -169,17 +169,11 @@ __weak typeof(InstanciaMascota) *weakSelf;
 }
 
 -(void) recibirMascota {
- /*   [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
+    
+    [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
                               parameters:nil
-                                 success:{self getSuccessGetBlock}
-                                     
-                                     [weakSelf recibirJsonMascota:responseObject];
-                                     
-                                
-     
-                                 failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                     NSLog(@"hay errores en el llamado:%@", error.localizedDescription);
-                                 }];*/
+                                 success:[self getSuccessGetBlock]
+                                 failure:[self getFailureGetBlock]];
 }
 
 - (void) sendRemoteNotification{
@@ -192,21 +186,31 @@ __weak typeof(InstanciaMascota) *weakSelf;
     [push sendPushInBackground];
 }
 
-- (void) recibirJsonMascota: (id*) jsonResponse{
- /*   Mascota* mascota = [[Mascota alloc] init];
-    mascota.energia = [jsonResponse objectForKey:@"energy"];
-    mascota.codigo = [jsonResponse objectForKey:@"code"];
-    mascota.nivel = [jsonResponse objectForKey:@"level"];
-    mascota.experiencia = [jsonResponse objectForKey:@"experience"];
-    mascota.nombre = [jsonResponse objectForKey:@"name"];
-    mascota.tipo = [jsonResponse objectForKey:@"pet_type"];
-    mascota.experienciaSiguienteNivel = [[NSNumber alloc] initWithInt:100 * (mascota.nivel.intValue * mascota.nivel.intValue)];
+-(Success)getSuccessGetBlock {
     
-    **************
-   //setear los array*/
+    return ^(NSURLSessionDataTask* task, id responseObject){
+        
+        Mascota* mascota = [[Mascota alloc] init];
+        mascota.energia = [responseObject objectForKey:@"energy"];
+        mascota.codigo = [responseObject objectForKey:@"code"];
+        mascota.nivel = [responseObject objectForKey:@"level"];
+        mascota.experiencia = [responseObject objectForKey:@"experience"];
+        mascota.nombre = [responseObject objectForKey:@"name"];
+        mascota.tipo = [responseObject objectForKey:@"pet_type"];
+        mascota.experienciaSiguienteNivel = [[NSNumber alloc] initWithInt:100 * (mascota.nivel.intValue * mascota.nivel.intValue)];
+        [weakSelf setMascota:mascota];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"MASCOTA_CARGADA" object:nil];
+    };
     
 }
 
+
+-(Failure)getFailureGetBlock {
+    return ^(NSURLSessionDataTask *task, NSError *error)
+    {
+        NSLog(@"Error en recibir la mascota: %@",error);
+    };
+}
 
 
 @end

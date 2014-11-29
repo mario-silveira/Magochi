@@ -677,7 +677,7 @@
 					"$(PROJECT_DIR)/Magochi/parse-library-1",
 				);
 				INFOPLIST_FILE = Magochi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "50f6aa4a-7d13-4042-8199-da736ae2508d";
@@ -696,7 +696,7 @@
 					"$(PROJECT_DIR)/Magochi/parse-library-1",
 				);
 				INFOPLIST_FILE = Magochi/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "50f6aa4a-7d13-4042-8199-da736ae2508d";

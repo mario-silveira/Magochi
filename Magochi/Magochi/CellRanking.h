@@ -10,9 +10,6 @@
 #import "Mascota.h"
 
 @interface CellRanking : UITableViewCell
-@property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
-@property (strong, nonatomic) IBOutlet UILabel *lblNombre;
-@property (strong, nonatomic) IBOutlet UILabel *lblNivel;
 
 -(void) setData :(Mascota *) mascota;
 

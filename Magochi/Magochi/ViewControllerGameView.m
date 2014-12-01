@@ -269,7 +269,7 @@
 }
 - (IBAction)clickRanking:(id)sender {
     
-    ViewControllerRanking* newView = [[ViewControllerRanking alloc]init];
+    ViewControllerRanking* newView = [[ViewControllerRanking alloc]initWithNibName:@"ViewControllerRanking" bundle:nil];
     
     [self.navigationController pushViewController:newView animated:YES];
     

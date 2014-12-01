@@ -8,6 +8,14 @@
 
 #import "CellRanking.h"
 #import "InstanciaMascota.h"
+@interface CellRanking ()
+
+@property (strong, nonatomic) IBOutlet UIImageView *imgMascota;
+@property (strong, nonatomic) IBOutlet UILabel *lblNombre;
+@property (strong, nonatomic) IBOutlet UILabel *lblNivel;
+
+@end
+
 
 @implementation CellRanking
 
@@ -25,6 +33,13 @@
     [self.imgMascota setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", [mascota getImagenMascota]]]];
     [self.lblNivel setText:mascota.nivel.description];
     [self.lblNombre setText:mascota.nombre];
+    
+    if ([mascota.codigo isEqual:[[InstanciaMascota sharedInstance] getMascota].codigo]){
+        [self setBackgroundColor:[UIColor greenColor]];
+    } else {
+        [self setBackgroundColor:[UIColor whiteColor]];
+    }
+
     
 }
 

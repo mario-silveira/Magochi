@@ -11,14 +11,14 @@
 
 @interface Mascota : NSObject
 
-@property NSString* codigo;
-@property NSString* nombre;
-@property (nonatomic) NSNumber* tipo;
-@property NSNumber* energia;
-@property NSNumber* nivel;
-@property NSNumber* experiencia;
-@property NSNumber* experienciaSiguienteNivel;
-@property (nonatomic) Imagenes* imagenes;
+@property (nonatomic, strong) NSString* codigo;
+@property (nonatomic, strong) NSString* nombre;
+@property (nonatomic, strong) NSNumber* tipo;
+@property (nonatomic, strong) NSNumber* energia;
+@property (nonatomic, strong) NSNumber* nivel;
+@property (nonatomic, strong) NSNumber* experiencia;
+@property (nonatomic, strong) NSNumber* experienciaSiguienteNivel;
+@property (nonatomic, strong) Imagenes* imagenes;
 
 -(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo;
 -(NSDictionary*) dataForSending;

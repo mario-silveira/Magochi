@@ -11,7 +11,7 @@
 #import "CellRanking.h"
 @interface ViewControllerRanking ()
 
-@property (nonatomic, weak)NSMutableArray* rankingMascotas;
+@property (nonatomic, strong) NSArray* rankingMascotas;
 @end
 
 @implementation ViewControllerRanking
@@ -67,12 +67,6 @@
     
     Mascota *mascota =  self.rankingMascotas[indexPath.row];
     [cRanking setData: mascota];
-    
-    if ([mascota.codigo isEqual:[[InstanciaMascota sharedInstance] getMascota].codigo]){
-        [cRanking setBackgroundColor:[UIColor greenColor]];
-    } else {
-        [cRanking setBackgroundColor:[UIColor whiteColor]];
-    }
     
     return cRanking;
 }

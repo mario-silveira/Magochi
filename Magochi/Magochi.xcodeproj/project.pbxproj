@@ -66,6 +66,9 @@
 		FAD52FD81A26237900B2760D /* VCPruebasNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FD61A26237900B2760D /* VCPruebasNetworking.m */; };
 		FAD52FD91A26237900B2760D /* VCPruebasNetworking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */; };
 		FAD52FDD1A26277800B2760D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FDC1A26277800B2760D /* NetworkManager.m */; };
+		FADC98211A2CE162008EF470 /* ServicioGetMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98201A2CE162008EF470 /* ServicioGetMascota.m */; };
+		FADC98241A2CE896008EF470 /* ServicioPostMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98231A2CE896008EF470 /* ServicioPostMascota.m */; };
+		FADC98271A2CEAE0008EF470 /* ServicioGetTodasMascotas.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98261A2CEAE0008EF470 /* ServicioGetTodasMascotas.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +181,12 @@
 		FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VCPruebasNetworking.xib; sourceTree = "<group>"; };
 		FAD52FDB1A26277800B2760D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		FAD52FDC1A26277800B2760D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		FADC981F1A2CE162008EF470 /* ServicioGetMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioGetMascota.h; sourceTree = "<group>"; };
+		FADC98201A2CE162008EF470 /* ServicioGetMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicioGetMascota.m; sourceTree = "<group>"; };
+		FADC98221A2CE896008EF470 /* ServicioPostMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioPostMascota.h; sourceTree = "<group>"; };
+		FADC98231A2CE896008EF470 /* ServicioPostMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicioPostMascota.m; sourceTree = "<group>"; };
+		FADC98251A2CEAE0008EF470 /* ServicioGetTodasMascotas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioGetTodasMascotas.h; sourceTree = "<group>"; };
+		FADC98261A2CEAE0008EF470 /* ServicioGetTodasMascotas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicioGetTodasMascotas.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -449,6 +458,12 @@
 				FA2866091A264E580064C3A1 /* 3rdPartyLibraries */,
 				FAD52FDB1A26277800B2760D /* NetworkManager.h */,
 				FAD52FDC1A26277800B2760D /* NetworkManager.m */,
+				FADC981F1A2CE162008EF470 /* ServicioGetMascota.h */,
+				FADC98201A2CE162008EF470 /* ServicioGetMascota.m */,
+				FADC98221A2CE896008EF470 /* ServicioPostMascota.h */,
+				FADC98231A2CE896008EF470 /* ServicioPostMascota.m */,
+				FADC98251A2CEAE0008EF470 /* ServicioGetTodasMascotas.h */,
+				FADC98261A2CEAE0008EF470 /* ServicioGetTodasMascotas.m */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -579,6 +594,8 @@
 				FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */,
 				FA5726461A1E664A00C1F5E3 /* CellComida.m in Sources */,
 				FA28663A1A264E580064C3A1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				FADC98211A2CE162008EF470 /* ServicioGetMascota.m in Sources */,
+				FADC98241A2CE896008EF470 /* ServicioPostMascota.m in Sources */,
 				FA60994A1A25021C00E5D001 /* NSString+Validation.m in Sources */,
 				FAD52FD81A26237900B2760D /* VCPruebasNetworking.m in Sources */,
 				FA5D244E1A1BD1410045984A /* ViewControllerImageGallery.m in Sources */,
@@ -587,6 +604,7 @@
 				FA5D24491A1BCE1D0045984A /* ViewControllerDataEntry.m in Sources */,
 				FA929F571A1FC7EE00792436 /* Mascota.m in Sources */,
 				FA2866341A264E580064C3A1 /* AFSecurityPolicy.m in Sources */,
+				FADC98271A2CEAE0008EF470 /* ServicioGetTodasMascotas.m in Sources */,
 				FA28663F1A264E580064C3A1 /* UIRefreshControl+AFNetworking.m in Sources */,
 				FA28663B1A264E580064C3A1 /* UIAlertView+AFNetworking.m in Sources */,
 				FAD52FDD1A26277800B2760D /* NetworkManager.m in Sources */,

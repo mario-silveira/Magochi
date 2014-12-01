@@ -13,12 +13,27 @@
 
 -(Mascota*) init {
     Mascota* mascota = [super init];
-    mascota.codigo = @"MSILVEIRA8031";
-    mascota.energia = [[NSNumber alloc]initWithInt:100];
-    mascota.nivel = [[NSNumber alloc]initWithInt:1];
-    mascota.experiencia = 0;
+    if (mascota) {
+        mascota.codigo = @"MSILVEIRA8031";
+        mascota.energia = [[NSNumber alloc]initWithInt:100];
+        mascota.nivel = [[NSNumber alloc]initWithInt:1];
+        mascota.experiencia = 0;
+        
+        mascota.experienciaSiguienteNivel = [[NSNumber alloc]initWithInt:100];
+    }
     
-    mascota.experienciaSiguienteNivel = [[NSNumber alloc]initWithInt:100];
+    return mascota;
+}
+
+-(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo {
+    Mascota* mascota = [super init];
+    if (mascota){
+        mascota.nombre = nombre;
+        mascota.tipo = tipo;
+        mascota.nivel = nivel;
+        mascota.codigo = codigo;
+    }
+    
     return mascota;
 }
 

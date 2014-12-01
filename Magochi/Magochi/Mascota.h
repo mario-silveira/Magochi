@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "Imagenes.h"
+#import <CoreLocation/CoreLocation.h>
 
 @interface Mascota : NSObject
 
@@ -18,6 +19,7 @@
 @property NSNumber* nivel;
 @property NSNumber* experiencia;
 @property NSNumber* experienciaSiguienteNivel;
+@property (nonatomic, strong) CLLocation* ubicacion;
 @property (nonatomic) Imagenes* imagenes;
 
 -(NSDictionary*) dataForSending;

@@ -52,16 +52,17 @@
 		FAC5AFAD1A28C8FA0023ED62 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFAC1A28C8FA0023ED62 /* AudioToolbox.framework */; };
 		FAC5AFAF1A28C9040023ED62 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFAE1A28C9040023ED62 /* CFNetwork.framework */; };
 		FAC5AFB11A28C9140023ED62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFB01A28C9140023ED62 /* CoreGraphics.framework */; };
-		FAC5AFB31A28C91E0023ED62 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFB21A28C91E0023ED62 /* CoreLocation.framework */; };
+		FAC5AFB31A28C91E0023ED62 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFB21A28C91E0023ED62 /* CoreLocation.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		FAC5AFB51A28C9360023ED62 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFB41A28C9360023ED62 /* libz.dylib */; };
 		FAC5AFB71A28C9400023ED62 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFB61A28C9400023ED62 /* MobileCoreServices.framework */; };
 		FAC5AFB91A28C9710023ED62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFB81A28C9710023ED62 /* QuartzCore.framework */; };
 		FAC5AFBB1A28C9820023ED62 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBA1A28C9820023ED62 /* Security.framework */; };
-		FAC5AFBD1A28C9910023ED62 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBC1A28C9910023ED62 /* StoreKit.framework */; };
 		FAC5AFBF1A28C99D0023ED62 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */; };
 		FAD52FD81A26237900B2760D /* VCPruebasNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FD61A26237900B2760D /* VCPruebasNetworking.m */; };
 		FAD52FD91A26237900B2760D /* VCPruebasNetworking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */; };
 		FAD52FDD1A26277800B2760D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FDC1A26277800B2760D /* NetworkManager.m */; };
+		FADC981C1A2CB07D008EF470 /* Constantes.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC981B1A2CB07D008EF470 /* Constantes.m */; };
+		FADC981E1A2CB7CC008EF470 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADC981D1A2CB7CC008EF470 /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,13 +162,15 @@
 		FAC5AFB61A28C9400023ED62 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		FAC5AFB81A28C9710023ED62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FAC5AFBA1A28C9820023ED62 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
-		FAC5AFBC1A28C9910023ED62 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FAD52FD51A26237900B2760D /* VCPruebasNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPruebasNetworking.h; sourceTree = "<group>"; };
 		FAD52FD61A26237900B2760D /* VCPruebasNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPruebasNetworking.m; sourceTree = "<group>"; };
 		FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VCPruebasNetworking.xib; sourceTree = "<group>"; };
 		FAD52FDB1A26277800B2760D /* NetworkManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkManager.h; sourceTree = "<group>"; };
 		FAD52FDC1A26277800B2760D /* NetworkManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NetworkManager.m; sourceTree = "<group>"; };
+		FADC981A1A2CB07D008EF470 /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
+		FADC981B1A2CB07D008EF470 /* Constantes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constantes.m; sourceTree = "<group>"; };
+		FADC981D1A2CB7CC008EF470 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,10 +179,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAC5AFBF1A28C99D0023ED62 /* SystemConfiguration.framework in Frameworks */,
-				FAC5AFBD1A28C9910023ED62 /* StoreKit.framework in Frameworks */,
 				FAC5AFBB1A28C9820023ED62 /* Security.framework in Frameworks */,
 				FAC5AFB91A28C9710023ED62 /* QuartzCore.framework in Frameworks */,
 				FAC5AFB71A28C9400023ED62 /* MobileCoreServices.framework in Frameworks */,
+				FADC981E1A2CB7CC008EF470 /* MapKit.framework in Frameworks */,
 				FAC5AFB51A28C9360023ED62 /* libz.dylib in Frameworks */,
 				FAC5AFB31A28C91E0023ED62 /* CoreLocation.framework in Frameworks */,
 				FAC5AFB11A28C9140023ED62 /* CoreGraphics.framework in Frameworks */,
@@ -264,8 +267,8 @@
 		FA5D24121A1BCA530045984A = {
 			isa = PBXGroup;
 			children = (
+				FADC981D1A2CB7CC008EF470 /* MapKit.framework */,
 				FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */,
-				FAC5AFBC1A28C9910023ED62 /* StoreKit.framework */,
 				FAC5AFBA1A28C9820023ED62 /* Security.framework */,
 				FAC5AFB81A28C9710023ED62 /* QuartzCore.framework */,
 				FAC5AFB61A28C9400023ED62 /* MobileCoreServices.framework */,
@@ -394,6 +397,8 @@
 				FA97CB3C1A250CEB0039082E /* NSTimer+StopTimer.m */,
 				FA080DD21A2898CB005071CB /* Imagenes.h */,
 				FA080DD31A2898CB005071CB /* Imagenes.m */,
+				FADC981A1A2CB07D008EF470 /* Constantes.h */,
+				FADC981B1A2CB07D008EF470 /* Constantes.m */,
 			);
 			name = Dominio;
 			sourceTree = "<group>";
@@ -479,6 +484,14 @@
 					FA5D241A1A1BCA530045984A = {
 						CreatedOnToolsVersion = 6.1;
 						DevelopmentTeam = 332N44E879;
+						SystemCapabilities = {
+							com.apple.InAppPurchase = {
+								enabled = 0;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					FA5D24331A1BCA530045984A = {
 						CreatedOnToolsVersion = 6.1;
@@ -539,6 +552,7 @@
 				FA28663C1A264E580064C3A1 /* UIButton+AFNetworking.m in Sources */,
 				FA5726411A1E54AB00C1F5E3 /* Comida.m in Sources */,
 				FA2866401A264E580064C3A1 /* UIWebView+AFNetworking.m in Sources */,
+				FADC981C1A2CB07D008EF470 /* Constantes.m in Sources */,
 				FA28663E1A264E580064C3A1 /* UIProgressView+AFNetworking.m in Sources */,
 				FA080DD41A2898CB005071CB /* Imagenes.m in Sources */,
 				FA2866321A264E580064C3A1 /* AFHTTPSessionManager.m in Sources */,

@@ -22,6 +22,8 @@
 
 @implementation ViewControllerGameView
 
+CLLocationManager* locationManager;
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -34,6 +36,9 @@
     self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects: mailButton, nil];
     
     self.imgMascota.image = [UIImage imageNamed:[self.mascota getImagenMascota]];
+    
+    [self startUpdates];
+    [self cargarLocation];
     
 }
 
@@ -266,5 +271,34 @@
     [self dismissViewControllerAnimated:YES completion:NULL];
     }
 }
+
+#pragma mark - Location
+
+-(void) cargarLocation {
+    CLLocation* location = [[CLLocation alloc] initWithLatitude:locationManager.location.coordinate.latitude longitude:locationManager.location.coordinate.longitude];
+    
+    [[InstanciaMascota sharedInstance] setearUbicacion:location];
+ //   NSLog(@"latitude: %f longitude: %f", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude);
+}
+-(void)startUpdates{
+    if (locationManager == nil){
+        locationManager = [[CLLocationManager alloc] init];
+    }
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyKilometer;
+    locationManager.distanceFilter = 10;
+    [locationManager startUpdatingLocation];
+}
+
+-(void)locationManager:(CLLocationManager *)manager didUpdateLocations:(NSArray *)locations {
+    CLLocation* location = (CLLocation*)locations[0];
+    
+    [[InstanciaMascota sharedInstance] setearUbicacion:location];
+    NSLog(@"latitude: %f longitude: %f", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude);
+    
+}
+
+    
+
 
 @end

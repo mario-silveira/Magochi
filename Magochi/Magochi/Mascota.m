@@ -8,12 +8,13 @@
 
 #import "Mascota.h"
 #import "Utils.h"
+#import "Constantes.h"
 
 @implementation Mascota
 
 -(Mascota*) init {
     Mascota* mascota = [super init];
-    mascota.codigo = @"MSILVEIRA8031";
+    mascota.codigo = CODIGO_MASCOTA;
     mascota.energia = [[NSNumber alloc]initWithInt:100];
     mascota.nivel = [[NSNumber alloc]initWithInt:1];
     mascota.experiencia = 0;
@@ -30,11 +31,13 @@
 
 -(NSDictionary*) dataForSending{
     return [NSDictionary dictionaryWithObjectsAndKeys:self.codigo, @"code",
-             self.nombre, @"name",
-             self.energia, @"energy",
-             self.nivel, @"level",
-             self.experiencia, @"experience",
-             self.tipo, @"pet_type", nil];
+            self.nombre, @"name",
+            self.energia, @"energy",
+            self.nivel, @"level",
+            self.experiencia, @"experience",
+            self.tipo, @"pet_type",
+            self.ubicacion.coordinate.latitude, @"position_lat",
+            self.ubicacion.coordinate.longitude, @"position_lon", nil];
 }
 
 -(NSString*) getImagenMascota{

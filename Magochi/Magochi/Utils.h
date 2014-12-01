@@ -12,8 +12,8 @@
 enum typeDef {
     Ciervo = 0,
     Gato = 1,
-    Jirafa = 2,
-    Leon = 3,
+    Leon = 2,
+    Jirafa = 3
 } tipoMascota;
 
 @interface Utils : NSObject

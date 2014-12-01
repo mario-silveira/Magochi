@@ -11,8 +11,10 @@
 #import "Comida.h"
 #import "ViewControllerTablaComidas.h"
 #import "Mascota.h"
+#import <CoreLocation/CoreLocation.h>
 
-@interface ViewControllerGameView : UIViewController <tableProtocol, MFMailComposeViewControllerDelegate>
+@interface ViewControllerGameView : UIViewController <tableProtocol, MFMailComposeViewControllerDelegate, CLLocationManagerDelegate>
+
 @property (strong, nonatomic) IBOutlet UIImageView *imgBoca;
 
 @property (strong, nonatomic) IBOutlet UITapGestureRecognizer *tapGesto;
@@ -22,6 +24,8 @@
 
 @property (strong, nonatomic) IBOutlet UIProgressView *pgbEnergia;
 @property (strong, nonatomic) IBOutlet UIButton *btnEjercicio;
+
+
 
 -(void) setComida: (Comida*) comida;
 

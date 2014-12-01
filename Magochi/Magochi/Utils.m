@@ -63,26 +63,6 @@ static NSArray *imagenes;
                             @"gato_exhausto_3",
                             @"gato_exhausto_4", nil];
     
-    Imagenes* jirafa = [[Imagenes alloc]init];
-    jirafa.imagen = @"jirafa_comiendo_1";
-    jirafa.imagenesComiendo = [[NSArray alloc]initWithObjects:
-                               @"jirafa_comiendo_1",
-                               @"jirafa_comiendo_2",
-                               @"jirafa_comiendo_3",
-                               @"jirafa_comiendo_4", nil];
-    jirafa.imagenesEjercicio = [[NSArray alloc]initWithObjects:
-                               @"jirafa_ejercicio_1",
-                               @"jirafa_ejercicio_2",
-                               @"jirafa_ejercicio_3",
-                               @"jirafa_ejercicio_4",
-                               @"jirafa_ejercicio_5", nil];
-    jirafa.imagenesCansado = [[NSArray alloc]initWithObjects:
-                              @"jirafa_exhausto_1",
-                              @"jirafa_exhausto_2",
-                              @"jirafa_exhausto_3",
-                              @"jirafa_exhausto_4", nil];
-
-    
     Imagenes* leon = [[Imagenes alloc]init];
     leon.imagen = @"leon_comiendo_1";
     leon.imagenesComiendo = [[NSArray alloc]initWithObjects:
@@ -102,7 +82,27 @@ static NSArray *imagenes;
                             @"leon_exhausto_3",
                             @"leon_exhausto_4", nil];
     
-    imagenes = [[NSArray alloc]initWithObjects:ciervo, gato, jirafa, leon, nil];
+    Imagenes* jirafa = [[Imagenes alloc]init];
+    jirafa.imagen = @"jirafa_comiendo_1";
+    jirafa.imagenesComiendo = [[NSArray alloc]initWithObjects:
+                               @"jirafa_comiendo_1",
+                               @"jirafa_comiendo_2",
+                               @"jirafa_comiendo_3",
+                               @"jirafa_comiendo_4", nil];
+    jirafa.imagenesEjercicio = [[NSArray alloc]initWithObjects:
+                                @"jirafa_ejercicio_1",
+                                @"jirafa_ejercicio_2",
+                                @"jirafa_ejercicio_3",
+                                @"jirafa_ejercicio_4",
+                                @"jirafa_ejercicio_5", nil];
+    jirafa.imagenesCansado = [[NSArray alloc]initWithObjects:
+                              @"jirafa_exhausto_1",
+                              @"jirafa_exhausto_2",
+                              @"jirafa_exhausto_3",
+                              @"jirafa_exhausto_4", nil];
+
+    
+    imagenes = [[NSArray alloc]initWithObjects:ciervo, gato, leon, jirafa, nil];
 }
 
 +(NSArray*) getImagenes{

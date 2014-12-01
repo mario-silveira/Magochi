@@ -11,6 +11,7 @@
 #import "NetworkManager.h"
 #import <Parse/Parse.h>
 #import "ViewControllerGameView.h"
+#import "Constantes.h"
 
 
 @interface InstanciaMascota ()
@@ -79,7 +80,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
     if (_energia.intValue > 0) {
         _energia = [NSNumber numberWithInt:[_energia intValue] - 10];
         [self subirExperiencia];
-        [[NSNotificationCenter defaultCenter] postNotificationName:@"REFRESCAR_ENERGIA"
+        [[NSNotificationCenter defaultCenter] postNotificationName:OBSERVER_REFRESCAR_ENERGIA
                                              object:_energia];
     } else {
         [self exhausto];
@@ -89,7 +90,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
 -(void) exhausto {
     [self.timerEjercicio pararTimer];
     _timerEjercicio = nil;
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"MASCOTA_EXHAUSTA" object:nil];
+    [[NSNotificationCenter defaultCenter] postNotificationName:OBSERVER_MASCOTA_EXHAUSTA object:nil];
 }
 
 -(void) pararEjercicio {
@@ -134,7 +135,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
     
     [self sendRemoteNotification];
     
-    [[NetworkManager sharedInstance] POST:@"/pet"
+    [[NetworkManager sharedInstance] POST:POST_GUARDAR_MASCOTA
                                parameters:[[self getMascota] dataForSending]
                                   success:^(NSURLSessionDataTask *task, id responseObject) {
                                       NSHTTPURLResponse* httpRsp = (NSHTTPURLResponse*) responseObject;
@@ -170,7 +171,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
 
 -(void) recibirMascota {
     
-    [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
+    [[NetworkManager sharedInstance] GET:GET_OBTENER_MASCOTA
                               parameters:nil
                                  success:[self getSuccessGetBlock]
                                  failure:[self getFailureGetBlock]];
@@ -199,7 +200,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
         mascota.tipo = [responseObject objectForKey:@"pet_type"];
         mascota.experienciaSiguienteNivel = [[NSNumber alloc] initWithInt:100 * (mascota.nivel.intValue * mascota.nivel.intValue)];
         [weakSelf setMascota:mascota];
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"MASCOTA_CARGADA" object:nil];
+        [[NSNotificationCenter defaultCenter]postNotificationName:OBSERVER_MASCOTA_CARGADA object:nil];
     };
     
 }
@@ -212,5 +213,9 @@ __weak typeof(InstanciaMascota) *weakSelf;
     };
 }
 
+
+-(void) setearUbicacion: (CLLocation*) location {
+    self.mascota.ubicacion = location;
+}
 
 @end

@@ -18,7 +18,9 @@
 @implementation ServicioGetTodasMascotas
 
 
--(void) recibirTodasMascotas : (SuccessGetTodasMascota) successblock{
+-(void) recibirTodasMascotas : (SuccessGetTodasMascota) bloque {
+    
+    self.successBlock = bloque;
     [[NetworkManager sharedInstance] GET:@"/pet/all"
                               parameters:nil
                                  success:[self successGetAllPetsBlock]

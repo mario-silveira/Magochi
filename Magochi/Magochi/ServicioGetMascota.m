@@ -17,7 +17,10 @@
 
 @implementation ServicioGetMascota
 
--(void) recibirMascota:(SuccessGetMascota) successblock {
+-(void) recibirMascota:(SuccessGetMascota) bloque {
+    
+    self.successBlock = bloque;
+    
     [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
                               parameters:nil
                                  success:[self successGetBlock]

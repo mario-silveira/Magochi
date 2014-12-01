@@ -165,6 +165,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
     self.servicioGetMascota = [[ServicioGetMascota alloc] init];
     [self.servicioGetMascota recibirMascota:^(Mascota * mascota) {
         [weakSelf setMascota:mascota];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"MASCOTA_CARGADA" object:nil];
     }];
 }
 

@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magochi/InstanciaMascota.m"
-            timestampString = "439154503.293543"
+            timestampString = "439157982.495109"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
             landmarkName = "-getMascotas"
             landmarkType = "5">
          </BreakpointContent>
@@ -86,15 +86,15 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magochi/ServicioGetMascota.m"
-            timestampString = "439154726.727207"
+            timestampString = "439157691.795623"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
             landmarkName = "-successGetBlock"
             landmarkType = "5">
          </BreakpointContent>
@@ -121,7 +121,7 @@
                   symbolName = "-[InstanciaMascota recibirMascota]"
                   moduleName = "Magochi"
                   urlString = "file:///Users/mario.silveira/Desktop/Curso%20IOS/workspace/Magochi/Magochi/InstanciaMascota.m"
-                  timestampString = "439156113.643835"
+                  timestampString = "439157692.21409"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"
@@ -135,7 +135,7 @@
                   symbolName = "__34-[InstanciaMascota recibirMascota]_block_invoke"
                   moduleName = "Magochi"
                   urlString = "file:///Users/mario.silveira/Desktop/Curso%20IOS/workspace/Magochi/Magochi/InstanciaMascota.m"
-                  timestampString = "439156113.644062"
+                  timestampString = "439157692.214252"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "166"

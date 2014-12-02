@@ -10,6 +10,7 @@
 #import "Utils.h"
 #import "Comida.h"
 #import "InstanciaMascota.h"
+#import "ViewControllerRanking.h"
 
 @interface ViewControllerGameView ()
 
@@ -271,6 +272,13 @@ CLLocationManager* locationManager;
     [self dismissViewControllerAnimated:YES completion:NULL];
     }
 }
+- (IBAction)clickRanking:(id)sender {
+    
+    ViewControllerRanking* newView = [[ViewControllerRanking alloc]initWithNibName:@"ViewControllerRanking" bundle:nil];
+    
+    [self.navigationController pushViewController:newView animated:YES];
+    
+}
 
 #pragma mark - Location
 
@@ -294,6 +302,7 @@ CLLocationManager* locationManager;
     CLLocation* location = (CLLocation*)locations[0];
     
     [[InstanciaMascota sharedInstance] setearUbicacion:location];
+    
     NSLog(@"latitude: %f longitude: %f", locationManager.location.coordinate.latitude, locationManager.location.coordinate.longitude);
     
 }

@@ -58,11 +58,21 @@
 		FAC5AFB91A28C9710023ED62 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFB81A28C9710023ED62 /* QuartzCore.framework */; };
 		FAC5AFBB1A28C9820023ED62 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBA1A28C9820023ED62 /* Security.framework */; };
 		FAC5AFBF1A28C99D0023ED62 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */; };
+		FAD01C161A2A050C0055CE96 /* ViewControllerRanking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD01C141A2A050C0055CE96 /* ViewControllerRanking.m */; };
+		FAD01C171A2A050C0055CE96 /* ViewControllerRanking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD01C151A2A050C0055CE96 /* ViewControllerRanking.xib */; };
+		FAD01C1B1A2A05320055CE96 /* CellRanking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD01C191A2A05320055CE96 /* CellRanking.m */; };
+		FAD01C1C1A2A05320055CE96 /* CellRanking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD01C1A1A2A05320055CE96 /* CellRanking.xib */; };
 		FAD52FD81A26237900B2760D /* VCPruebasNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FD61A26237900B2760D /* VCPruebasNetworking.m */; };
 		FAD52FD91A26237900B2760D /* VCPruebasNetworking.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */; };
 		FAD52FDD1A26277800B2760D /* NetworkManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FAD52FDC1A26277800B2760D /* NetworkManager.m */; };
 		FADC981C1A2CB07D008EF470 /* Constantes.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC981B1A2CB07D008EF470 /* Constantes.m */; };
 		FADC981E1A2CB7CC008EF470 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADC981D1A2CB7CC008EF470 /* MapKit.framework */; };
+		FADC98211A2CE162008EF470 /* ServicioGetMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98201A2CE162008EF470 /* ServicioGetMascota.m */; };
+		FADC98241A2CE896008EF470 /* ServicioPostMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98231A2CE896008EF470 /* ServicioPostMascota.m */; };
+		FADC98271A2CEAE0008EF470 /* ServicioGetTodasMascotas.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98261A2CEAE0008EF470 /* ServicioGetTodasMascotas.m */; };
+		FADC982C1A2DDFFD008EF470 /* ViewControllerMapa.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC982A1A2DDFFD008EF470 /* ViewControllerMapa.m */; };
+		FADC982D1A2DDFFD008EF470 /* ViewControllerMapa.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC982B1A2DDFFD008EF470 /* ViewControllerMapa.xib */; };
+		FADC98361A2E0E63008EF470 /* Anotacion.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98351A2E0E63008EF470 /* Anotacion.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -163,6 +173,12 @@
 		FAC5AFB81A28C9710023ED62 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		FAC5AFBA1A28C9820023ED62 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		FAD01C131A2A050C0055CE96 /* ViewControllerRanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerRanking.h; sourceTree = "<group>"; };
+		FAD01C141A2A050C0055CE96 /* ViewControllerRanking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerRanking.m; sourceTree = "<group>"; };
+		FAD01C151A2A050C0055CE96 /* ViewControllerRanking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerRanking.xib; sourceTree = "<group>"; };
+		FAD01C181A2A05320055CE96 /* CellRanking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CellRanking.h; sourceTree = "<group>"; };
+		FAD01C191A2A05320055CE96 /* CellRanking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CellRanking.m; sourceTree = "<group>"; };
+		FAD01C1A1A2A05320055CE96 /* CellRanking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CellRanking.xib; sourceTree = "<group>"; };
 		FAD52FD51A26237900B2760D /* VCPruebasNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VCPruebasNetworking.h; sourceTree = "<group>"; };
 		FAD52FD61A26237900B2760D /* VCPruebasNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VCPruebasNetworking.m; sourceTree = "<group>"; };
 		FAD52FD71A26237900B2760D /* VCPruebasNetworking.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VCPruebasNetworking.xib; sourceTree = "<group>"; };
@@ -171,6 +187,17 @@
 		FADC981A1A2CB07D008EF470 /* Constantes.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constantes.h; sourceTree = "<group>"; };
 		FADC981B1A2CB07D008EF470 /* Constantes.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constantes.m; sourceTree = "<group>"; };
 		FADC981D1A2CB7CC008EF470 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		FADC981F1A2CE162008EF470 /* ServicioGetMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioGetMascota.h; sourceTree = "<group>"; };
+		FADC98201A2CE162008EF470 /* ServicioGetMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicioGetMascota.m; sourceTree = "<group>"; };
+		FADC98221A2CE896008EF470 /* ServicioPostMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioPostMascota.h; sourceTree = "<group>"; };
+		FADC98231A2CE896008EF470 /* ServicioPostMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicioPostMascota.m; sourceTree = "<group>"; };
+		FADC98251A2CEAE0008EF470 /* ServicioGetTodasMascotas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicioGetTodasMascotas.h; sourceTree = "<group>"; };
+		FADC98261A2CEAE0008EF470 /* ServicioGetTodasMascotas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicioGetTodasMascotas.m; sourceTree = "<group>"; };
+		FADC98291A2DDFFD008EF470 /* ViewControllerMapa.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerMapa.h; sourceTree = "<group>"; };
+		FADC982A1A2DDFFD008EF470 /* ViewControllerMapa.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerMapa.m; sourceTree = "<group>"; };
+		FADC982B1A2DDFFD008EF470 /* ViewControllerMapa.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerMapa.xib; sourceTree = "<group>"; };
+		FADC98341A2E0E63008EF470 /* Anotacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anotacion.h; sourceTree = "<group>"; };
+		FADC98351A2E0E63008EF470 /* Anotacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anotacion.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -295,6 +322,8 @@
 		FA5D241D1A1BCA530045984A /* Magochi */ = {
 			isa = PBXGroup;
 			children = (
+				FADC98281A2DDFC9008EF470 /* Mapa */,
+				FAD01C0F1A2A04C50055CE96 /* Ranking */,
 				FAC5AFA31A28C7B40023ED62 /* parse-library-1 */,
 				FAD52FDA1A26272F00B2760D /* Networking */,
 				FAD52FD41A26234B00B2760D /* PruebasNetworking */,
@@ -414,6 +443,19 @@
 			path = "parse-library-1";
 			sourceTree = "<group>";
 		};
+		FAD01C0F1A2A04C50055CE96 /* Ranking */ = {
+			isa = PBXGroup;
+			children = (
+				FAD01C131A2A050C0055CE96 /* ViewControllerRanking.h */,
+				FAD01C141A2A050C0055CE96 /* ViewControllerRanking.m */,
+				FAD01C151A2A050C0055CE96 /* ViewControllerRanking.xib */,
+				FAD01C181A2A05320055CE96 /* CellRanking.h */,
+				FAD01C191A2A05320055CE96 /* CellRanking.m */,
+				FAD01C1A1A2A05320055CE96 /* CellRanking.xib */,
+			);
+			name = Ranking;
+			sourceTree = "<group>";
+		};
 		FAD52FD41A26234B00B2760D /* PruebasNetworking */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,8 +472,26 @@
 				FA2866091A264E580064C3A1 /* 3rdPartyLibraries */,
 				FAD52FDB1A26277800B2760D /* NetworkManager.h */,
 				FAD52FDC1A26277800B2760D /* NetworkManager.m */,
+				FADC981F1A2CE162008EF470 /* ServicioGetMascota.h */,
+				FADC98201A2CE162008EF470 /* ServicioGetMascota.m */,
+				FADC98221A2CE896008EF470 /* ServicioPostMascota.h */,
+				FADC98231A2CE896008EF470 /* ServicioPostMascota.m */,
+				FADC98251A2CEAE0008EF470 /* ServicioGetTodasMascotas.h */,
+				FADC98261A2CEAE0008EF470 /* ServicioGetTodasMascotas.m */,
 			);
 			name = Networking;
+			sourceTree = "<group>";
+		};
+		FADC98281A2DDFC9008EF470 /* Mapa */ = {
+			isa = PBXGroup;
+			children = (
+				FADC98341A2E0E63008EF470 /* Anotacion.h */,
+				FADC98351A2E0E63008EF470 /* Anotacion.m */,
+				FADC98291A2DDFFD008EF470 /* ViewControllerMapa.h */,
+				FADC982A1A2DDFFD008EF470 /* ViewControllerMapa.m */,
+				FADC982B1A2DDFFD008EF470 /* ViewControllerMapa.xib */,
+			);
+			name = Mapa;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -523,13 +583,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAD01C1C1A2A05320055CE96 /* CellRanking.xib in Resources */,
 				FA57263F1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib in Resources */,
 				FA5D24541A1BD3CF0045984A /* ViewControllerGameView.xib in Resources */,
 				FA5726471A1E664A00C1F5E3 /* CellComida.xib in Resources */,
+				FAD01C171A2A050C0055CE96 /* ViewControllerRanking.xib in Resources */,
 				FAD52FD91A26237900B2760D /* VCPruebasNetworking.xib in Resources */,
 				FA5D244F1A1BD1410045984A /* ViewControllerImageGallery.xib in Resources */,
 				FA5D242C1A1BCA530045984A /* Images.xcassets in Resources */,
 				FA5D244A1A1BCE1D0045984A /* ViewControllerDataEntry.xib in Resources */,
+				FADC982D1A2DDFFD008EF470 /* ViewControllerMapa.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -556,16 +619,21 @@
 				FA28663E1A264E580064C3A1 /* UIProgressView+AFNetworking.m in Sources */,
 				FA080DD41A2898CB005071CB /* Imagenes.m in Sources */,
 				FA2866321A264E580064C3A1 /* AFHTTPSessionManager.m in Sources */,
+				FAD01C1B1A2A05320055CE96 /* CellRanking.m in Sources */,
 				FA929F591A1FC86E00792436 /* Utils.m in Sources */,
 				FA28663D1A264E580064C3A1 /* UIImageView+AFNetworking.m in Sources */,
 				FA2866331A264E580064C3A1 /* AFNetworkReachabilityManager.m in Sources */,
 				FA2866301A264E580064C3A1 /* AFHTTPRequestOperation.m in Sources */,
 				FA2866361A264E580064C3A1 /* AFURLRequestSerialization.m in Sources */,
+				FADC98361A2E0E63008EF470 /* Anotacion.m in Sources */,
 				FA2866351A264E580064C3A1 /* AFURLConnectionOperation.m in Sources */,
 				FA2866381A264E580064C3A1 /* AFURLSessionManager.m in Sources */,
 				FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */,
 				FA5726461A1E664A00C1F5E3 /* CellComida.m in Sources */,
 				FA28663A1A264E580064C3A1 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				FADC98211A2CE162008EF470 /* ServicioGetMascota.m in Sources */,
+				FADC982C1A2DDFFD008EF470 /* ViewControllerMapa.m in Sources */,
+				FADC98241A2CE896008EF470 /* ServicioPostMascota.m in Sources */,
 				FA60994A1A25021C00E5D001 /* NSString+Validation.m in Sources */,
 				FAD52FD81A26237900B2760D /* VCPruebasNetworking.m in Sources */,
 				FA5D244E1A1BD1410045984A /* ViewControllerImageGallery.m in Sources */,
@@ -574,11 +642,13 @@
 				FA5D24491A1BCE1D0045984A /* ViewControllerDataEntry.m in Sources */,
 				FA929F571A1FC7EE00792436 /* Mascota.m in Sources */,
 				FA2866341A264E580064C3A1 /* AFSecurityPolicy.m in Sources */,
+				FADC98271A2CEAE0008EF470 /* ServicioGetTodasMascotas.m in Sources */,
 				FA28663F1A264E580064C3A1 /* UIRefreshControl+AFNetworking.m in Sources */,
 				FA28663B1A264E580064C3A1 /* UIAlertView+AFNetworking.m in Sources */,
 				FAD52FDD1A26277800B2760D /* NetworkManager.m in Sources */,
 				FA2866311A264E580064C3A1 /* AFHTTPRequestOperationManager.m in Sources */,
 				FA5D24211A1BCA530045984A /* main.m in Sources */,
+				FAD01C161A2A050C0055CE96 /* ViewControllerRanking.m in Sources */,
 				FA2866371A264E580064C3A1 /* AFURLResponseSerialization.m in Sources */,
 				FA2866391A264E580064C3A1 /* AFNetworkActivityIndicatorManager.m in Sources */,
 			);

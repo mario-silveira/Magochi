@@ -14,12 +14,28 @@
 
 -(Mascota*) init {
     Mascota* mascota = [super init];
-    mascota.codigo = CODIGO_MASCOTA;
-    mascota.energia = [[NSNumber alloc]initWithInt:100];
-    mascota.nivel = [[NSNumber alloc]initWithInt:1];
-    mascota.experiencia = 0;
+    if (mascota) {
+        mascota.codigo = CODIGO_MASCOTA;
+        mascota.energia = [[NSNumber alloc]initWithInt:100];
+        mascota.nivel = [[NSNumber alloc]initWithInt:1];
+        mascota.experiencia = 0;
+        
+        mascota.experienciaSiguienteNivel = [[NSNumber alloc]initWithInt:100];
+    }
     
-    mascota.experienciaSiguienteNivel = [[NSNumber alloc]initWithInt:100];
+    return mascota;
+}
+
+-(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo ubicacion:(CLLocation*) ubicacion {
+    Mascota* mascota = [super init];
+    if (mascota){
+        mascota.nombre = nombre;
+        mascota.tipo = tipo;
+        mascota.nivel = nivel;
+        mascota.codigo = codigo;
+        mascota.ubicacion = ubicacion;
+    }
+    
     return mascota;
 }
 
@@ -30,14 +46,17 @@
 }
 
 -(NSDictionary*) dataForSending{
-    return [NSDictionary dictionaryWithObjectsAndKeys:self.codigo, @"code",
+    NSLog(@"lat %f", self.ubicacion.coordinate.latitude);
+    NSLog(@"lon %f", self.ubicacion.coordinate.longitude);
+    return [NSDictionary dictionaryWithObjectsAndKeys:
+            self.codigo, @"code",
             self.nombre, @"name",
             self.energia, @"energy",
             self.nivel, @"level",
+            [NSString stringWithFormat:@"%f", self.ubicacion.coordinate.latitude], @"position_lat",
+            [NSString stringWithFormat:@"%f", self.ubicacion.coordinate.longitude], @"position_lon",
             self.experiencia, @"experience",
-            self.tipo, @"pet_type",
-            self.ubicacion.coordinate.latitude, @"position_lat",
-            self.ubicacion.coordinate.longitude, @"position_lon", nil];
+            self.tipo, @"pet_type",nil];
 }
 
 -(NSString*) getImagenMascota{

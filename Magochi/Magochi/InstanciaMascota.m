@@ -13,15 +13,20 @@
 #import "ViewControllerGameView.h"
 #import "Constantes.h"
 
+#import "ServicioGetMascota.h"
+#import "ServicioPostMascota.h"
+#import "ServicioGetTodasMascotas.h"
 
 @interface InstanciaMascota ()
 
 @property (nonatomic)  Mascota* mascota;
 @property (nonatomic, strong) NSNumber* energia;
 @property NSTimer* timerEjercicio;
+@property NSArray* mascotas;
 
-@property (nonatomic, copy) Success successGetBlock;
-@property (nonatomic, copy) Failure failureGetBlock;
+@property (nonatomic, strong) ServicioGetMascota* servicioGetMascota;
+@property (nonatomic, strong) ServicioPostMascota* servicioPostMascota;
+@property (nonatomic, strong) ServicioGetTodasMascotas* servicioGetTodasMascotas;
 
 @end
 
@@ -122,34 +127,22 @@ __weak typeof(InstanciaMascota) *weakSelf;
     self.mascota.nivel = [[NSNumber alloc] initWithInt:[self.mascota.nivel intValue] + 1 ];
     [self.mascota setExperienciaSiguienteNivel:[self experienciaNuevoNivel]];
     NSLog(@"Experiencia siguiente nivel: %@", self.mascota.experienciaSiguienteNivel);
-    [self enviarNuevoNivel];
+    [self enviarMascota];
 }
 
 - (NSNumber*) experienciaNuevoNivel {
     return [[NSNumber alloc] initWithInt:100 * (self.mascota.nivel.intValue * self.mascota.nivel.intValue)];
 }
 
--(void) enviarNuevoNivel {
+-(void) enviarMascota {
     
  //   [self createNotification];
     
-    [self sendRemoteNotification];
+  //  [self sendRemoteNotification];
     
-    [[NetworkManager sharedInstance] POST:POST_GUARDAR_MASCOTA
-                               parameters:[[self getMascota] dataForSending]
-                                  success:^(NSURLSessionDataTask *task, id responseObject) {
-                                      NSHTTPURLResponse* httpRsp = (NSHTTPURLResponse*) responseObject;
-                                      if ([[responseObject objectForKey:@"status"] isEqualToString:@"ok"]){
-                                          NSLog(@"la info llego sin error");
-                                      } else {
-                                          NSLog(@"hay errores en el llamado");
-                                      }
-                                      
-                                      
-                                  }
-                                  failure:^(NSURLSessionDataTask *task, NSError *error) {
-                                      NSLog(@"error");
-                                  }];
+    self.servicioPostMascota = [[ServicioPostMascota alloc] init];
+    [[self servicioPostMascota] almacenarMascota:[self getMascota]];
+    
 }
 
 -(void) createNotification{
@@ -171,10 +164,11 @@ __weak typeof(InstanciaMascota) *weakSelf;
 
 -(void) recibirMascota {
     
-    [[NetworkManager sharedInstance] GET:GET_OBTENER_MASCOTA
-                              parameters:nil
-                                 success:[self getSuccessGetBlock]
-                                 failure:[self getFailureGetBlock]];
+    self.servicioGetMascota = [[ServicioGetMascota alloc] init];
+    [self.servicioGetMascota recibirMascota:^(Mascota * mascota) {
+        [weakSelf setMascota:mascota];
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"MASCOTA_CARGADA" object:nil];
+    }];
 }
 
 - (void) sendRemoteNotification{
@@ -187,35 +181,25 @@ __weak typeof(InstanciaMascota) *weakSelf;
     [push sendPushInBackground];
 }
 
--(Success)getSuccessGetBlock {
     
-    return ^(NSURLSessionDataTask* task, id responseObject){
-        
-        Mascota* mascota = [[Mascota alloc] init];
-        mascota.energia = [responseObject objectForKey:@"energy"];
-        mascota.codigo = [responseObject objectForKey:@"code"];
-        mascota.nivel = [responseObject objectForKey:@"level"];
-        mascota.experiencia = [responseObject objectForKey:@"experience"];
-        mascota.nombre = [responseObject objectForKey:@"name"];
-        mascota.tipo = [responseObject objectForKey:@"pet_type"];
-        mascota.experienciaSiguienteNivel = [[NSNumber alloc] initWithInt:100 * (mascota.nivel.intValue * mascota.nivel.intValue)];
-        [weakSelf setMascota:mascota];
-        [[NSNotificationCenter defaultCenter]postNotificationName:OBSERVER_MASCOTA_CARGADA object:nil];
-    };
-    
+-(void) recibirTodasMascotas {
+    self.servicioGetTodasMascotas = [[ServicioGetTodasMascotas alloc] init];
+    [self.servicioGetTodasMascotas recibirTodasMascotas:^(NSArray *mascotas) {
+        weakSelf.mascotas = mascotas;
+        [[NSNotificationCenter defaultCenter]postNotificationName:@"RANKING_CARGADO" object:nil];
+
+    }];
 }
 
 
--(Failure)getFailureGetBlock {
-    return ^(NSURLSessionDataTask *task, NSError *error)
-    {
-        NSLog(@"Error en recibir la mascota: %@",error);
-    };
+-(NSArray*) getMascotas{
+    return _mascotas;
 }
 
 
 -(void) setearUbicacion: (CLLocation*) location {
     self.mascota.ubicacion = location;
+    [self enviarMascota];
 }
 
 @end

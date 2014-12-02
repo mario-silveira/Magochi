@@ -37,11 +37,13 @@ CLLocationManager* locationManager;
     self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects: mailButton, nil];
     
     self.imgMascota.image = [UIImage imageNamed:[self.mascota getImagenMascota]];
-    
+    [[[InstanciaMascota sharedInstance] getMascota] guardarMascota];
     [self startUpdates];
     [self cargarLocation];
     
 }
+
+#pragma mark - Envio Email
 
 - (void) enviarMail {
     
@@ -109,6 +111,10 @@ CLLocationManager* locationManager;
     [self dismissViewControllerAnimated:YES completion:NULL];
 }
 
+-(ViewControllerGameView*) initWithData {
+    [[InstanciaMascota sharedInstance] cargarMascota];
+    return [[ViewControllerGameView alloc] initWithNibName:@"ViewControllerGameView" bundle:nil];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

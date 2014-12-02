@@ -26,7 +26,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *btnEjercicio;
 
 
-
+-(ViewControllerGameView*) initWithData;
 -(void) setComida: (Comida*) comida;
 
 @end

@@ -8,7 +8,11 @@
 
 #import "AppDelegate.h"
 #import "ViewControllerDataEntry.h"
+#import "ViewControllerGameView.h"
+#import "ViewControllerImageGallery.h"
 #import <Parse/Parse.h>
+#import "Constantes.h"
+#import "Utils.h"
 
 
 @interface AppDelegate ()
@@ -50,8 +54,20 @@
     
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     
-    ViewControllerDataEntry* home = [[ViewControllerDataEntry alloc] initWithNibName:@"ViewControllerDataEntry" bundle:nil];
-    UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:home];
+    UIViewController* view;
+    [Utils cargarImagenes];
+    
+    if ([[NSUserDefaults standardUserDefaults] boolForKey:NOMBRE_MASCOTA_CARGADO]) {
+        if ([[NSUserDefaults standardUserDefaults] boolForKey:IMAGEN_MASCOTA_CARGADA]) {
+            view = [[ViewControllerGameView alloc]initWithData];
+        } else {
+            view = [[ViewControllerImageGallery alloc] initWithNibName:@"ViewControllerImageGallery" bundle:nil];
+        }
+    } else {
+        view = [[ViewControllerDataEntry alloc] initWithNibName:@"ViewControllerDataEntry" bundle:nil];
+    }
+    
+    UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:view];
     
     [self.window setRootViewController:navControllerHome];
     self.window.backgroundColor = [UIColor whiteColor];

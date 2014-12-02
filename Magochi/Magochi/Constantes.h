@@ -19,6 +19,7 @@ extern const NSString *CODIGO_MASCOTA;
 extern const NSString *POST_GUARDAR_MASCOTA;
 extern const NSString *GET_OBTENER_MASCOTA;
 
-
+extern const NSString *NOMBRE_MASCOTA_CARGADO;
+extern const NSString *IMAGEN_MASCOTA_CARGADA;
 
 @end

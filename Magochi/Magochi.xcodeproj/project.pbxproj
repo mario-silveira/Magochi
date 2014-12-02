@@ -73,6 +73,7 @@
 		FADC982C1A2DDFFD008EF470 /* ViewControllerMapa.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC982A1A2DDFFD008EF470 /* ViewControllerMapa.m */; };
 		FADC982D1A2DDFFD008EF470 /* ViewControllerMapa.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC982B1A2DDFFD008EF470 /* ViewControllerMapa.xib */; };
 		FADC98361A2E0E63008EF470 /* Anotacion.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98351A2E0E63008EF470 /* Anotacion.m */; };
+		FADC983D1A2E3FC1008EF470 /* Persistencia.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC983C1A2E3FC1008EF470 /* Persistencia.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -198,6 +199,8 @@
 		FADC982B1A2DDFFD008EF470 /* ViewControllerMapa.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerMapa.xib; sourceTree = "<group>"; };
 		FADC98341A2E0E63008EF470 /* Anotacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Anotacion.h; sourceTree = "<group>"; };
 		FADC98351A2E0E63008EF470 /* Anotacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anotacion.m; sourceTree = "<group>"; };
+		FADC983B1A2E3FC1008EF470 /* Persistencia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persistencia.h; sourceTree = "<group>"; };
+		FADC983C1A2E3FC1008EF470 /* Persistencia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persistencia.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -322,6 +325,7 @@
 		FA5D241D1A1BCA530045984A /* Magochi */ = {
 			isa = PBXGroup;
 			children = (
+				FADC98371A2E30CD008EF470 /* Persistencia */,
 				FADC98281A2DDFC9008EF470 /* Mapa */,
 				FAD01C0F1A2A04C50055CE96 /* Ranking */,
 				FAC5AFA31A28C7B40023ED62 /* parse-library-1 */,
@@ -494,6 +498,15 @@
 			name = Mapa;
 			sourceTree = "<group>";
 		};
+		FADC98371A2E30CD008EF470 /* Persistencia */ = {
+			isa = PBXGroup;
+			children = (
+				FADC983B1A2E3FC1008EF470 /* Persistencia.h */,
+				FADC983C1A2E3FC1008EF470 /* Persistencia.m */,
+			);
+			name = Persistencia;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -635,6 +648,7 @@
 				FADC982C1A2DDFFD008EF470 /* ViewControllerMapa.m in Sources */,
 				FADC98241A2CE896008EF470 /* ServicioPostMascota.m in Sources */,
 				FA60994A1A25021C00E5D001 /* NSString+Validation.m in Sources */,
+				FADC983D1A2E3FC1008EF470 /* Persistencia.m in Sources */,
 				FAD52FD81A26237900B2760D /* VCPruebasNetworking.m in Sources */,
 				FA5D244E1A1BD1410045984A /* ViewControllerImageGallery.m in Sources */,
 				FABAA17E1A2381E300D7D912 /* InstanciaMascota.m in Sources */,

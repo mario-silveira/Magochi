@@ -9,34 +9,60 @@
 #import "Mascota.h"
 #import "Utils.h"
 #import "Constantes.h"
+#import "Persistencia.h"
 
 @implementation Mascota
 
 -(Mascota*) init {
-    Mascota* mascota = [super init];
-    if (mascota) {
-        mascota.codigo = CODIGO_MASCOTA;
-        mascota.energia = [[NSNumber alloc]initWithInt:100];
-        mascota.nivel = [[NSNumber alloc]initWithInt:1];
-        mascota.experiencia = 0;
+    self = [super init];
+    if (self) {
+        self.codigo = CODIGO_MASCOTA;
+        self.energia = [[NSNumber alloc]initWithInt:100];
+        self.nivel = [[NSNumber alloc]initWithInt:1];
+        self.experiencia = 0;
         
-        mascota.experienciaSiguienteNivel = [[NSNumber alloc]initWithInt:100];
+        self.experienciaSiguienteNivel = [[NSNumber alloc]initWithInt:100];
     }
     
-    return mascota;
+    return self;
 }
 
 -(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo ubicacion:(CLLocation*) ubicacion {
-    Mascota* mascota = [super init];
-    if (mascota){
-        mascota.nombre = nombre;
-        mascota.tipo = tipo;
-        mascota.nivel = nivel;
-        mascota.codigo = codigo;
-        mascota.ubicacion = ubicacion;
+    self = [super init];
+    if (self){
+        self.nombre = nombre;
+        self.tipo = tipo;
+        self.nivel = nivel;
+        self.codigo = codigo;
+        self.ubicacion = ubicacion;
     }
     
-    return mascota;
+    return self;
+}
+
+-(id)initWithCoder:(NSCoder *)coder{
+    if(self = [super init]){
+        [self setCodigo:[coder decodeObjectForKey:@"code"]];
+        [self setNombre:[coder decodeObjectForKey:@"name"]];
+        [self setEnergia:[coder decodeObjectForKey:@"energy"]];
+        [self setNivel:[coder decodeObjectForKey:@"level"]];
+        [self setExperiencia:[coder decodeObjectForKey:@"experience"]];
+        [self setTipo:[coder decodeObjectForKey:@"pet_type"]];
+     /*   CLLocation* location = [[CLLocation alloc]init];
+        location.coordinate.latitude = [coder decodeObjectForKey:@"position_lat"];
+        [self setUbicacion:location];*/
+        
+    }
+    return self;
+}
+
+-(void)encodeWithCoder:(NSCoder *)coder{
+    [coder encodeObject:self.codigo forKey:@"code"];
+    [coder encodeObject:self.nombre forKey:@"name"];
+    [coder encodeObject:self.energia forKey:@"energy"];
+    [coder encodeObject:self.nivel forKey:@"level"];
+    [coder encodeObject:self.experiencia forKey:@"experience"];
+    [coder encodeObject:self.tipo forKey:@"pet_type"];
 }
 
 -(void)setTipo:(NSNumber *)tipo{
@@ -46,8 +72,6 @@
 }
 
 -(NSDictionary*) dataForSending{
-    NSLog(@"lat %f", self.ubicacion.coordinate.latitude);
-    NSLog(@"lon %f", self.ubicacion.coordinate.longitude);
     return [NSDictionary dictionaryWithObjectsAndKeys:
             self.codigo, @"code",
             self.nombre, @"name",
@@ -73,6 +97,14 @@
 
 -(NSArray*) getImagenesCansado{
     return self.imagenes.imagenesCansado;
+}
+
+-(void)guardarMascota{
+    [Persistencia guardarMascota:self];
+}
+
++(Mascota*)cargarMascota{
+    return [Persistencia cargarMascota];
 }
 
 @end

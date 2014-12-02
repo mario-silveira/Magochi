@@ -12,6 +12,7 @@
 #import <Parse/Parse.h>
 #import "ViewControllerGameView.h"
 #import "Constantes.h"
+#import "Utils.h"
 
 #import "ServicioGetMascota.h"
 #import "ServicioPostMascota.h"
@@ -52,7 +53,6 @@ __weak typeof(InstanciaMascota) *weakSelf;
     InstanciaMascota* instancia = [super init];
     instancia.energia = [[NSNumber alloc]initWithInt:100];
     weakSelf = self;
-
     return instancia;
 }
 
@@ -111,22 +111,20 @@ __weak typeof(InstanciaMascota) *weakSelf;
 
 - (void) subaEnergia: (NSNumber*) energia {
     self.energia = MIN([[NSNumber alloc] initWithInt:100], [[NSNumber alloc] initWithInt:[energia integerValue] + [self.energia integerValue]]);
-    NSLog(@"energia:%@", self.energia);
+   [self.mascota guardarMascota];
 }
 
 - (void) subirExperiencia {
     self.mascota.experiencia = [[NSNumber alloc] initWithInt:[self.mascota.experiencia intValue] + 10];
-    NSLog(@"Experiencia:%@", self.mascota.experiencia);
     if (self.mascota.experiencia.intValue >= self.mascota.experienciaSiguienteNivel.intValue) {
         [self subirNivel];
-        NSLog(@"NUEVO NIVEL!!!");
     }
 }
 
 - (void) subirNivel {
     self.mascota.nivel = [[NSNumber alloc] initWithInt:[self.mascota.nivel intValue] + 1 ];
     [self.mascota setExperienciaSiguienteNivel:[self experienciaNuevoNivel]];
-    NSLog(@"Experiencia siguiente nivel: %@", self.mascota.experienciaSiguienteNivel);
+    [self.mascota guardarMascota];
     [self enviarMascota];
 }
 
@@ -200,6 +198,10 @@ __weak typeof(InstanciaMascota) *weakSelf;
 -(void) setearUbicacion: (CLLocation*) location {
     self.mascota.ubicacion = location;
     [self enviarMascota];
+}
+
+-(void) cargarMascota {
+    self.mascota = [Mascota cargarMascota];
 }
 
 @end

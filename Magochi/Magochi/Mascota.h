@@ -10,7 +10,7 @@
 #import "Imagenes.h"
 #import <CoreLocation/CoreLocation.h>
 
-@interface Mascota : NSObject
+@interface Mascota : NSObject <NSCoding>
 
 @property (nonatomic, strong) NSString* codigo;
 @property (nonatomic, strong) NSString* nombre;
@@ -29,5 +29,9 @@
 -(NSArray*) getImagenesComiendo;
 -(NSArray*) getImagenesEjercitando;
 -(NSArray*) getImagenesCansado;
+-(id)initWithCoder:(NSCoder *)coder;
+-(void)encodeWithCoder:(NSCoder *)coder;
+-(void)guardarMascota;
++(Mascota*) cargarMascota;
 
 @end

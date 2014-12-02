@@ -8,9 +8,9 @@
 
 #import "ViewControllerImageGallery.h"
 #import "ViewControllerGameView.h"
-#import "Utils.h"
 #import "Mascota.h"
 #import "InstanciaMascota.h"
+#import "Constantes.h"
 
 @interface ViewControllerImageGallery ()
 @property (strong, nonatomic) IBOutlet UIButton *btn1;
@@ -31,6 +31,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
+    
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:IMAGEN_MASCOTA_CARGADA];
     
     [self.btnDone setEnabled:NO];
     
@@ -69,6 +71,9 @@
     return self;
 }
 - (IBAction)btnClickDone:(id)sender {
+    
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:IMAGEN_MASCOTA_CARGADA];
+    
     self.mascota.nombre = self.nombreMascota;
     
     [[InstanciaMascota sharedInstance] setMascota:self.mascota];

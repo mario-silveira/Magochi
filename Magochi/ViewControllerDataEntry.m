@@ -10,9 +10,9 @@
 #import "ViewControllerImageGallery.h"
 #import "ViewControllerGameView.h"
 #import "NSString+Validation.h"
-#import "Utils.h"
 #import "InstanciaMascota.h"
 #import "ViewControllerGameView.h"
+#import "Constantes.h"
 
 @interface ViewControllerDataEntry ()
 
@@ -23,6 +23,8 @@
 
 
 @implementation ViewControllerDataEntry
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -44,33 +46,32 @@
 }
 
 - (void)viewWillAppear:(BOOL)animated{
-    [Utils cargarImagenes];
+    [[NSUserDefaults standardUserDefaults] setBool:NO forKey:NOMBRE_MASCOTA_CARGADO];
     
     [self.lblError setHidden:YES];
     self.txtName.text = @"";
 }
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 - (IBAction)btnClick:(id)sender {
     BOOL result = [self validateText: self.txtName.text];
     
     if (result){
-        self.nombreMascota = self.txtName.text;
         
-        ViewControllerImageGallery* newView = [[ViewControllerImageGallery alloc]initWithName:self.nombreMascota];
-        
-        [self.navigationController pushViewController:newView animated:YES];
+        [self cargarPantallaImagenes];
     } else {
         [self.lblError setHidden:NO];
     }
+}
+
+-(void) cargarPantallaImagenes {
+    [[NSUserDefaults standardUserDefaults] setBool:YES forKey:NOMBRE_MASCOTA_CARGADO];
+    
+    self.nombreMascota = self.txtName.text;
+    
+    ViewControllerImageGallery* newView = [[ViewControllerImageGallery alloc]initWithName:self.nombreMascota];
+    
+    [self.navigationController pushViewController:newView animated:YES];
+
 }
 - (IBAction)txtEndEdt:(id)sender {
   [self.view endEditing:YES];
@@ -94,7 +95,9 @@
 }
 
 - (IBAction)clickCargar:(UIButton *)sender {
-    [[InstanciaMascota sharedInstance] recibirMascota];
+    [[InstanciaMascota sharedInstance] cargarMascota];
+    [self mascotaCargada];
+   // [[InstanciaMascota sharedInstance] recibirMascota];
 }
 
 -(void)mascotaCargada{

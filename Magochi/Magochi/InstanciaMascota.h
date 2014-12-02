@@ -22,5 +22,6 @@
 -(void) setearUbicacion: (CLLocation*) location;
 -(void) recibirTodasMascotas;
 -(NSMutableArray*) getMascotas;
+-(void) cargarMascota;
 
 @end

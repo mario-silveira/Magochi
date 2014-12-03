@@ -13,6 +13,18 @@
 
 @implementation Mascota
 
+
+@synthesize tipo;
+@synthesize energia;
+@synthesize longitud;
+@synthesize experiencia;
+@synthesize latitud;
+@synthesize codigo;
+@synthesize nombre;
+@synthesize nivel;
+@synthesize experienciaSiguienteNivel;
+@synthesize imagenes;
+
 -(Mascota*) init {
     self = [super init];
     if (self) {
@@ -27,14 +39,15 @@
     return self;
 }
 
--(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo ubicacion:(CLLocation*) ubicacion {
+-(Mascota*)initMascotaRanking: (NSString*) _nombre tipo:(NSNumber*) _tipo nivel:(NSNumber*) _nivel codigo:(NSString*) _codigo latitud:(NSNumber *)_latitud longitud:(NSNumber *)_longitud {
     self = [super init];
     if (self){
-        self.nombre = nombre;
-        self.tipo = tipo;
-        self.nivel = nivel;
-        self.codigo = codigo;
-        self.ubicacion = ubicacion;
+        nombre = _nombre;
+        tipo = _tipo;
+        nivel = _nivel;
+        codigo = _codigo;
+        latitud = _latitud;
+        longitud = _longitud;
     }
     
     return self;
@@ -65,8 +78,8 @@
     [coder encodeObject:self.tipo forKey:@"pet_type"];
 }
 
--(void)setTipo:(NSNumber *)tipo{
-    _tipo = tipo;
+-(void)setTipo:(NSNumber *)_tipo{
+    tipo = _tipo;
     [self setImagenes:[Utils getImagenes][tipo.intValue]];
     
 }
@@ -77,8 +90,8 @@
             self.nombre, @"name",
             self.energia, @"energy",
             self.nivel, @"level",
-            [NSString stringWithFormat:@"%f", self.ubicacion.coordinate.latitude], @"position_lat",
-            [NSString stringWithFormat:@"%f", self.ubicacion.coordinate.longitude], @"position_lon",
+            self.latitud, @"position_lat",
+            self.longitud, @"position_lon",
             self.experiencia, @"experience",
             self.tipo, @"pet_type",nil];
 }

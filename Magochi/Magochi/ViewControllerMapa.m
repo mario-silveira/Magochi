@@ -29,12 +29,12 @@
     
     [self.lblNombre setText:self.mascota.nombre];
     MKCoordinateRegion region;
-    region.center = self.mascota.ubicacion.coordinate;
+    region.center =  CLLocationCoordinate2DMake(self.mascota.latitud.doubleValue, self.mascota.longitud.doubleValue);
     region.span.latitudeDelta = 0.02;
     region.span.longitudeDelta = 0.02;
     
     Anotacion* annotation = [[Anotacion alloc] init];
-    [annotation setCoordinate:self.mascota.ubicacion.coordinate];
+    [annotation setCoordinate:CLLocationCoordinate2DMake(self.mascota.latitud.doubleValue, self.mascota.longitud.doubleValue)];
     [annotation setTitle:self.mascota.nombre];
     [annotation setSubtitle:self.mascota.nivel.description];
 

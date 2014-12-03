@@ -65,10 +65,10 @@
 
 -(void) cargarPantallaImagenes {
     [[NSUserDefaults standardUserDefaults] setBool:YES forKey:NOMBRE_MASCOTA_CARGADO];
+    [[[InstanciaMascota sharedInstance] getMascota] setNombre:self.txtName.text];
+  //  self.nombreMascota = self.txtName.text;
     
-    self.nombreMascota = self.txtName.text;
-    
-    ViewControllerImageGallery* newView = [[ViewControllerImageGallery alloc]initWithName:self.nombreMascota];
+    ViewControllerImageGallery* newView = [[ViewControllerImageGallery alloc]initWithNibName:@"ViewControllerImageGallery" bundle:nil];
     
     [self.navigationController pushViewController:newView animated:YES];
 

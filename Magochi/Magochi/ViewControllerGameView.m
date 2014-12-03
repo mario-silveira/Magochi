@@ -11,6 +11,7 @@
 #import "Comida.h"
 #import "InstanciaMascota.h"
 #import "ViewControllerRanking.h"
+#import "CoreDataHelper.h"
 
 @interface ViewControllerGameView ()
 
@@ -280,7 +281,9 @@ CLLocationManager* locationManager;
 }
 - (IBAction)clickRanking:(id)sender {
     
-    ViewControllerRanking* newView = [[ViewControllerRanking alloc]initWithNibName:@"ViewControllerRanking" bundle:nil];
+    
+    NSArray* datos = [[CoreDataHelper sharedInstance] getMascotasRanking];
+    ViewControllerRanking* newView = [[ViewControllerRanking alloc] initWithData:datos];
     
     [self.navigationController pushViewController:newView animated:YES];
     
@@ -313,7 +316,9 @@ CLLocationManager* locationManager;
     
 }
 
-    
+#pragma mark - Core Data
+
+
 
 
 @end

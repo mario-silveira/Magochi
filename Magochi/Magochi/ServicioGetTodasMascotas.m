@@ -8,6 +8,7 @@
 
 #import "ServicioGetTodasMascotas.h"
 #import "NetworkManager.h"
+#import "CoreDataHelper.h"
 
 @interface ServicioGetTodasMascotas ()
 
@@ -36,21 +37,46 @@
         NSNumber* tipo;
         NSNumber* nivel;
         NSString* codigo;
+        NSNumber* latitud;
+        NSNumber* longitud;
+        [[CoreDataHelper sharedInstance] borrarMascotasRanking];
+        NSManagedObjectContext*context = [[CoreDataHelper sharedInstance] managedObjectContext];
         for (NSDictionary* data in responseObject) {
             nombre = [data objectForKey:@"name"];
             tipo = [data objectForKey:@"pet_type"];
             nivel = [data objectForKey:@"level"];
-            codigo = [data objectForKeyedSubscript:@"code"];
-            CLLocation* location = [[CLLocation alloc] initWithLatitude:((NSNumber*)[data objectForKey:@"position_lat"]).floatValue longitude:((NSNumber*)[data objectForKey:@"position_lon"]).floatValue];
-            [mascotasDesordenadas addObject:[[Mascota alloc]initMascotaRanking:nombre tipo:tipo nivel:nivel codigo:codigo ubicacion:location]];
+            codigo = [data objectForKey:@"code"];
+            latitud = [data objectForKey:@"position_lat"];
+            longitud = [data objectForKey:@"position_lon"];
+            
+            Mascota * mascota = (Mascota*)[NSEntityDescription insertNewObjectForEntityForName:@"Mascota"
+                                                                      inManagedObjectContext: context];
+//            [mascotasDesordenadas addObject:[[Mascota alloc]initMascotaRanking:nombre tipo:tipo nivel:nivel codigo:codigo latitud:latitud longitud:longitud]];
+                                         
+            [mascota setNombre: nombre];
+            [mascota setTipo: tipo];
+            [mascota setCodigo: codigo];
+            [mascota setLatitud: latitud];
+            [mascota setLongitud: longitud];
+            [mascota setNivel: nivel];
+            [mascotasDesordenadas addObject: mascota];
+                                         
         }
+        
+        NSError* error;
+        if (![context save:&error]){
+            NSLog(@"Error al guardar los datos");
+            [context rollback];
+        }
+        
         NSArray* mascotasOrdenadas = [mascotasDesordenadas sortedArrayUsingComparator:^NSComparisonResult(Mascota* a, Mascota* b) {
             NSNumber *first = a.nivel;
             NSNumber *second =b.nivel;
             return [second compare:first];
         }];
         
-        self.successBlock(mascotasOrdenadas);
+        
+        self.successBlock([mascotasOrdenadas copy]);
     };
 }
 

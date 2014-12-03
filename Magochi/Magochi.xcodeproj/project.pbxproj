@@ -74,6 +74,9 @@
 		FADC982D1A2DDFFD008EF470 /* ViewControllerMapa.xib in Resources */ = {isa = PBXBuildFile; fileRef = FADC982B1A2DDFFD008EF470 /* ViewControllerMapa.xib */; };
 		FADC98361A2E0E63008EF470 /* Anotacion.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98351A2E0E63008EF470 /* Anotacion.m */; };
 		FADC983D1A2E3FC1008EF470 /* Persistencia.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC983C1A2E3FC1008EF470 /* Persistencia.m */; };
+		FADC983F1A2F6006008EF470 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FADC983E1A2F6005008EF470 /* CoreData.framework */; };
+		FADC98421A2F6176008EF470 /* CoreDataHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = FADC98411A2F6176008EF470 /* CoreDataHelper.m */; };
+		FADC98451A2F61C0008EF470 /* Base.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FADC98431A2F61C0008EF470 /* Base.xcdatamodeld */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -201,6 +204,10 @@
 		FADC98351A2E0E63008EF470 /* Anotacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Anotacion.m; sourceTree = "<group>"; };
 		FADC983B1A2E3FC1008EF470 /* Persistencia.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persistencia.h; sourceTree = "<group>"; };
 		FADC983C1A2E3FC1008EF470 /* Persistencia.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persistencia.m; sourceTree = "<group>"; };
+		FADC983E1A2F6005008EF470 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		FADC98401A2F6176008EF470 /* CoreDataHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataHelper.h; sourceTree = "<group>"; };
+		FADC98411A2F6176008EF470 /* CoreDataHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataHelper.m; sourceTree = "<group>"; };
+		FADC98441A2F61C0008EF470 /* Base.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Base.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -208,6 +215,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADC983F1A2F6006008EF470 /* CoreData.framework in Frameworks */,
 				FAC5AFBF1A28C99D0023ED62 /* SystemConfiguration.framework in Frameworks */,
 				FAC5AFBB1A28C9820023ED62 /* Security.framework in Frameworks */,
 				FAC5AFB91A28C9710023ED62 /* QuartzCore.framework in Frameworks */,
@@ -297,6 +305,7 @@
 		FA5D24121A1BCA530045984A = {
 			isa = PBXGroup;
 			children = (
+				FADC983E1A2F6005008EF470 /* CoreData.framework */,
 				FADC981D1A2CB7CC008EF470 /* MapKit.framework */,
 				FAC5AFBE1A28C99D0023ED62 /* SystemConfiguration.framework */,
 				FAC5AFBA1A28C9820023ED62 /* Security.framework */,
@@ -503,6 +512,9 @@
 			children = (
 				FADC983B1A2E3FC1008EF470 /* Persistencia.h */,
 				FADC983C1A2E3FC1008EF470 /* Persistencia.m */,
+				FADC98401A2F6176008EF470 /* CoreDataHelper.h */,
+				FADC98411A2F6176008EF470 /* CoreDataHelper.m */,
+				FADC98431A2F61C0008EF470 /* Base.xcdatamodeld */,
 			);
 			name = Persistencia;
 			sourceTree = "<group>";
@@ -623,6 +635,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FADC98451A2F61C0008EF470 /* Base.xcdatamodeld in Sources */,
 				FA5D24241A1BCA530045984A /* AppDelegate.m in Sources */,
 				FA5D24531A1BD3CF0045984A /* ViewControllerGameView.m in Sources */,
 				FA28663C1A264E580064C3A1 /* UIButton+AFNetworking.m in Sources */,
@@ -654,6 +667,7 @@
 				FABAA17E1A2381E300D7D912 /* InstanciaMascota.m in Sources */,
 				FA97CB3D1A250CEB0039082E /* NSTimer+StopTimer.m in Sources */,
 				FA5D24491A1BCE1D0045984A /* ViewControllerDataEntry.m in Sources */,
+				FADC98421A2F6176008EF470 /* CoreDataHelper.m in Sources */,
 				FA929F571A1FC7EE00792436 /* Mascota.m in Sources */,
 				FA2866341A264E580064C3A1 /* AFSecurityPolicy.m in Sources */,
 				FADC98271A2CEAE0008EF470 /* ServicioGetTodasMascotas.m in Sources */,
@@ -866,6 +880,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FADC98431A2F61C0008EF470 /* Base.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FADC98441A2F61C0008EF470 /* Base.xcdatamodel */,
+			);
+			currentVersion = FADC98441A2F61C0008EF470 /* Base.xcdatamodel */;
+			path = Base.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FA5D24131A1BCA530045984A /* Project object */;
 }

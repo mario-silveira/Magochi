@@ -12,6 +12,6 @@
 @interface ViewControllerRanking : UIViewController <UITableViewDataSource, mostrarMapaProtocol>
 @property (strong, nonatomic) IBOutlet UITableView *tblRanking;
 
-
+-(ViewControllerRanking*)initWithData: (NSArray*) data;
 
 @end

@@ -33,6 +33,8 @@
 }
 
 -(void)setData:(Mascota *)mascota {
+    [mascota setTipo: mascota.tipo];
+    
     [self.imgMascota setImage:[UIImage imageNamed:[NSString stringWithFormat:@"%@", [mascota getImagenMascota]]]];
     [self.lblNivel setText:mascota.nivel.description];
     [self.lblNombre setText:mascota.nombre];

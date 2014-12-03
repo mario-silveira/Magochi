@@ -17,6 +17,13 @@
 
 @implementation ViewControllerRanking
 
+
+-(ViewControllerRanking *)initWithData:(NSArray *)data {
+    self = [[ViewControllerRanking alloc] initWithNibName:@"ViewControllerRanking" bundle:nil];
+    self.rankingMascotas = data;
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
@@ -27,6 +34,7 @@
                                              selector:@selector(rankingCargado)
                                                  name:@"RANKING_CARGADO"
                                                object:nil];
+    
     
     [[InstanciaMascota sharedInstance] recibirTodasMascotas] ;
 

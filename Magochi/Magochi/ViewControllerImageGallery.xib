@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="6250" systemVersion="13F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
@@ -57,7 +58,7 @@
                         <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2fE-OE-NQh">
                             <rect key="frame" x="350" y="1" width="81" height="74"/>
                             <color key="backgroundColor" white="0.87484248990000002" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" backgroundImage="leon_comiendo_1">
+                            <state key="normal" backgroundImage="jirafa_comiendo_1">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>
@@ -77,7 +78,7 @@
                         <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aJt-SJ-0v2">
                             <rect key="frame" x="247" y="1" width="81" height="74"/>
                             <color key="backgroundColor" white="0.87484248990000002" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" backgroundImage="jirafa_comiendo_1">
+                            <state key="normal" backgroundImage="leon_comiendo_1">
                                 <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                             </state>
                             <connections>

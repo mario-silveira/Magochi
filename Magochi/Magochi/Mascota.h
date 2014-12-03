@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "Imagenes.h"
 #import <CoreLocation/CoreLocation.h>
+#import <CoreData/CoreData.h>
 
-@interface Mascota : NSObject <NSCoding>
+@interface Mascota : NSManagedObject <NSCoding>
 
 @property (nonatomic, strong) NSString* codigo;
 @property (nonatomic, strong) NSString* nombre;
@@ -20,10 +21,12 @@
 @property (nonatomic, strong) NSNumber* experiencia;
 @property (nonatomic, strong) NSNumber* experienciaSiguienteNivel;
 @property (nonatomic, strong) Imagenes* imagenes;
-@property (nonatomic, strong) CLLocation* ubicacion;
+@property (nonatomic, strong) NSNumber* latitud;
+@property (nonatomic, strong) NSNumber* longitud;
 
 
--(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo ubicacion:(CLLocation*) ubicacion;
+-(Mascota*)initMascotaRanking: (NSString*) nombre tipo:(NSNumber*) tipo nivel:(NSNumber*) nivel codigo:(NSString*) codigo latitud:(NSNumber*) latitud longitud:(NSNumber*) longitud;
+
 -(NSDictionary*) dataForSending;
 -(NSString*) getImagenMascota;
 -(NSArray*) getImagenesComiendo;
@@ -33,5 +36,6 @@
 -(void)encodeWithCoder:(NSCoder *)coder;
 -(void)guardarMascota;
 +(Mascota*) cargarMascota;
+-(void) setTipo :(NSNumber*) tipo;
 
 @end

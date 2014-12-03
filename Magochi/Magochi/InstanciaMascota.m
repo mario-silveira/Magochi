@@ -13,6 +13,7 @@
 #import "ViewControllerGameView.h"
 #import "Constantes.h"
 #import "Utils.h"
+#import "CoreDataHelper.h"
 
 #import "ServicioGetMascota.h"
 #import "ServicioPostMascota.h"
@@ -23,7 +24,7 @@
 @property (nonatomic)  Mascota* mascota;
 @property (nonatomic, strong) NSNumber* energia;
 @property NSTimer* timerEjercicio;
-@property NSArray* mascotas;
+@property (nonatomic, copy) NSArray* mascotas;
 
 @property (nonatomic, strong) ServicioGetMascota* servicioGetMascota;
 @property (nonatomic, strong) ServicioPostMascota* servicioPostMascota;
@@ -181,9 +182,11 @@ __weak typeof(InstanciaMascota) *weakSelf;
 
     
 -(void) recibirTodasMascotas {
+    __weak typeof(InstanciaMascota) *__weakSelf = self;
     self.servicioGetTodasMascotas = [[ServicioGetTodasMascotas alloc] init];
     [self.servicioGetTodasMascotas recibirTodasMascotas:^(NSArray *mascotas) {
-        weakSelf.mascotas = mascotas;
+        __weakSelf.mascotas = mascotas;
+//        [[CoreDataHelper sharedInstance] guardarMascotasRanking:__weakSelf.mascotas];
         [[NSNotificationCenter defaultCenter]postNotificationName:@"RANKING_CARGADO" object:nil];
 
     }];
@@ -196,7 +199,8 @@ __weak typeof(InstanciaMascota) *weakSelf;
 
 
 -(void) setearUbicacion: (CLLocation*) location {
-    self.mascota.ubicacion = location;
+    self.mascota.latitud = [[NSNumber alloc] initWithDouble:location.coordinate.latitude];
+    self.mascota.longitud = [[NSNumber alloc] initWithDouble:location.coordinate.longitude];
     [self enviarMascota];
 }
 

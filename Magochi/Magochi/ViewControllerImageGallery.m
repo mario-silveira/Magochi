@@ -33,7 +33,7 @@
     // Do any additional setup after loading the view from its nib.
     
     [[NSUserDefaults standardUserDefaults] setBool:NO forKey:IMAGEN_MASCOTA_CARGADA];
-    
+    [self setTitle:[[InstanciaMascota sharedInstance] getMascota].nombre];
     [self.btnDone setEnabled:NO];
     
 }

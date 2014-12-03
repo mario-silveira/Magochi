@@ -57,15 +57,15 @@
     UIViewController* view;
     [Utils cargarImagenes];
     
-    if ([[NSUserDefaults standardUserDefaults] boolForKey:NOMBRE_MASCOTA_CARGADO]) {
+ /*   if ([[NSUserDefaults standardUserDefaults] boolForKey:NOMBRE_MASCOTA_CARGADO]) {
         if ([[NSUserDefaults standardUserDefaults] boolForKey:IMAGEN_MASCOTA_CARGADA]) {
             view = [[ViewControllerGameView alloc]initWithData];
         } else {
             view = [[ViewControllerImageGallery alloc] initWithNibName:@"ViewControllerImageGallery" bundle:nil];
         }
-    } else {
+    } else {*/
         view = [[ViewControllerDataEntry alloc] initWithNibName:@"ViewControllerDataEntry" bundle:nil];
-    }
+    //}
     
     UINavigationController* navControllerHome = [[UINavigationController alloc] initWithRootViewController:view];
     

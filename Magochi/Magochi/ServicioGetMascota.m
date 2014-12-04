@@ -17,20 +17,20 @@
 
 @implementation ServicioGetMascota
 
--(void) recibirMascota:(SuccessGetMascota) bloque {
+-(void) recibirMascota:(NSString*) codigo bloque:(SuccessGetMascota) bloque {
     
     self.successBlock = bloque;
     
-    [[NetworkManager sharedInstance] GET:@"/pet/MSILVEIRA8031"
+    [[NetworkManager sharedInstance] GET:[NSString stringWithFormat:@"/pet/%@", codigo]
                               parameters:nil
                                  success:[self successGetBlock]
                                  failure:[self getFailureGetBlock]];
 }
 
 -(void (^)(NSURLSessionDataTask *task, id responseObject)) successGetBlock {
-    __weak typeof(self) weakSelf = self;
+  //  __weak typeof(self) weakSelf = self;
     return ^(NSURLSessionDataTask* task, id responseObject){
-        
+        __weak typeof(self) weakSelf = self;
         Mascota* mascota = [[Mascota alloc] init];
         mascota.energia = [responseObject objectForKey:@"energy"];
         mascota.codigo = [responseObject objectForKey:@"code"];

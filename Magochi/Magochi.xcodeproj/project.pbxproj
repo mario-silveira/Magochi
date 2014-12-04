@@ -44,6 +44,8 @@
 		FA929F571A1FC7EE00792436 /* Mascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F561A1FC7EE00792436 /* Mascota.m */; };
 		FA929F591A1FC86E00792436 /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = FA929F581A1FC86E00792436 /* Utils.m */; };
 		FA97CB3D1A250CEB0039082E /* NSTimer+StopTimer.m in Sources */ = {isa = PBXBuildFile; fileRef = FA97CB3C1A250CEB0039082E /* NSTimer+StopTimer.m */; };
+		FAAF9E561A30B2C6006E951D /* ViewControllerDetalles.m in Sources */ = {isa = PBXBuildFile; fileRef = FAAF9E541A30B2C6006E951D /* ViewControllerDetalles.m */; };
+		FAAF9E571A30B2C6006E951D /* ViewControllerDetalles.xib in Resources */ = {isa = PBXBuildFile; fileRef = FAAF9E551A30B2C6006E951D /* ViewControllerDetalles.xib */; };
 		FABAA17E1A2381E300D7D912 /* InstanciaMascota.m in Sources */ = {isa = PBXBuildFile; fileRef = FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */; };
 		FAC5AFA81A28C7B50023ED62 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFA41A28C7B50023ED62 /* Bolts.framework */; };
 		FAC5AFA91A28C7B50023ED62 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAC5AFA51A28C7B50023ED62 /* Parse.framework */; };
@@ -162,6 +164,9 @@
 		FA929F581A1FC86E00792436 /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		FA97CB3B1A250CEB0039082E /* NSTimer+StopTimer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSTimer+StopTimer.h"; sourceTree = "<group>"; };
 		FA97CB3C1A250CEB0039082E /* NSTimer+StopTimer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSTimer+StopTimer.m"; sourceTree = "<group>"; };
+		FAAF9E531A30B2C6006E951D /* ViewControllerDetalles.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerDetalles.h; sourceTree = "<group>"; };
+		FAAF9E541A30B2C6006E951D /* ViewControllerDetalles.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerDetalles.m; sourceTree = "<group>"; };
+		FAAF9E551A30B2C6006E951D /* ViewControllerDetalles.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerDetalles.xib; sourceTree = "<group>"; };
 		FABAA17C1A2381E300D7D912 /* InstanciaMascota.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InstanciaMascota.h; sourceTree = "<group>"; };
 		FABAA17D1A2381E300D7D912 /* InstanciaMascota.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InstanciaMascota.m; sourceTree = "<group>"; };
 		FAC5AFA41A28C7B50023ED62 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
@@ -334,6 +339,7 @@
 		FA5D241D1A1BCA530045984A /* Magochi */ = {
 			isa = PBXGroup;
 			children = (
+				FAAF9E521A30B2A8006E951D /* Detalles */,
 				FADC98371A2E30CD008EF470 /* Persistencia */,
 				FADC98281A2DDFC9008EF470 /* Mapa */,
 				FAD01C0F1A2A04C50055CE96 /* Ranking */,
@@ -377,6 +383,16 @@
 				FA5D24391A1BCA530045984A /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FAAF9E521A30B2A8006E951D /* Detalles */ = {
+			isa = PBXGroup;
+			children = (
+				FAAF9E531A30B2C6006E951D /* ViewControllerDetalles.h */,
+				FAAF9E541A30B2C6006E951D /* ViewControllerDetalles.m */,
+				FAAF9E551A30B2C6006E951D /* ViewControllerDetalles.xib */,
+			);
+			name = Detalles;
 			sourceTree = "<group>";
 		};
 		FABAA1771A2379CF00D7D912 /* DataEntry */ = {
@@ -611,6 +627,7 @@
 				FAD01C1C1A2A05320055CE96 /* CellRanking.xib in Resources */,
 				FA57263F1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib in Resources */,
 				FA5D24541A1BD3CF0045984A /* ViewControllerGameView.xib in Resources */,
+				FAAF9E571A30B2C6006E951D /* ViewControllerDetalles.xib in Resources */,
 				FA5726471A1E664A00C1F5E3 /* CellComida.xib in Resources */,
 				FAD01C171A2A050C0055CE96 /* ViewControllerRanking.xib in Resources */,
 				FAD52FD91A26237900B2760D /* VCPruebasNetworking.xib in Resources */,
@@ -642,6 +659,7 @@
 				FA5726411A1E54AB00C1F5E3 /* Comida.m in Sources */,
 				FA2866401A264E580064C3A1 /* UIWebView+AFNetworking.m in Sources */,
 				FADC981C1A2CB07D008EF470 /* Constantes.m in Sources */,
+				FAAF9E561A30B2C6006E951D /* ViewControllerDetalles.m in Sources */,
 				FA28663E1A264E580064C3A1 /* UIProgressView+AFNetworking.m in Sources */,
 				FA080DD41A2898CB005071CB /* Imagenes.m in Sources */,
 				FA2866321A264E580064C3A1 /* AFHTTPSessionManager.m in Sources */,

@@ -10,6 +10,7 @@
 #import "ViewControllerDataEntry.h"
 #import "ViewControllerGameView.h"
 #import "ViewControllerImageGallery.h"
+#import "ViewControllerDetalles.h"
 #import <Parse/Parse.h>
 #import "Constantes.h"
 #import "Utils.h"
@@ -95,6 +96,19 @@
 
 -(void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo{
     [[NSNotificationCenter defaultCenter] postNotificationName:@"NOTIFICACION_NIVEL" object:nil userInfo:userInfo];
+}
+
+-(BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    ViewControllerDetalles* view = [[ViewControllerDetalles alloc]initWithNibName:@"ViewControllerDetalles" bundle:nil];
+    
+    
+    NSString* codigo = [url lastPathComponent];
+    [view setCodigo:codigo];
+    
+    [self.window setRootViewController:view];
+    [self.window makeKeyAndVisible];
+    
+    return YES;
 }
 
 @end

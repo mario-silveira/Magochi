@@ -13,6 +13,6 @@
 
 typedef void (^SuccessGetMascota)(Mascota*);
 
--(void) recibirMascota:(SuccessGetMascota) successblock;
+-(void) recibirMascota:(NSString*) codigo bloque:(SuccessGetMascota) successblock;
 
 @end

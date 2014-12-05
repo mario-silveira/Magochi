@@ -44,6 +44,7 @@
         
         // Initialize the session
         _sharedInstance = [[NetworkManager alloc] initWithBaseURL:[NSURL URLWithString: @"http://tamagotchi.herokuapp.com"] sessionConfiguration:sessionConfiguration];
+     //    _sharedInstance = [[NetworkManager alloc] initWithBaseURL:[NSURL URLWithString: @"http://169.254.226.91:3000"] sessionConfiguration:sessionConfiguration];
         
         //Setup a default JSONSerializer for all request/responses.
         _sharedInstance.requestSerializer = [AFJSONRequestSerializer serializer];

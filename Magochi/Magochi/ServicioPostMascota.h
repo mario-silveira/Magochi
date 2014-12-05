@@ -11,8 +11,8 @@
 
 @interface ServicioPostMascota : NSObject
 
+typedef void (^SuccessPostMascota)(bool);
 
--(void) almacenarMascota: (Mascota*) mascota;
-
+-(void) almacenarMascota: (Mascota*) mascota bloque:(SuccessPostMascota) successblock;
 
 @end

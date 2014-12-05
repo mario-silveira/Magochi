@@ -83,8 +83,8 @@ __weak typeof(InstanciaMascota) *weakSelf;
 }
 
 -(void) tickTimerEjercicio {
-    if (_energia.intValue > 0) {
-        _energia = [NSNumber numberWithInt:[_energia intValue] - 10];
+    if (self.mascota.energia.intValue > 0) {
+        self.mascota.energia = [NSNumber numberWithInt:[_energia intValue] - 10];
         [self subirExperiencia];
         [[NSNotificationCenter defaultCenter] postNotificationName:OBSERVER_REFRESCAR_ENERGIA
                                              object:_energia];
@@ -116,7 +116,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
 }
 
 - (void) subirExperiencia {
-    self.mascota.experiencia = [[NSNumber alloc] initWithInt:[self.mascota.experiencia intValue] + 10];
+    self.mascota.experiencia = [[NSNumber alloc] initWithInt:[self.mascota.experiencia intValue] + 15];
     if (self.mascota.experiencia.intValue >= self.mascota.experienciaSiguienteNivel.intValue) {
         [self subirNivel];
     }
@@ -124,6 +124,7 @@ __weak typeof(InstanciaMascota) *weakSelf;
 
 - (void) subirNivel {
     self.mascota.nivel = [[NSNumber alloc] initWithInt:[self.mascota.nivel intValue] + 1 ];
+    [self.mascota setExperiencia:[[NSNumber alloc] initWithInt:self.mascota.experiencia.intValue - self.mascota.experienciaSiguienteNivel.intValue]];
     [self.mascota setExperienciaSiguienteNivel:[self experienciaNuevoNivel]];
     [self.mascota guardarMascota];
     [self enviarMascota];
@@ -134,13 +135,14 @@ __weak typeof(InstanciaMascota) *weakSelf;
 }
 
 -(void) enviarMascota {
-    
- //   [self createNotification];
-    
-  //  [self sendRemoteNotification];
-    
+        
     self.servicioPostMascota = [[ServicioPostMascota alloc] init];
-    [[self servicioPostMascota] almacenarMascota:[self getMascota]];
+    [[self servicioPostMascota] almacenarMascota:[self getMascota] bloque:^(bool resultado) {
+        if (resultado) {
+            NSLog(@"Post sin errores");
+        } else {
+            NSLog(@"Hay Errores en el post");
+        }}];
     
 }
 

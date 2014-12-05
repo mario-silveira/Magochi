@@ -24,4 +24,6 @@
 -(NSMutableArray*) getMascotas;
 -(void) cargarMascota;
 
+-(void) tickTimerEjercicio;
+
 @end

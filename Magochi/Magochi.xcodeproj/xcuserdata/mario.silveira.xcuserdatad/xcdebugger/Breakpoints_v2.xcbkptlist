@@ -89,7 +89,7 @@
                   symbolName = "-[ServicioGetMascota successGetBlock]"
                   moduleName = "Magochi"
                   urlString = "file:///Users/mario.silveira/Desktop/Curso%20IOS/workspace/Magochi/Magochi/ServicioGetMascota.m"
-                  timestampString = "439422792.180613"
+                  timestampString = "439506010.958711"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
@@ -103,7 +103,7 @@
                   symbolName = "__37-[ServicioGetMascota successGetBlock]_block_invoke"
                   moduleName = "Magochi"
                   urlString = "file:///Users/mario.silveira/Desktop/Curso%20IOS/workspace/Magochi/Magochi/ServicioGetMascota.m"
-                  timestampString = "439422792.180759"
+                  timestampString = "439506010.958858"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -174,6 +174,54 @@
             startingLineNumber = "105"
             endingLineNumber = "105"
             landmarkName = "-application:openURL:sourceApplication:annotation:"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MagochiTests/TestServicios.m"
+            timestampString = "439505193.415076"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
+            landmarkName = "-setUp"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "MagochiTests/TestServicios.m"
+            timestampString = "439505228.167185"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "-test1Post"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Magochi/ServicioPostMascota.m"
+            timestampString = "439505604.986807"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "36"
+            endingLineNumber = "36"
+            landmarkName = "-successPostBlock"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

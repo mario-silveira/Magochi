@@ -12,6 +12,7 @@
 #import "InstanciaMascota.h"
 #import "ViewControllerRanking.h"
 #import "CoreDataHelper.h"
+#import "ViewControllerContactos.h"
 
 @interface ViewControllerGameView ()
 
@@ -33,9 +34,9 @@ CLLocationManager* locationManager;
     self.ejercitando = NO;
     [self setMascota:[[InstanciaMascota sharedInstance] getMascota]];
 
-    UIBarButtonItem* mailButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"mail_image"]  style:UIBarButtonItemStyleDone target:self action:@selector(enviarMail)];
+    UIBarButtonItem* contactButton = [[UIBarButtonItem alloc] initWithImage:[UIImage imageNamed:@"contacts-icon"]  style:UIBarButtonItemStyleDone target:self action:@selector(pantallaContacto)];
     
-    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects: mailButton, nil];
+    self.navigationItem.rightBarButtonItems = [[NSArray alloc] initWithObjects: contactButton, nil];
     
     self.imgMascota.image = [UIImage imageNamed:[self.mascota getImagenMascota]];
     [[[InstanciaMascota sharedInstance] getMascota] guardarMascota];
@@ -44,7 +45,12 @@ CLLocationManager* locationManager;
     
 }
 
-#pragma mark - Envio Email
+- (void) pantallaContacto {
+    ViewControllerContactos* viewContactos = [[ViewControllerContactos alloc]initWithNibName:@"ViewControllerContactos" bundle:nil];
+    [self.navigationController pushViewController:viewContactos animated:YES];
+}
+
+/*#pragma mark - Envio Email
 
 - (void) enviarMail {
     
@@ -110,7 +116,7 @@ CLLocationManager* locationManager;
     }
     
     [self dismissViewControllerAnimated:YES completion:NULL];
-}
+}*/
 
 -(ViewControllerGameView*) initWithData {
     [[InstanciaMascota sharedInstance] cargarMascota];

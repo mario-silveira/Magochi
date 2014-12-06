@@ -15,7 +15,6 @@
 #import "Constantes.h"
 #import "Utils.h"
 
-
 @interface AppDelegate ()
 
 @end

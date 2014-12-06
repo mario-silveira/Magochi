@@ -25,6 +25,7 @@
 		FA28663E1A264E580064C3A1 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28662B1A264E580064C3A1 /* UIProgressView+AFNetworking.m */; };
 		FA28663F1A264E580064C3A1 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28662D1A264E580064C3A1 /* UIRefreshControl+AFNetworking.m */; };
 		FA2866401A264E580064C3A1 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FA28662F1A264E580064C3A1 /* UIWebView+AFNetworking.m */; };
+		FA29D0A21A333BC100B53E03 /* Contacto.m in Sources */ = {isa = PBXBuildFile; fileRef = FA29D0A11A333BC100B53E03 /* Contacto.m */; };
 		FA57263E1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m in Sources */ = {isa = PBXBuildFile; fileRef = FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */; };
 		FA57263F1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib in Resources */ = {isa = PBXBuildFile; fileRef = FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */; };
 		FA5726411A1E54AB00C1F5E3 /* Comida.m in Sources */ = {isa = PBXBuildFile; fileRef = FA5726401A1E54AA00C1F5E3 /* Comida.m */; };
@@ -135,6 +136,8 @@
 		FA28662D1A264E580064C3A1 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
 		FA28662E1A264E580064C3A1 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		FA28662F1A264E580064C3A1 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		FA29D0A01A333BC100B53E03 /* Contacto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Contacto.h; sourceTree = "<group>"; };
+		FA29D0A11A333BC100B53E03 /* Contacto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Contacto.m; sourceTree = "<group>"; };
 		FA57263B1A1E523C00C1F5E3 /* ViewControllerTablaComidas.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewControllerTablaComidas.h; sourceTree = "<group>"; };
 		FA57263C1A1E523C00C1F5E3 /* ViewControllerTablaComidas.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTablaComidas.m; sourceTree = "<group>"; };
 		FA57263D1A1E523C00C1F5E3 /* ViewControllerTablaComidas.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewControllerTablaComidas.xib; sourceTree = "<group>"; };
@@ -418,6 +421,8 @@
 				FAAF9E671A325611006E951D /* CellContacto.h */,
 				FAAF9E681A325611006E951D /* CellContacto.m */,
 				FAAF9E691A325611006E951D /* CellContacto.xib */,
+				FA29D0A01A333BC100B53E03 /* Contacto.h */,
+				FA29D0A11A333BC100B53E03 /* Contacto.m */,
 			);
 			name = Contactos;
 			sourceTree = "<group>";
@@ -681,6 +686,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA29D0A21A333BC100B53E03 /* Contacto.m in Sources */,
 				FADC98451A2F61C0008EF470 /* Base.xcdatamodeld in Sources */,
 				FA5D24241A1BCA530045984A /* AppDelegate.m in Sources */,
 				FA5D24531A1BD3CF0045984A /* ViewControllerGameView.m in Sources */,

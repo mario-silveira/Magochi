@@ -32,7 +32,7 @@
 -(void (^)(NSURLSessionDataTask *task, id responseObject)) successPostBlock {
     __weak typeof(self) weakSelf = self;
    return ^(NSURLSessionDataTask* task, id responseObject){
-       
+       __weak typeof(self) weakSelf = self;
        if ([[responseObject objectForKey:@"status"] isEqualToString:@"ok" ]) {
            NSLog(@"la info llego sin error");
            weakSelf.successBlock(true);

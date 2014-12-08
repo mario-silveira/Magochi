@@ -116,11 +116,26 @@ ABAddressBookRef agenda;
 #pragma mark - Metodos del Protocolo
 
 -(void)llamarContacto:(NSString *)telefono{
-    NSString *tel = [[telefono componentsSeparatedByCharactersInSet:
-                            [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]
-                           componentsJoinedByString:@""];
-    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"tel://%@",tel]]];
-    NSLog(@"Llamada realizada al telefono %@", tel);
+
+
+    NSString *tel = [NSString stringWithFormat:@"tel://%@",
+                     [[telefono componentsSeparatedByCharactersInSet:
+                                                              [[NSCharacterSet decimalDigitCharacterSet] invertedSet]]
+                                                             componentsJoinedByString:@""]];
+
+    if ([[UIApplication sharedApplication] canOpenURL:[NSURL URLWithString:tel]]) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:tel]];
+        NSLog(@"Llamada realizada al telefono %@", tel);
+    } else {
+        [[[UIAlertView alloc]
+          initWithTitle: @"Error"
+          message: @"Este dispositivo no puede realizar llamadas"
+          delegate: self
+          cancelButtonTitle:@"OK"
+          otherButtonTitles:nil] show];
+        return;
+    }
+    
     
 }
 

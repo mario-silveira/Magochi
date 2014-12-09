@@ -14,12 +14,11 @@
 @interface ViewControllerContactos ()
 
 @property (nonatomic, strong) NSMutableArray* contactos;
+@property (assign) ABAddressBookRef agenda;
 
 @end
 
 @implementation ViewControllerContactos
-
-ABAddressBookRef agenda;
 
 
 - (void)viewDidLoad {
@@ -39,10 +38,10 @@ ABAddressBookRef agenda;
 }
 
 -(void) cargarContactos {
-    agenda = ABAddressBookCreateWithOptions(nil, nil);
+    self.agenda = ABAddressBookCreateWithOptions(nil, nil);
     
     if (ABAddressBookGetAuthorizationStatus() == kABAuthorizationStatusNotDetermined){
-        ABAddressBookRequestAccessWithCompletion(agenda, ^(bool granted, CFErrorRef error) {
+        ABAddressBookRequestAccessWithCompletion(self.agenda, ^(bool granted, CFErrorRef error) {
             NSLog(@"Acceso a los contactos pidiendo autorizacion");
             [self cargarDatos];
         });
@@ -57,9 +56,9 @@ ABAddressBookRef agenda;
 
 
 -(void) cargarDatos{
-    CFArrayRef refContactos = ABAddressBookCopyArrayOfAllPeople(agenda);
+    CFArrayRef refContactos = ABAddressBookCopyArrayOfAllPeople(self.agenda);
     
-    CFIndex cantContactos = ABAddressBookGetPersonCount(agenda);
+    CFIndex cantContactos = ABAddressBookGetPersonCount(self.agenda);
     Contacto* contacto;
     for (int i = 0; i < cantContactos ; i++) {
         contacto = [[Contacto alloc] init];
@@ -91,7 +90,10 @@ ABAddressBookRef agenda;
 
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.contactos.count;
+    if (self.contactos){
+        return self.contactos.count;
+    }
+    return 0;
 }
 
 -(double) tableView: (UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -158,50 +160,36 @@ ABAddressBookRef agenda;
 
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
 {
+    NSString* mensaje;
     switch (result)
     {
         case MFMailComposeResultCancelled:
-            
-            [[[UIAlertView alloc]
-              initWithTitle: @"Resultado"
-              message: @"Mail Cancelado"
-              delegate: self
-              cancelButtonTitle:@"OK"
-              otherButtonTitles:nil] show];
-            
+            mensaje = @"Mail Cancelado";
             break;
         case MFMailComposeResultSaved:
-            [[[UIAlertView alloc]
-              initWithTitle: @"Resultado"
-              message: @"Mail Guardado"
-              delegate: self
-              cancelButtonTitle:@"OK"
-              otherButtonTitles:nil] show];
-            
+            mensaje = @"Mail Guardado";
             break;
         case MFMailComposeResultSent:
-            [[[UIAlertView alloc]
-              initWithTitle: @"Resultado"
-              message: @"Mail Enviado"
-              delegate: self
-              cancelButtonTitle:@"OK"
-              otherButtonTitles:nil] show];
-            
+            mensaje = @"Mail Enviado";
             break;
         case MFMailComposeResultFailed:
-            [[[UIAlertView alloc]
-              initWithTitle: @"Resultado"
-              message: @"Error al enviar mail"
-              delegate: self
-              cancelButtonTitle:@"OK"
-              otherButtonTitles:nil] show];
-            
+            mensaje = @"Fallo en el envio";
             break;
         default:
             break;
     }
+    [self showAlert:mensaje];
     
     [self dismissViewControllerAnimated:YES completion:NULL];
+}
+
+-(void) showAlert: (NSString*) mensaje {
+    [[[UIAlertView alloc]
+      initWithTitle: @"Resultado"
+      message: mensaje
+      delegate: self
+      cancelButtonTitle:@"OK"
+      otherButtonTitles:nil] show];
 }
 
 @end

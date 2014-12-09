@@ -11,8 +11,8 @@
 
 @protocol enviarLlamado
 
--(void) llamarContacto :(NSString*) telefono;
--(void) enviarEmail: (NSString*) email;
+@required -(void) llamarContacto :(NSString*) telefono;
+@required -(void) enviarEmail: (NSString*) email;
 
 @end
 

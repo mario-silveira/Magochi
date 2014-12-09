@@ -38,6 +38,7 @@
     [self.lblTrabajo setText:contacto.trabajo];
     [self.lblEmail setText:contacto.email];
     [self.lblTelefono setText:contacto.telefono];
+    
     if ((!contacto.email) || contacto.email.length == 0) {
         [self.btnEmail setEnabled:NO];
         [self.btnEmail setAlpha:0];
@@ -46,7 +47,7 @@
         [self.btnEmail setAlpha:1.0];
     }
     
-    if (contacto.telefono.length == 0) {
+    if ((!contacto.telefono) || (contacto.telefono.length == 0)) {
         [self.btnTel setEnabled:NO];
         [self.btnTel setAlpha:0];
     } else {

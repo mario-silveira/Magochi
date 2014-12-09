@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CellContacto.h"
+#import <MessageUI/MessageUI.h>
 
-@interface ViewControllerContactos : UIViewController
+
+@interface ViewControllerContactos : UIViewController <enviarLlamado, MFMailComposeViewControllerDelegate>
+
+@property (strong, nonatomic) IBOutlet UITableView *tblContactos;
 
 @end

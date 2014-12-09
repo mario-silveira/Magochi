@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magochi/ViewControllerGameView.m"
-            timestampString = "439332184.367866"
+            timestampString = "439577428.923256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "285"
-            endingLineNumber = "285"
+            startingLineNumber = "291"
+            endingLineNumber = "291"
             landmarkName = "-clickRanking:"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magochi/AppDelegate.m"
-            timestampString = "439400318.564145"
+            timestampString = "439577428.923256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
             landmarkName = "-application:openURL:sourceApplication:annotation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -89,7 +89,7 @@
                   symbolName = "-[ServicioGetMascota successGetBlock]"
                   moduleName = "Magochi"
                   urlString = "file:///Users/mario.silveira/Desktop/Curso%20IOS/workspace/Magochi/Magochi/ServicioGetMascota.m"
-                  timestampString = "439506010.958711"
+                  timestampString = "439734956.353539"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "32"
@@ -103,7 +103,7 @@
                   symbolName = "__37-[ServicioGetMascota successGetBlock]_block_invoke"
                   moduleName = "Magochi"
                   urlString = "file:///Users/mario.silveira/Desktop/Curso%20IOS/workspace/Magochi/Magochi/ServicioGetMascota.m"
-                  timestampString = "439506010.958858"
+                  timestampString = "439734956.353707"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "33"
@@ -168,11 +168,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Magochi/AppDelegate.m"
-            timestampString = "439422719.111132"
+            timestampString = "439577428.923256"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "104"
+            endingLineNumber = "104"
             landmarkName = "-application:openURL:sourceApplication:annotation:"
             landmarkType = "5">
          </BreakpointContent>
@@ -212,16 +212,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Magochi/ServicioPostMascota.m"
-            timestampString = "439505604.986807"
+            filePath = "Magochi/ViewControllerContactos.m"
+            timestampString = "439572266.041083"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "36"
-            endingLineNumber = "36"
-            landmarkName = "-successPostBlock"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-cargarContactos"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Magochi/ViewControllerContactos.m"
+            timestampString = "439572266.041083"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
+            landmarkName = "-cargarDatos"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Magochi/ViewControllerContactos.m"
+            timestampString = "439575382.172196"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "-cargarDatos"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
